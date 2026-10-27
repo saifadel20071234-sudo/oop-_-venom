@@ -133,6 +133,25 @@ const ChatController = {
     }
   },
 
+  scrollToMessageTop(element) {
+    if (!element) return;
+    setTimeout(() => {
+      if (this.chatContainer) {
+        const containerRect = this.chatContainer.getBoundingClientRect();
+        const elemRect = element.getBoundingClientRect();
+        const scrollDelta = elemRect.top - containerRect.top;
+        this.chatContainer.scrollBy({
+          top: scrollDelta - 12,
+          behavior: 'smooth'
+        });
+      } else {
+        try {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {}
+      }
+    }, 60);
+  },
+
   renderUserMessage(text) {
     const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const isArabic = /[\u0600-\u06FF]/.test(text);
@@ -241,7 +260,8 @@ const ChatController = {
     `;
 
     this.chatContainer.insertAdjacentHTML('beforeend', msgHtml);
-    this.scrollToBottom();
+    const newMsg = this.chatContainer.lastElementChild;
+    this.scrollToMessageTop(newMsg);
   },
 
   renderErrorMessage(errText) {
@@ -256,7 +276,8 @@ const ChatController = {
       </div>
     `;
     this.chatContainer.insertAdjacentHTML('beforeend', msgHtml);
-    this.scrollToBottom();
+    const newMsg = this.chatContainer.lastElementChild;
+    this.scrollToMessageTop(newMsg);
   },
 
   showReasonModal(encodedReason) {
