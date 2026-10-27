@@ -1,9 +1,10 @@
 """
 routes/chatbot_routes.py - ML / NLU & Chatbot API
-Integrates Member 3 (Reda El-Qeblawy)'s ML model and dialog manager.
+Integrates Member 3 (Reda El-Qeblawy)'s ML model, Member 1's IR, and Member 2's KB.
 """
 from flask import Blueprint, request, jsonify
-from contracts import nlu_parse, chatbot_reply
+from contracts import nlu_parse
+from services.clinical_pipeline import process_clinical_query
 
 chatbot_bp = Blueprint("chatbot", __name__)
 
@@ -34,7 +35,7 @@ def predict():
 
 @chatbot_bp.route("/api/chat", methods=["POST"])
 def chat():
-    """Process message through dialog manager and guardrails."""
+    """Process message through unified ML + IR + KB clinical intelligence pipeline."""
     data = request.get_json(silent=True) or {}
     message = data.get("message", "")
     session_id = data.get("session_id", "default")
@@ -46,11 +47,11 @@ def chat():
         }), 400
 
     try:
-        reply = chatbot_reply({"session_id": session_id}, message.strip())
-        return jsonify({
-            "status": "success",
-            "data": reply
-        }), 200
+        payload = process_clinical_query(message.strip(), session_id)
+        res = dict(payload)
+        res["data"] = payload
+        res["status"] = "success"
+        return jsonify(res), 200
     except Exception as e:
         return jsonify({
             "status": "error",
