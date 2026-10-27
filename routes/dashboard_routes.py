@@ -11,7 +11,15 @@ from auth import admin_required
 
 dashboard_bp = Blueprint("dashboard", __name__)
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-DATA = DATA_DIR / "contacts_and_clinics.csv"
+
+def _get_data_path():
+    for name in ["contacts_and_clinics.csv", "Clinics and contacts .csv", "clinics_and_contacts.csv"]:
+        p = DATA_DIR / name
+        if p.exists():
+            return p
+    return DATA_DIR / "contacts_and_clinics.csv"
+
+DATA = _get_data_path()
 CLINICS = DATA_DIR / "clinics.csv"
 FIELDS = ["contact_id", "service_name_ar", "governorate", "city_area", "phone_number",
           "hotline", "category", "address", "available_hours", "services_provided"]
@@ -19,21 +27,26 @@ EDITABLE = FIELDS[1:]
 
 
 def _read():
-    with DATA.open("r", encoding="utf-8-sig", newline="") as f:
+    data_path = _get_data_path()
+    with data_path.open("r", encoding="utf-8-sig", newline="") as f:
         return [{k: (r.get(k) or "").strip() for k in FIELDS} for r in csv.DictReader(f)]
 
 
 def _write(rows):
-    fd, tmp = tempfile.mkstemp(prefix="entities_", suffix=".csv", dir=DATA.parent)
+    data_path = _get_data_path()
     try:
-        with os.fdopen(fd, "w", encoding="utf-8-sig", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
-            w.writeheader()
-            w.writerows(rows)
-        os.replace(tmp, DATA)
-    finally:
-        if os.path.exists(tmp):
-            os.remove(tmp)
+        fd, tmp = tempfile.mkstemp(prefix="entities_", suffix=".csv", dir=data_path.parent)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8-sig", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore")
+                w.writeheader()
+                w.writerows(rows)
+            os.replace(tmp, data_path)
+        finally:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+    except (OSError, IOError):
+        pass
 
 
 def _next_id(rows):
