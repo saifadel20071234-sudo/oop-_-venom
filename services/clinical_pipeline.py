@@ -24,8 +24,109 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from contracts import nlu_parse, ir_search, kb_infer, storage_log_query
 
-# Pre-compiled Medical Knowledge for each condition
+# Pre-compiled Medical Knowledge Catalog
 CONDITION_CATALOG: Dict[str, Dict[str, Any]] = {
+    "high_blood_pressure": {
+        "arabic_title": "طوارئ ارتفاع ضغط الدم الحاد (Hypertensive Crisis)",
+        "category": "طوارئ الدورة الدموية وضغط الدم",
+        "default_severity": "orange",
+        "guide_file": "ar_doc_04_cardiac_arrest_and_cpr.txt",
+        "source": "الجمعية الأوروبية لأمراض القلب ESC ووزارة الصحة المصرية",
+        "default_steps": [
+            "ساعِد المصاب على الجلوس في وضع مستريح بزاوية 45 درجة في مكان هادئ ومظلم وجيد التهوية.",
+            "فك الملابس والأربطة الضيقة حول العنق والصدر والخصر لتسهيل حركة التنفس وتخفيف الاحتقان.",
+            "طمئن المريض تماماً واطلب منه التنفس ببطء وعمق لأن التوتر والانفعال يرفعان الضغط بشكل مفاجئ.",
+            "أعد قياس ضغط الدم بهدوء بعد 5 دقائق من الراحة التامة والاسترخاء.",
+            "إذا كانت القراءة أعلى من 180/120 ملم زئبق أو صاحبها ألم بالصدر أو صعوبة تنفس أو ثقل في جانب من الجسم: اتصل بالإسعاف (123) فوراً."
+        ],
+        "do_list": [
+            "إراحة المريض في وضع الجلوس المسترخي لمدة 5 دقائق قبل إعادة القياس",
+            "فحص علامات الطوارئ (ألم الصدر، ضيق التنفس، التلعثم، أو تنميل الوجه والذراع)",
+            "التوجه الفوري لطوارئ المستشفى إذا كان مصحوباً بصداع انفجاري حاد أو زغللة بالعين"
+        ],
+        "dont_list": [
+            "ممنوع إعطاء المريض أدوية أو مدرات بول عشوائياً دون وصفة طبية صريحة",
+            "ممنوع تناول القهوة أو الشاي أو المسكنات التي ترفع ضغط الدم",
+            "لا تجعل المريض يستلقي مسطحاً تماماً على ظهره لمنع زيادة الضغط داخل الرأس"
+        ],
+        "referral": "طوارئ الباطنة والقلب بمستشفى كفر الشيخ العام أو الإسعاف 123 فوراً"
+    },
+    "abdominal_pain": {
+        "arabic_title": "ألم ومغص حاد في البطن والجهاز الهضمي (Acute Abdominal Pain)",
+        "category": "طوارئ البطن والجهاز الهضمي",
+        "default_severity": "orange",
+        "guide_file": "ar_doc_08_chemical_and_drug_poisoning.txt",
+        "source": "دليل طوارئ الجراحة العامة والباطنة - المستشفيات الجامعية بالدلتا",
+        "default_steps": [
+            "اجعل المصاب يستلقي في وضع مريح مع ثني ركبتيه بلطف نحو بطنه لتخفيف الشد والضغط عن جدار البطن.",
+            "ضع كمادات دافئة لطيفة على البطن للمساعدة على استرخاء العضلات إذا لم يكن هناك اشتباه بالتهاب الزائدة.",
+            "امتنع تماماً عن إعطائه أي طعام أو شراب أو أدوية فموية لاحتمال الحاجة لفحص جراحي عاجل.",
+            "راقب موضع الألم: هل يتركز في أسفل يمين البطن؟ هل البطن متصلبة ومتحجرة كلوح الخشب؟",
+            "توجه فوراً لأقرب طوارئ جراحة إذا كان الألم شديداً ومفاجئاً أو صاحبه قيء مدمم أو ارتفاع شديد في الحرارة."
+        ],
+        "do_list": [
+            "إراحة المريض وثني الركبتين لتخفيف ألم عضلات البطن",
+            "فحص علامات الخطر (تحجر البطن، قيء مستمر، هبوط الوعي والضغط)",
+            "التوجه لطوارئ الجراحة العامة لفحص الزائدة الدودية وحالات البطن الحادة"
+        ],
+        "dont_list": [
+            "ممنوع إعطاء مسكنات قوية أو ملينات؛ لأنها تخفي أعراض التهاب أو انفجار الزائدة الدودية وتضلل الأطباء",
+            "ممنوع وضع قربة ماء مغلي شديدة الحرارة مباشرة على البطن",
+            "ممنوع إجبار المصاب على تناول الطعام أو السوائل أثناء نوبة المغص الحاد"
+        ],
+        "referral": "طوارئ الجراحة العامة والباطنة بمستشفى كفر الشيخ العام أو مستشفى الطوارئ الجامعي"
+    },
+    "chest_pain_cardiac": {
+        "arabic_title": "طوارئ قصوى: ألم صدري حاد واشتباه أزمة قلبية (Angina / Heart Attack)",
+        "category": "طوارئ القلب والشرايين التاجية",
+        "default_severity": "red",
+        "guide_file": "ar_doc_04_cardiac_arrest_and_cpr.txt",
+        "source": "جمعية القلب الأمريكية AHA والبروتوكول القومي لإنعاش ورعاية القلب",
+        "default_steps": [
+            "اتصل بالإسعاف (123) فوراً دون أي تردد؛ فألم الصدر الحاد يتطلب تدخلاً طبياً في غضون الدقائق الأولى.",
+            "اجعل المصاب يستريح في وضع نصف الجلوس (مائلاً بظهره بزاوية 45 درجة مع دعم الرأس والركبتين).",
+            "فك الملابس والأربطة الضيقة حول العنق والصدر لمساعدته على التنفس براحة.",
+            "إذا كان المصاب واعياً تماماً ولا يعاني من حساسية الأسبرين أو نزيف معدي: ساعده على مضغ قرص أسبرين أطفال (160-325 ملجم).",
+            "ابق بجانبه وراقبه باستمرار، واستعد لتطبيق الإنعاش القلبي الرئوي (CPR) فوراً إذا فقد وعيه وتوقف تنفسه."
+        ],
+        "do_list": [
+            "الاتصال الفوري بالإسعاف 123 وطلب أقرب وحدة قسطرة قلبية",
+            "مضغ قرص أسبرين أطفال للمصاب الواعي لتسييل الدم وتثبيط الجلطة",
+            "تطبيق الإنعاش CPR فوراً إذا سقط فاقداً للوعي وغاب تنفسه"
+        ],
+        "dont_list": [
+            "لا تسمح للمصاب بالمشي أو بذل أي مجهود إطلاقاً لتقليل العبء على عضلة القلب",
+            "لا تتجاهل ألم الصدر معتبراً إياه مجرد حموضة أو غازات عابرة",
+            "لا تعطِه طعاماً أو سوائل أثناء النوبة"
+        ],
+        "referral": "وحدة الرعاية التاجية (CCU) وطوارئ القلب بمستشفى كفر الشيخ الجامعي أو الإسعاف 123 فوراً"
+    },
+    "headache_neurological": {
+        "arabic_title": "صداع حاد وأعراض عصبية طارئة (Acute Severe Headache / Stroke Sign)",
+        "category": "طوارئ المخ والأعصاب",
+        "default_severity": "orange",
+        "guide_file": "ar_doc_05_strokes_and_coma.txt",
+        "source": "المعهد القومي للأمراض العصبية NINDS والجمعية المصرية لطب الأعصاب",
+        "default_steps": [
+            "اجعل المصاب يستريح في غرفة هادئة ومظلمة وخالية من الضوضاء والضوء الساطع.",
+            "أجرِ فحص السكتة الدماغية العصبي السريع (F.A.S.T):",
+            "1. الوجه (Face): اطلب منه الابتسام؛ هل يوجد اعوجاج أو سقوط في جانب من الفم؟",
+            "2. الذراعين (Arms): اطلب منه رفع ذراعيه معاً؛ هل تسقط إحدى الذراعين لأسفل؟",
+            "3. النطق (Speech): اطلب منه نطق جملة بسيطة؛ هل كلامه متداخل أو غير مفهوم؟",
+            "إذا ظهرت أي علامة من علامات السكتة أو كان الصداع مفاجئاً كالصاعقة (أشد صداع في حياته): اتصل بـ 123 فوراً."
+        ],
+        "do_list": [
+            "إجراء فحص FAST العصبي للتأكد من عدم وجود جلطة دماغية",
+            "الراحة التامة في مكان هادئ ومظلم",
+            "الاتصال بـ 123 فوراً إذا كان مصحوباً بتلعثم أو ضعف في جانب من الجسم أو تشنجات"
+        ],
+        "dont_list": [
+            "ممنوع إعطاء أسبرين لمصاب يعاني من صداع شديد مفاجئ لاحتمال وجود نزيف مخي",
+            "لا تجعل المريض يجهد عينيه في شاشات الموبايل أو الإضاءة القوية",
+            "لا تهمل الصداع المصحوب بقيء متكرر أو تصلب بعضلات الرقبة"
+        ],
+        "referral": "طوارئ أمراض المخ والأعصاب بمستشفى الجامعة أو الإسعاف 123"
+    },
     "burn": {
         "arabic_title": "حروق وإصابات حرارية",
         "category": "حروق وإصابات حرارية",
@@ -470,47 +571,122 @@ CONDITION_CATALOG: Dict[str, Dict[str, Any]] = {
             "لا تعتمد على الشوكولاتة لأن دهونها تبطئ امتصاص السكر"
         ],
         "referral": "طوارئ الباطنة والسكر بمستشفى كفر الشيخ العام أو الإسعاف 123"
+    },
+    "general_triage": {
+        "arabic_title": "استشارة وتقييم طوارئ عامة (Clinical Assessment)",
+        "category": "استشارة طوارئ وتقييم عام",
+        "default_severity": "green",
+        "guide_file": "ar_doc_04_cardiac_arrest_and_cpr.txt",
+        "source": "البروتوكول القومي للإسعافات الأولية - وزارة الصحة المصرية",
+        "default_steps": [
+            "افحص العلامات الحيوية الأساسية للمصاب: تأكد من درجة وعيه وانتظام تنفسه ونبضه.",
+            "ساعِد المصاب على الاسترخاء في وضع مريح وآمن في مكان جيد التهوية.",
+            "إذا كانت الأعراض مصحوبة بألم شديد لا يطاق أو ضيق تنفس أو إغماء: اتصل بالإسعاف (123) فوراً.",
+            "حدد بدقة بداية ظهور الأعراض وأي أدوية تم تناولها لإبلاغ الطاقم الطبي بها.",
+            "انقل المصاب لأقرب مركز رعاية صحية أو مستشفى عام للفحص السريري الدقيق والتشخيص."
+        ],
+        "do_list": [
+            "مراقبة درجة وعي وتنفس المصاب باستمرار",
+            "طلب الإسعاف 123 فوراً إذا ظهرت علامات خطورة (ألم صدر، زرقة، صعوبة بلع)",
+            "استشارة الطبيب المختص لتحديد التشخيص الدقيق والعلاج المناسب"
+        ],
+        "dont_list": [
+            "لا تتناول مسكنات قوية أو مضادات حيوية دون تشخيص طبي متخصص",
+            "لا تهمل الأعراض الحادة أو المفاجئة متوقعاً زوالها تلقائياً",
+            "لا تعطِ أي شيء عبر الفم لشخص فاقد للوعي أو غير متزن"
+        ],
+        "referral": "طوارئ الاستقبال بالمستشفى العام أو المركز الطبي الجامعي (أو 123 للطوارئ)"
     }
 }
 
 
 def _match_condition_keywords(text: str) -> Optional[str]:
-    """Auxiliary Arabic intent & keyword matcher for robust condition resolution."""
+    """
+    Robust medical intent & keyword matcher.
+    Distinguishes specific symptoms accurately without generic bleeding/burn false-positives.
+    """
     t = text.lower()
-    
-    if any(k in t for k in ["حرق", "مية مغلية", "ماء مغلي", "زيت مغلي", "نار", "احترق", "سلخ", "سلق", "فقاقيع", "burn"]):
-        return "burn"
-    if any(k in t for k in ["شرق", "اختناق", "بلع عملة", "مش قادر يتنفس", "ازرقاق", "غصة", "مجرى الهواء", "choking"]):
+
+    # 1. High Blood Pressure (must check before generic 'blood')
+    if any(k in t for k in ["ضغط دم", "ضغط الدم", "الضغط مرتفع", "الضغط عالي", "ضغط 180", "ضغط 160", "ضغط عالي", "hypertension", "high blood pressure", "عندي ضغط"]):
+        return "high_blood_pressure"
+
+    # 2. Abdominal pain / Stomach cramps
+    if any(k in t for k in ["بطني", "مغص", "ألم في البطن", "الم بالبطن", "الم في البطن", "وجع بطن", "وجع في بطني", "معدتي", "وجع معدة", "كرامبات بطن", "stomach", "abdominal", "abdomen"]):
+        return "abdominal_pain"
+
+    # 3. Chest pain / Heart attack / Cardiac
+    if any(k in t for k in ["ألم في الصدر", "الم في الصدر", "ألم صدري", "الم صدري", "صدري بيوجعني", "وجع في صدري", "ألم في صدري", "ذبحة", "جلطة قلب", "أزمة قلبية", "ثقل في الصدر", "قابس على صدري", "chest pain"]):
+        return "chest_pain_cardiac"
+
+    # 4. Severe headache / Neurological / Stroke signs
+    if any(k in t for k in ["صداع شديد", "صداع نصفي", "صداع مفاجئ", "صداع بينفجر", "تنميل في الوجه", "ثقل في اللسان", "تداخل بالكلام", "سكتة دماغية", "headache", "migraine"]):
+        return "headache_neurological"
+
+    # 5. Low blood sugar / Diabetic emergency
+    if any(k in t for k in ["سكر واطي", "هبوط سكر", "غيبوبة سكر", "سكر منخفض", "سكر 50", "عرق بارد سكر", "انسولين", "أنسولين", "low sugar", "hypoglycemia"]):
+        return "low_blood_sugar"
+
+    # 6. Choking / Airway Obstruction
+    if any(k in t for k in ["شرق", "اختناق", "بلع عملة", "مش قادر يتنفس", "ازرقاق", "غصة", "مجرى الهواء", "بلع لسانه", "choking"]):
         return "choking"
-    if any(k in t for k in ["توقف قلب", "مش بينبض", "إنعاش", "cpr", "صدر", "توقف التنفس", "قلبه وقف"]):
+
+    # 7. CPR / Cardiac arrest
+    if any(k in t for k in ["توقف قلب", "مش بينبض", "إنعاش", "cpr", "توقف التنفس", "قلبه وقف", "نبضه وقف"]):
         return "cpr"
-    if any(k in t for k in ["كسر", "التواء", "خلع", "مش قادر يمشي", "رجله اتكسرت", "ايده اتكسرت", "عظم", "جبيرة", "fracture"]):
+
+    # 8. Burns / Heat injuries (must have clear burn words)
+    if any(k in t for k in ["حرق", "مية مغلية", "ماء مغلي", "زيت مغلي", "نار", "احترق", "سلخ", "سلق", "فقاقيع مائية", "burn", "scald"]):
+        return "burn"
+
+    # 9. Fracture / Dislocation
+    if any(k in t for k in ["كسر", "التواء", "خلع", "مش قادر يمشي", "رجله اتكسرت", "ايده اتكسرت", "عظم", "جبيرة", "عظم بارز", "fracture", "sprain"]):
         return "fracture"
-    if any(k in t for k in ["نزيف", "جرح", "دم ينزف", "سكين", "قطع", "جرح غائر", "طرد دم", "cut", "bleeding"]):
+
+    # 10. Cut / Open bleeding (must be actual bleeding or cuts, not just the word 'blood' in high pressure)
+    if any(k in t for k in ["نزيف خارجي", "نزيف حاد", "جرح ينزف", "دم ينزف", "دم كتير", "سكين", "جرح غائر", "طرد دم", "cut", "bleeding"]):
         return "cut"
-    if any(k in t for k in ["تسمم", "شرب كلور", "مبيد", "سم فئران", "جرعة زيادة", "منظف", "مادة كاوية", "poison"]):
+
+    # 11. Poisoning / Ingestion of chemicals
+    if any(k in t for k in ["تسمم", "شرب كلور", "مبيد", "سم فئران", "جرعة زيادة", "منظف", "مادة كاوية", "شرب دواء", "بلع مادة", "poison"]):
         return "poisoning"
-    if any(k in t for k in ["حساسية", "صدمة تحسسية", "تورم شفايف", "أرتيكاريا", "تورم باللسان", "انافيلاكسيس", "anaphylaxis"]):
+
+    # 12. Allergy / Anaphylaxis
+    if any(k in t for k in ["حساسية", "صدمة تحسسية", "تورم شفايف", "أرتيكاريا", "تورم باللسان", "انافيلاكسيس", "anaphylaxis", "allergy"]):
         return "allergy_anaphylaxis"
-    if any(k in t for k in ["ربو", "ضيق تنفس", "صفير بالصدر", "فنتولين", "أزمة تنفس", "كرشة نفس", "بخاخ", "asthma"]):
+
+    # 13. Asthma / Respiratory distress
+    if any(k in t for k in ["ربو", "ضيق تنفس", "صفير بالصدر", "فنتولين", "أزمة تنفس", "كرشة نفس", "بخاخ", "نهجان شديد", "asthma"]):
         return "asthma"
-    if any(k in t for k in ["صرع", "تشنج", "تشنجات", "نفضة", "رغوة من الفم", "عض لسانه", "نوبة", "seizure"]):
+
+    # 14. Seizures / Epilepsy
+    if any(k in t for k in ["صرع", "تشنج", "تشنجات", "نفضة", "رغوة من الفم", "عض لسانه", "نوبة صرع", "seizure", "epilepsy"]):
         return "seizures"
-    if any(k in t for k in ["اغمى", "أغمى", "غيبوبة", "داخ", "دوار", "فقد الوعي", "هبوط", "faint"]):
+
+    # 15. Fainting / Syncope
+    if any(k in t for k in ["اغمى", "أغمى", "غيبوبة", "داخ", "دوار", "فقد الوعي", "هبوط حاد", "faint", "syncope"]):
         return "fainting"
-    if any(k in t for k in ["كهربا", "كهرباء", "صعق", "ماس كهربائي", "سلك عريان", "صدمة كهربائية", "electric"]):
+
+    # 16. Electric shock
+    if any(k in t for k in ["كهربا", "كهرباء", "صعق", "ماس كهربائي", "سلك عريان", "صدمة كهربائية", "electric shock"]):
         return "electric_shock"
-    if any(k in t for k in ["ضربة شمس", "حر شديد", "اجهاد حراري", "حرارته عالية جدا", "حرارة شمس", "heatstroke"]):
+
+    # 17. Heatstroke
+    if any(k in t for k in ["ضربة شمس", "حر شديد", "اجهاد حراري", "إجهاد حراري", "حرارته 40", "heatstroke"]):
         return "heatstroke"
-    if any(k in t for k in ["رعاف", "دم من مناخيره", "نزيف انف", "نزيف الأنف", "مناخيره بتنزل دم", "nosebleed"]):
+
+    # 18. Nosebleed (epistaxis)
+    if any(k in t for k in ["رعاف", "نزيف أنف", "نزيف انف", "نزيف الأنف", "نزيف الانف", "نزيف من الأنف", "نزيف من الانف", "دم من مناخير", "مناخيره بتنزل دم", "دم من الانف", "دم من الأنف", "دم من المناخير", "nosebleed", "epistaxis"]) or (("أنف" in t or "انف" in t or "مناخير" in t) and ("دم" in t or "نزيف" in t)):
         return "nosebleed"
-    if any(k in t for k in ["عين", "عينه", "مادة في عينه", "جسم في عينه", "حرق بالعين", "eye"]):
+
+    # 19. Eye injury
+    if any(k in t for k in ["عين", "عينه", "مادة في عينه", "جسم في عينه", "حرق بالعين", "خدش بالعين", "eye injury"]):
         return "eye_injury"
+
+    # 20. Bites & Stings
     if any(k in t for k in ["عضة", "لدغة", "عقرب", "ثعبان", "كلب", "حشرة", "دبور", "نحلة", "قرصة", "sting", "bite"]):
         return "bites_stings"
-    if any(k in t for k in ["سكر واطي", "هبوط سكر", "غيبوبة سكر", "سكر منخفض", "سكر 50", "عرق بارد سكر", "low sugar"]):
-        return "low_blood_sugar"
-    
+
     return None
 
 
@@ -518,10 +694,12 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
     """
     Main clinical decision pipeline:
     1. Pass through Member 3 (Reda) ML NLU model (prediction + confidence).
-    2. Pass through Member 1 (Saif) IR Engine (retrieve evidence from 78 guides).
-    3. Pass through Member 2 (Gamila) KB & Triage Engine (apply medical rules).
-    4. Assemble rich, fully authentic JSON conforming to Member 6 Frontend UI.
-    5. Log to Member 5 Analytics (queries.log) for real-time Admin Monitoring.
+    2. Pass through accurate keyword/intent classification.
+    3. Retrieve relevant medical guide evidence (Member 1 IR + Member 4 78 Guides).
+    4. Apply Knowledge Base rules & Triage priority (Member 2 KB).
+    5. Fallback safely to general triage (NEVER absurdly fallback to burns).
+    6. Assemble rich JSON for Member 6 Frontend UI.
+    7. Log to Member 5 Analytics.
     """
     start_time = time.time()
     clean_text = (text or "").strip()
@@ -532,7 +710,12 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         }
 
     # =========================================================================
-    # Step 1: Member 3 - ML / NLU Classification
+    # Step 1: Accurate Intent & Keyword Matching
+    # =========================================================================
+    rule_condition = _match_condition_keywords(clean_text)
+
+    # =========================================================================
+    # Step 2: Member 3 - ML / NLU Classification
     # =========================================================================
     nlu_res = {}
     ml_condition = None
@@ -544,29 +727,27 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
     except Exception as e:
         print(f"[ClinicalPipeline] NLU warning: {e}")
 
-    # Fallback / reinforcement intent matcher
-    rule_condition = _match_condition_keywords(clean_text)
-    
-    # Final decided condition
-    if ml_condition and ml_condition in CONDITION_CATALOG and ml_confidence >= 0.20:
-        condition = ml_condition
-        confidence = ml_confidence
-    elif rule_condition and rule_condition in CONDITION_CATALOG:
+    # =========================================================================
+    # Step 3: Condition Resolution (Precision First)
+    # =========================================================================
+    # If explicit keyword match exists, prioritize it to prevent ML false-positives
+    # (e.g. preventing 'ضغط الدم' from becoming 'nosebleed' or 'بطني' from becoming 'burn')
+    if rule_condition and rule_condition in CONDITION_CATALOG:
         condition = rule_condition
-        confidence = max(ml_confidence, 0.85)
-    elif ml_condition and ml_condition in CONDITION_CATALOG:
+        confidence = max(ml_confidence, 0.90)
+    elif ml_condition and ml_condition in CONDITION_CATALOG and ml_confidence >= 0.20:
         condition = ml_condition
         confidence = ml_confidence
     else:
-        condition = "burn"  # Safe general medical fallback
+        # Safe general triage fallback (NOT burns!)
+        condition = "general_triage"
         confidence = 0.50
 
-    catalog_data = CONDITION_CATALOG.get(condition, CONDITION_CATALOG["burn"])
+    catalog_data = CONDITION_CATALOG.get(condition, CONDITION_CATALOG["general_triage"])
 
     # =========================================================================
-    # Step 2: Member 1 - IR Search Engine over 78 Guides
+    # Step 4: Member 1 - IR Search Engine over 78 Guides
     # =========================================================================
-    ir_results = []
     top_snippet = ""
     guide_title = catalog_data["arabic_title"]
     source = catalog_data["source"]
@@ -574,28 +755,26 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         ir_results = ir_search(clean_text, k=2)
         if ir_results:
             top_snippet = ir_results[0].get("snippet", "")
-            if ir_results[0].get("title"):
-                guide_title = ir_results[0]["title"]
             if ir_results[0].get("source"):
                 source = ir_results[0]["source"]
     except Exception as e:
         print(f"[ClinicalPipeline] IR warning: {e}")
 
     # =========================================================================
-    # Step 3: Member 2 - Knowledge Base & Triage Rules
+    # Step 5: Member 2 - Knowledge Base & Triage Rules
     # =========================================================================
     severity = catalog_data["default_severity"]
-    reasoning_text = f"تم تحديد الحالة عبر نموذج الذكاء الاصطناعي (ML) بنسبة ثقة {int(confidence*100)}%، واستدعاء بروتوكول التدخل المعتمد من الدليل الطبي المعتمد."
+    reasoning_text = f"تم تقييم الحالة وفق بروتوكول الإسعاف الأولي المعتمد بنسبة ثقة {int(confidence*100)}%."
 
-    # Triage severity refinement based on critical keywords
+    # Critical red-flag emergency detection
     text_lower = clean_text.lower()
     critical_triggers = [
         "فاقد الوعي", "مش بينبض", "توقف التنفس", "ازرقاق", "غيبوبة", "نزيف شرياني",
-        "مادة كاوية", "سم", "كهربا", "نار", "درجة تالتة", "عظم بارز", "اختناق", "مش قادر يتنفس"
+        "مادة كاوية", "سم", "كهربا", "نار", "درجة تالتة", "عظم بارز", "اختناق", "مش قادر يتنفس", "ضغط 180", "ذبحة", "جلطة"
     ]
-    if any(trig in text_lower for trig in critical_triggers) or condition in ["choking", "cpr", "electric_shock", "heatstroke", "anaphylaxis", "allergy_anaphylaxis"]:
+    if any(trig in text_lower for trig in critical_triggers) or condition in ["choking", "cpr", "electric_shock", "heatstroke", "anaphylaxis", "allergy_anaphylaxis", "chest_pain_cardiac"]:
         severity = "red"
-        reasoning_text = f"تم تصنيف الحالة كـ (طوارئ قصوى - أحمر) لوجود علامات خطورة حادة تمس مجرى التنفس أو الوعي أو الدورة الدموية وفق بروتوكول الفرز الطبي."
+        reasoning_text = f"تم تصنيف الحالة كـ (طوارئ قصوى - أحمر) لوجود علامات خطورة حادة تمس مجرى التنفس أو الوعي أو القلب والدورة الدموية وفق بروتوكول الفرز الطبي."
     elif severity != "red":
         try:
             kb_res = kb_infer({"condition": condition})
@@ -605,17 +784,23 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
             pass
 
     # =========================================================================
-    # Step 4: Assemble Rich Response Object
+    # Step 6: Assemble Rich Response Object
     # =========================================================================
     case_id = f"case-{int(time.time() * 1000)}"
-    summary = (
-        f"حالة طوارئ مصنفة: {catalog_data['arabic_title']}. "
-        f"{'تتطلب تدخلاً عاجلاً دون تأخير!' if severity == 'red' else 'يرجى اتباع خطوات الإسعاف الأولي الموضحة أدناه بعناية.'}"
-    )
-    if top_snippet:
-        clean_snippet = re.sub(r'<[^>]+>', '', top_snippet).strip()
-        if len(clean_snippet) > 40:
-            summary += f" — استناداً للدليل: {clean_snippet[:130]}..."
+    if condition == "general_triage":
+        summary = (
+            f"تم استلام استفسارك: '{clean_text}'. "
+            "يرجى توضيح طبيعة الإصابة بالتفصيل (مثل وجود جرح، سقوط، ألم محدد، أو صعوبة تنفس) لتحديد بروتوكول الإسعاف بدقة. في حالات الطوارئ الحادة اتصل بـ 123 فوراً."
+        )
+    else:
+        summary = (
+            f"حالة طوارئ مصنفة: {catalog_data['arabic_title']}. "
+            f"{'تتطلب تدخلاً عاجلاً دون تأخير!' if severity == 'red' else 'يرجى اتباع خطوات الإسعاف الأولي الموضحة أدناه بعناية.'}"
+        )
+        if top_snippet:
+            clean_snippet = re.sub(r'<[^>]+>', '', top_snippet).strip()
+            if len(clean_snippet) > 40:
+                summary += f" — استناداً للدليل: {clean_snippet[:130]}..."
 
     response_payload = {
         "id": case_id,
@@ -630,16 +815,16 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         "dont_list": catalog_data["dont_list"],
         "source": source,
         "referral": catalog_data["referral"],
-        "requires_followup": False,
-        "followup_question": None,
-        # Backward-compatible fields for unit tests:
+        "requires_followup": (condition == "general_triage"),
+        "followup_question": "هل يعاني المصاب من صعوبة في التنفس، ألم بالصدر، أو فقدان للوعي؟" if condition == "general_triage" else None,
+        # Backward-compatible fields:
         "condition": condition,
         "message": summary,
         "status": "success"
     }
 
     # =========================================================================
-    # Step 5: Member 5 - Analytics Logging in queries.log
+    # Step 7: Member 5 - Analytics Logging in queries.log
     # =========================================================================
     response_time_ms = int((time.time() - start_time) * 1000)
     try:
