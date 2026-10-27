@@ -17,7 +17,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Pass through all network requests directly with no-store
+// Pass through all network requests directly
 self.addEventListener('fetch', (event) => {
-  event.respondWith(fetch(event.request, { cache: 'no-store' }));
+  event.respondWith(fetch(event.request));
 });

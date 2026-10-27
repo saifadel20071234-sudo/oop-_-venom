@@ -44,9 +44,6 @@ def add_cache_control_headers(response):
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
-    response.headers["Clear-Site-Data"] = '"cache"'
-    response.headers.pop("ETag", None)
-    response.headers.pop("Last-Modified", None)
     return response
 
 

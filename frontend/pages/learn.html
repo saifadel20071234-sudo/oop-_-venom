@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(regs) {
-        for (var i = 0; i < regs.length; i++) { regs[i].unregister(); }
-      });
-    }
-    if ('caches' in window) {
-      caches.keys().then(function(keys) {
-        for (var i = 0; i < keys.length; i++) { caches.delete(keys[i]); }
-      });
-    }
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ziad Asaad">
@@ -26,8 +10,8 @@
   <!-- Font Awesome 6 (Local 100% Offline) -->
   <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/main.css?v=300">
-  <link rel="stylesheet" href="../css/dark-mode.css?v=300">
+  <link rel="stylesheet" href="../css/main.css?v=60">
+  <link rel="stylesheet" href="../css/dark-mode.css?v=60">
   <style>
     .learn-container {
       max-width: 1100px;
@@ -557,7 +541,7 @@
       <div class="kit-section-header">
         <div class="kit-title-group">
           <div class="kit-badge-wrap">
-            <img src="../assets/images/hero-kit-3d.png?v=300" alt="حقيبة الإسعافات الأولية" class="kit-badge-3d-icon">
+            <img src="../assets/images/hero-kit-3d.png?v=63" alt="حقيبة الإسعافات الأولية" class="kit-badge-3d-icon">
             <span class="kit-live-pill">
               <i class="fa-solid fa-kit-medical"></i>
               <span>محطة فحص معدات الإسعاف التفاعلية</span>
@@ -803,9 +787,9 @@
   </nav>
 
   <!-- Scripts -->
-  <script src="../components/severity-badge.js?v=300"></script>
-  <script src="../components/team-modal.js?v=300"></script>
-  <script src="../js/app.js?v=300"></script>
+  <script src="../components/severity-badge.js"></script>
+  <script src="../components/team-modal.js?v=60"></script>
+  <script src="../js/app.js?v=105"></script>
 
   <!-- Quiz & Metronome Logic -->
   <script>
