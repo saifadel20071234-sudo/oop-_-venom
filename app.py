@@ -27,7 +27,7 @@ FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY")
 if not ADMIN_PASSWORD:
     ADMIN_PASSWORD = "VENOM"
 if not FLASK_SECRET_KEY:
-    FLASK_SECRET_KEY = secrets.token_hex(32)
+    FLASK_SECRET_KEY = "venom-first-aid-assistant-secret-key-stable-2026"
 
 app = Flask(__name__)
 CORS(app)  # Enable Cross-Origin Resource Sharing for Frontend
@@ -41,19 +41,9 @@ app.config.update(
 
 @app.after_request
 def add_cache_control_headers(response):
-    # Admin dashboard, login, and all APIs must NEVER be cached by browser
-    if (
-        request.path.startswith("/api/")
-        or request.path.startswith("/admin")
-        or request.path == "/login"
-        or request.path == "/sw.js"
-    ):
-        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0"
-        response.headers["Pragma"] = "no-cache"
-        response.headers["Expires"] = "0"
-    else:
-        response.headers["Cache-Control"] = "no-cache, must-revalidate, max-age=0"
-        response.headers["Pragma"] = "no-cache"
+    response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
     return response
 
 

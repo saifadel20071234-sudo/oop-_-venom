@@ -24,7 +24,7 @@ const L=()=>T[document.documentElement.lang==="en"?"en":"ar"];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const csrf=()=>document.querySelector('meta[name="csrf-token"]')?.content??"";
-async function api(url,opt={}){const r=await fetch(url,{...opt,cache:"no-store",headers:{"X-CSRF-Token":csrf(),"Cache-Control":"no-cache","Pragma":"no-cache",...(opt.headers||{})}});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.message||"error");return d;}
+async function api(url,opt={}){const r=await fetch(url,{...opt,cache:"no-store",credentials:"same-origin",headers:{"X-CSRF-Token":csrf(),"Cache-Control":"no-cache","Pragma":"no-cache",...(opt.headers||{})}});if(r.status===401){window.location.href="/login";return {};}const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.message||"error");return d;}
 const goto=id=>document.querySelector(`.nav-link[data-target="${id}"]`)?.click();
 
 function mapSvg(pts){

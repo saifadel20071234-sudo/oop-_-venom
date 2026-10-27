@@ -1089,6 +1089,10 @@ function showSection(target) {
         loadRules();
     } else if (target === "analytics") {
         loadAnalytics();
+    } else if (["dashboard", "governorates", "categories", "import"].includes(target)) {
+        if (typeof reload === "function") {
+            reload();
+        }
     }
 }
 
