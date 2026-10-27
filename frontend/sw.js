@@ -4,7 +4,7 @@
  * with Automatic Offline PWA Cache Fallback.
  */
 
-const CACHE_NAME = 'venom-firstaid-v105';
+const CACHE_NAME = 'venom-firstaid-v106';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -72,8 +72,13 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(req.url);
 
-  // Bypass API requests directly to backend (never cache API calls in SW)
-  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/admin')) {
+  // Bypass API, admin panel, login, and static admin assets from SW completely
+  if (
+    url.pathname.startsWith('/api/') ||
+    url.pathname.startsWith('/admin') ||
+    url.pathname.startsWith('/login') ||
+    url.pathname.startsWith('/static/')
+  ) {
     return;
   }
 

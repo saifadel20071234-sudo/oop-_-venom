@@ -41,14 +41,17 @@ app.config.update(
 
 @app.after_request
 def add_cache_control_headers(response):
-    if request.path.startswith("/api/"):
-        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    # Admin dashboard, login, and all APIs must NEVER be cached by browser
+    if (
+        request.path.startswith("/api/")
+        or request.path.startswith("/admin")
+        or request.path == "/login"
+        or request.path == "/sw.js"
+    ):
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"
-    elif request.path == "/sw.js":
-        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
-        response.headers["Pragma"] = "no-cache"
-    elif any(request.path.endswith(ext) for ext in [".html", ".js", ".css"]) or request.path in ["/", "/chat", "/triage", "/contacts", "/learn"]:
+    else:
         response.headers["Cache-Control"] = "no-cache, must-revalidate, max-age=0"
         response.headers["Pragma"] = "no-cache"
     return response
