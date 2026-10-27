@@ -580,7 +580,8 @@ const App = {
     if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.hostname === 'localhost')) {
       navigator.serviceWorker.register('/sw.js', { scope: '/' })
         .then((reg) => {
-          console.log('[PWA] Service Worker registered successfully at root scope:', reg.scope);
+          try { reg.update(); } catch (e) {}
+          console.log('[PWA] Service Worker registered and updated:', reg.scope);
         })
         .catch((err) => {
           console.warn('[PWA] Service Worker registration failed:', err);
