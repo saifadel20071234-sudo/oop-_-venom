@@ -1,0 +1,32 @@
+TITLE: Fainting and Syncope First Aid
+SOURCE: MedlinePlus
+DATE_REVIEWED: 2024-01-17
+URL: https://medlineplus.gov/ency/article/003092.htm
+LANGUAGE: EN
+CONDITION_TAG: fainting
+SEVERITY_TAGS: green, orange, red
+---
+Fainting (syncope) is a temporary loss of consciousness caused by a sudden decrease in blood flow to the brain. Recovery is usually rapid and complete.
+
+## What to do immediately
+1. Lay the person flat on their back on the floor.
+2. Elevate their legs about 30 cm (12 inches) above heart level to restore blood flow to the head.
+3. Loosen tight collars, ties, belts, or restrictive clothing.
+4. Ensure fresh air circulation; fan the person and clear crowds.
+5. Check breathing and airway; if breathing normally, keep them resting for 10-15 minutes.
+6. Help them sit up slowly before attempting to stand.
+
+## Do NOT
+- Do NOT give them anything to eat or drink while they are drowsy or unconscious.
+- Do NOT splash water on the person's face or slap them to revive them.
+- Do NOT let them stand up immediately after regaining consciousness.
+
+## When to go to hospital
+- The person does not regain consciousness within 1 minute.
+- Fainting occurs during exercise or while lying down.
+- Accompanied by chest pain, palpitations, or shortness of breath.
+
+## Signs of serious fainting (RED FLAGS)
+- Sustained unconsciousness lasting longer than 60 seconds.
+- Incontinence (loss of bowel or bladder control).
+- Unequal pupils, slurred speech, or confusion after waking (suspected stroke).

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ziad Asaad">
+  <title>VENOM — المساعد الإسعافي الذكي</title>
+  <link rel="icon" type="image/png" href="../assets/images/medical-favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <!-- Font Awesome 6 (Local 100% Offline) -->
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css?v=60">
+  <link rel="stylesheet" href="../css/dark-mode.css?v=60">
+  <link rel="stylesheet" href="../css/chat.css">
+  <!-- Google Fonts: Inter (Crystal-clear English UI) + Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@500;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN Fallback for Brands Icons (LinkedIn, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- 1. Mandatory Unclosable Emergency Banner -->
+  
+
+  <!-- 2. Header & Navigation -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-logo" title="VENOM مسعف الذكي">
+        <div class="logo-badge">
+          <img src="../assets/images/venom-official-logo.png" alt="VENOM مسعف الذكي" class="brand-badge-img">
+        </div>
+        <div class="logo-text">
+          <h1 class="brand-heading">
+            <span class="venom-text-gradient">VENOM</span>
+            <span class="brand-ar-text">مسعف الذكي</span>
+          </h1>
+          <span class="brand-tagline">منظومة الإسعاف والتوجيه الطبي الفوري</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="../index.html" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span data-i18n="navHome">الرئيسية</span>
+            </a>
+          </li>
+          <li>
+            <a href="chat.html" class="nav-link active">
+              <i class="fa-solid fa-robot"></i>
+              <span data-i18n="navChat">المساعد الذكي</span>
+            </a>
+          </li>
+          <li>
+            <a href="triage.html" class="nav-link">
+              <i class="fa-solid fa-stethoscope"></i>
+              <span data-i18n="navTriage">الفرز السريع</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacts.html" class="nav-link">
+              <i class="fa-solid fa-hospital"></i>
+              <span data-i18n="navContacts">أرقام الطوارئ</span>
+            </a>
+          </li>
+          <li>
+            <a href="learn.html" class="nav-link">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span data-i18n="navLearn">تعلّم الإسعافات</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin" class="nav-link admin-nav-link" title="لوحة التحكم الإدارية (Admin)">
+              <i class="fa-solid fa-gear"></i>
+              <span>لوحة الإدارة</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+            <div class="nav-controls">
+        <!-- Admin Shortcut Button -->
+        <a href="/admin" class="admin-quick-btn" title="لوحة تحكم المشرف (Admin Dashboard)">
+          <i class="fa-solid fa-user-shield"></i>
+          <span class="admin-btn-text">لوحة الإدارة</span>
+        </a>
+        <button id="lang-switch-btn" class="lang-switch-btn" title="تبديل اللغة">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-btn-text">English</span>
+        </button>
+        <button id="theme-toggle-btn" class="icon-btn" title="الوضع الليلي">
+          <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Main Chat View -->
+  <main class="chat-page-wrapper">
+    <div class="chat-card">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-bot-info">
+          <div class="bot-avatar">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="bot-meta">
+            <h2>المساعد الإسعافي الذكي</h2>
+            <span><span class="status-dot-active"></span> متصل ومستعد للمساعدة الفورية</span>
+          </div>
+        </div>
+
+        <div class="chat-header-actions">
+          <button id="print-advice-btn" class="icon-btn" title="طباعة / تصدير بطاقة الإسعاف كـ PDF" style="width: auto; padding: 0 16px; gap: 8px; font-size: 0.85rem; font-weight: 800;">
+            <i class="fa-solid fa-print"></i>
+            <span>طباعة بطاقة الإسعاف</span>
+          </button>
+          <button onclick="localStorage.removeItem('fa_session_id'); location.reload();" class="icon-btn" title="بدء محادثة جديدة" style="width: 42px;">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages Scroll Area -->
+      <div class="chat-messages-area" id="chat-messages">
+        <!-- Initial Welcome Message from System -->
+        <div class="message-row system">
+          <div class="msg-avatar">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <div class="msg-bubble">
+            <div class="msg-top-meta">
+              <span class="badge-severity green">
+                <i class="fa-solid fa-circle-check"></i>
+                <span class="badge-dot"></span>
+                <span>نظام التقييم الإسعافي جاهز</span>
+              </span>
+              <span class="msg-time">الآن</span>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 6px; color: var(--text-main);">
+              مرحباً بك في نظام الإسعافات الأولية والتوجيه الذكي
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
+              أنا هنا لمساعدتك في التعامل السريع والصحيح مع أي حالة إسعافية طارئة. صف لي ما حدث بدقة أو اختر من الأعراض الشائعة بالأسفل للبدء فوراً.
+            </p>
+            <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted); background: var(--bg-subtle); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px;">
+              <i class="fa-solid fa-lightbulb" style="color: #f59e0b; font-size: 1.1rem;"></i>
+              <div>
+                <strong>نصيحة سريعة:</strong> يمكنك أيضاً استخدام زر الميكروفون الصوتي للتحدث إذا كنت في وضع عاجل!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator (Initially Hidden) -->
+        <div class="message-row system" id="typing-indicator" style="display: none;">
+          <div class="msg-avatar">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <div class="typing-bubble">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Symptom Chips -->
+      <div class="chat-quick-chips">
+        <span style="font-size: 0.825rem; font-weight: 800; color: var(--text-muted); margin-inline-end: 4px;">
+          سيناريوهات سريعة:
+        </span>
+        <button class="chip-btn" data-query="عندي حرق خفيف في صباعي من ماء ساخن">
+          <i class="fa-solid fa-fire" style="color: #ea580c;"></i>
+          <span>حرق ماء ساخن (أخضر)</span>
+        </button>
+        <button class="chip-btn" data-query="ابني بلع لعبة ومش قادر يتنفس ووشه أزرق وبيشاور على رقبته">
+          <i class="fa-solid fa-lungs" style="color: #dc2626;"></i>
+          <span>انسداد مجرى التنفس (أحمر)</span>
+        </button>
+        <button class="chip-btn" data-query="شخص فاقد الوعي ومش بيتفس ونبضه مش حاسه">
+          <i class="fa-solid fa-heart-pulse" style="color: #e11d48;"></i>
+          <span>إنعاش قلبي CPR (أحمر)</span>
+        </button>
+        <button class="chip-btn" data-query="نزيف حاد من الساق بعد جرح عميق بقطعة زجاج والدم بينبض">
+          <i class="fa-solid fa-droplet" style="color: #dc2626;"></i>
+          <span>نزيف شرياني (أحمر)</span>
+        </button>
+        <button class="chip-btn" data-query="شخص تعبان وواقع ومش عارف أحدد ماله بالضبط">
+          <i class="fa-solid fa-circle-question" style="color: #8b5cf6;"></i>
+          <span>حالة غامضة (سؤال متابعة)</span>
+        </button>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="chat-input-bar">
+        <button id="voice-btn" class="voice-input-btn" title="التحدث بالصوت (Web Speech)">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <input 
+          type="text" 
+          id="chat-input" 
+          class="chat-input-field" 
+          placeholder="صف الحالة الطارئة أو الأعراض هنا (مثال: حرق في اليد، اختناق، نزيف)..."
+          autocomplete="off"
+        >
+        <button id="send-btn" class="send-msg-btn" title="إرسال">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Explanation Modal ("ليه الحكم ده؟") -->
+  <div class="modal-overlay" id="reason-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" style="display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i>
+          <span>مبرر القرار السريري والاستنتاج</span>
+        </h3>
+        <button class="modal-close-btn" id="close-reason-modal">&times;</button>
+      </div>
+      <div class="modal-body" id="reason-modal-body" style="line-height: 1.6; font-size: 0.95rem; color: var(--text-main);">
+        <!-- Reason text injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom App Bar -->
+  <aside class="emergency-banner" role="alert">
+    <div class="emergency-banner-content">
+      <div class="emergency-beacon-wrapper">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="emergency-beacon-ring"></span>
+      </div>
+      <span data-i18n="emergencyWarning">
+        هذا النظام للتوعية والإسعاف الأولي السريع — في حالات الطوارئ القصوى اتصل بـ 123 فوراً
+      </span>
+    </div>
+    <a href="tel:123" class="emergency-call-btn">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span data-i18n="callNow">اتصل الآن (123)</span>
+    </a>
+  </aside>
+
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="../index.html" class="mobile-nav-item">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="chat.html" class="mobile-nav-item active">
+      <i class="fa-solid fa-robot"></i>
+      <span>المساعد</span>
+    </a>
+    <a href="triage.html" class="mobile-nav-item">
+      <i class="fa-solid fa-stethoscope"></i>
+      <span>الفرز</span>
+    </a>
+    <a href="contacts.html" class="mobile-nav-item">
+      <i class="fa-solid fa-hospital"></i>
+      <span>الطوارئ</span>
+    </a>
+    <a href="learn.html" class="mobile-nav-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>تعلّم</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="../components/severity-badge.js"></script>
+  <script src="../components/step-card.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/voice.js"></script>
+  <script src="../js/chat.js"></script>
+  <script src="../components/team-modal.js?v=60"></script>
+  <script src="../js/app.js?v=60"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ChatController.init();
+      VoiceAssistant.init('chat-input', 'voice-btn');
+    });
+  </script>
+
+</body>
+</html>

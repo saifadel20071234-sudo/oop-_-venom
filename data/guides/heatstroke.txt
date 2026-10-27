@@ -1,0 +1,35 @@
+TITLE: Heat Exhaustion and Heatstroke Treatment
+SOURCE: WHO
+DATE_REVIEWED: 2024-01-18
+URL: https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health
+LANGUAGE: EN
+CONDITION_TAG: heatstroke
+SEVERITY_TAGS: green, orange, red
+---
+Heat exhaustion is caused by loss of water and salt from excessive sweating. Heatstroke is a life-threatening medical emergency where the body's internal temperature regulation fails and core temperature exceeds 40°C.
+
+## What to do immediately
+For heat exhaustion:
+1. Move the person immediately to a cool, shaded, or air-conditioned area.
+2. Loosen or remove unnecessary outer clothing.
+3. Have them sip cool water or an oral electrolyte rehydration solution.
+4. Apply cool wet cloths to the skin or spray with water.
+
+For heatstroke (Emergency):
+1. Call 123 (Ambulance) immediately.
+2. Rapidly cool the patient by any available means: ice baths, cool water sponge, or cold packs on neck, armpits, and groin.
+3. Fan vigorously to promote evaporative cooling.
+
+## Do NOT
+- Do NOT give fluids by mouth to someone who is drowsy, confused, vomiting, or unconscious.
+- Do NOT give aspirin or paracetamol; they do not reduce environmental hyperthermia and can harm kidneys.
+
+## When to go to hospital
+- Heat exhaustion that does not improve after 30 minutes of rest and cooling.
+- Any suspected heatstroke case must be admitted to ICU immediately.
+
+## Signs of heatstroke (RED FLAGS)
+- Core body temperature above 40°C (104°F).
+- Hot, dry, flushed skin (sweating has completely ceased).
+- Confusion, delirium, seizures, or coma.
+- Rapid pounding heart rate and rapid shallow breathing.

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ziad Asaad">
+  <title>VENOM — الفرز الطبي السريع</title>
+  <link rel="icon" type="image/png" href="../assets/images/medical-favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <!-- Font Awesome 6 (Local 100% Offline) -->
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css?v=60">
+  <link rel="stylesheet" href="../css/dark-mode.css?v=60">
+  <link rel="stylesheet" href="../css/triage.css">
+  <!-- Google Fonts: Inter (Crystal-clear English UI) + Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@500;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN Fallback for Brands Icons (LinkedIn, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- 1. Mandatory Unclosable Emergency Banner -->
+  
+
+  <!-- 2. Header & Navigation -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-logo" title="VENOM مسعف الذكي">
+        <div class="logo-badge">
+          <img src="../assets/images/venom-official-logo.png" alt="VENOM مسعف الذكي" class="brand-badge-img">
+        </div>
+        <div class="logo-text">
+          <h1 class="brand-heading">
+            <span class="venom-text-gradient">VENOM</span>
+            <span class="brand-ar-text">مسعف الذكي</span>
+          </h1>
+          <span class="brand-tagline">منظومة الإسعاف والتوجيه الطبي الفوري</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="../index.html" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span data-i18n="navHome">الرئيسية</span>
+            </a>
+          </li>
+          <li>
+            <a href="chat.html" class="nav-link">
+              <i class="fa-solid fa-robot"></i>
+              <span data-i18n="navChat">المساعد الذكي</span>
+            </a>
+          </li>
+          <li>
+            <a href="triage.html" class="nav-link active">
+              <i class="fa-solid fa-stethoscope"></i>
+              <span data-i18n="navTriage">الفرز السريع</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacts.html" class="nav-link">
+              <i class="fa-solid fa-hospital"></i>
+              <span data-i18n="navContacts">أرقام الطوارئ</span>
+            </a>
+          </li>
+          <li>
+            <a href="learn.html" class="nav-link">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span data-i18n="navLearn">تعلّم الإسعافات</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin" class="nav-link admin-nav-link" title="لوحة التحكم الإدارية (Admin)">
+              <i class="fa-solid fa-gear"></i>
+              <span>لوحة الإدارة</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+            <div class="nav-controls">
+        <!-- Admin Shortcut Button -->
+        <a href="/admin" class="admin-quick-btn" title="لوحة تحكم المشرف (Admin Dashboard)">
+          <i class="fa-solid fa-user-shield"></i>
+          <span class="admin-btn-text">لوحة الإدارة</span>
+        </a>
+        <button id="lang-switch-btn" class="lang-switch-btn" title="تبديل اللغة">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-btn-text">English</span>
+        </button>
+        <button id="theme-toggle-btn" class="icon-btn" title="الوضع الليلي">
+          <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Triage Main Container -->
+  <main class="triage-wrapper">
+    <div class="triage-card">
+      
+      <!-- Stepper Progress Tracker -->
+      <div class="triage-progress-bar-container">
+        <div class="triage-steps-tracker">
+          <div class="triage-progress-fill"></div>
+
+          <!-- Step 1 Node -->
+          <div class="step-tracker-node active" id="node-step-1">
+            <div class="node-circle">1</div>
+            <span class="node-label">اختيار الحالة</span>
+          </div>
+
+          <!-- Step 2 Node -->
+          <div class="step-tracker-node" id="node-step-2">
+            <div class="node-circle">2</div>
+            <span class="node-label">تحديد الأعراض</span>
+          </div>
+
+          <!-- Step 3 Node -->
+          <div class="step-tracker-node" id="node-step-3">
+            <div class="node-circle">3</div>
+            <span class="node-label">النتيجة والتدخل</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           STEP 1: SELECT CATEGORY
+           ==================================================================== -->
+      <section class="triage-step-pane active" id="pane-step-1">
+        <div class="step-title-header">
+          <h2>الخطوة 1: اختر نوع الإصابة أو الحالة الطارئة</h2>
+          <p>اضغط على الحالة الأقرب لوصف ما يمر به المصاب حالياً</p>
+        </div>
+
+        <div class="categories-selector-grid">
+          <div class="category-choice-card" data-category="burns">
+            <div class="cat-icon-wrap" style="color: #ea580c; background: #fff7ed;">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <span class="cat-title">حروق حرارية</span>
+            <span class="cat-subtitle">نار، ماء ساخن، كيماويات</span>
+          </div>
+
+          <div class="category-choice-card" data-category="bleeding">
+            <div class="cat-icon-wrap" style="color: #dc2626; background: #fef2f2;">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <span class="cat-title">نزيف وجروح</span>
+            <span class="cat-subtitle">قطع زجاج، سكين، نزف حاد</span>
+          </div>
+
+          <div class="category-choice-card" data-category="choking">
+            <div class="cat-icon-wrap" style="color: #0284c7; background: #f0f9ff;">
+              <i class="fa-solid fa-lungs"></i>
+            </div>
+            <span class="cat-title">اختناق وشرقة</span>
+            <span class="cat-subtitle">بلع طعام، ألعاب، انسداد هواء</span>
+          </div>
+
+          <div class="category-choice-card" data-category="cpr">
+            <div class="cat-icon-wrap" style="color: #e11d48; background: #fff1f2;">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="cat-title">إنعاش CPR</span>
+            <span class="cat-subtitle">توقف قلب، غياب تنفس</span>
+          </div>
+
+          <div class="category-choice-card" data-category="fractures">
+            <div class="cat-icon-wrap" style="color: #0d9488; background: #f0fdfa;">
+              <i class="fa-solid fa-bone"></i>
+            </div>
+            <span class="cat-title">كسور والتواءات</span>
+            <span class="cat-subtitle">سقوط، كاحل، عظم مشوه</span>
+          </div>
+
+          <div class="category-choice-card" data-category="heatstroke">
+            <div class="cat-icon-wrap" style="color: #d97706; background: #fffbeb;">
+              <i class="fa-solid fa-temperature-arrow-up"></i>
+            </div>
+            <span class="cat-title">ضربة شمس</span>
+            <span class="cat-subtitle">تعرض للشمس، إجهاد حراري</span>
+          </div>
+
+          <div class="category-choice-card" data-category="poisoning">
+            <div class="cat-icon-wrap" style="color: #7c3aed; background: #f5f3ff;">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <span class="cat-title">تسمم وكيماويات</span>
+            <span class="cat-subtitle">منظفات، أدوية، مبيدات</span>
+          </div>
+
+          <div class="category-choice-card" data-category="allergy">
+            <div class="cat-icon-wrap" style="color: #4f46e5; background: #eef2ff;">
+              <i class="fa-solid fa-shield-virus"></i>
+            </div>
+            <span class="cat-title">صدمة تحسسية</span>
+            <span class="cat-subtitle">لدغات، تورم شفتين، صفير</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           STEP 2: SELECT SYMPTOMS CHECKLIST
+           ==================================================================== -->
+      <section class="triage-step-pane" id="pane-step-2">
+        <div class="step-title-header">
+          <h2>الخطوة 2: حدد الأعراض الحالية للمصاب</h2>
+          <p>الحالة المحددة: <strong id="symptoms-category-name" style="color: var(--primary);">حروق</strong> — يمكنك اختيار أكثر من عرض</p>
+        </div>
+
+        <div class="symptoms-selector-container" id="symptoms-checklist-container">
+          <!-- Injected dynamically by TriageController -->
+        </div>
+
+        <div class="triage-nav-actions">
+          <button class="btn-secondary" id="triage-back-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span>تراجع للخطوة السابقة</span>
+          </button>
+          <button class="btn-primary" id="triage-next-btn">
+            <span>تقييم النتيجة الفورية</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           STEP 3: INSTANT EVALUATION RESULT
+           ==================================================================== -->
+      <section class="triage-step-pane" id="pane-step-3">
+        <div class="step-title-header">
+          <h2>الخطوة 3: التقييم السريري والتوجيه الإسعافي</h2>
+          <p>تم تحديد درجة الخطورة بناءً على المؤشرات الحيوية والأعراض المدخلة</p>
+        </div>
+
+        <div id="triage-result-container">
+          <!-- Dynamically filled with Result Header, Steps, Do/Don't & Direct Call -->
+        </div>
+
+        <div class="triage-nav-actions" style="margin-top: 30px;">
+          <button class="btn-secondary" id="triage-restart-btn">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>بدء تقييم جديد من البداية</span>
+          </button>
+          <a href="chat.html" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-robot"></i>
+            <span>المتابعة مع المساعد الذكي</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Mobile Bottom App Bar -->
+  <aside class="emergency-banner" role="alert">
+    <div class="emergency-banner-content">
+      <div class="emergency-beacon-wrapper">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="emergency-beacon-ring"></span>
+      </div>
+      <span data-i18n="emergencyWarning">
+        هذا النظام للتوعية والإسعاف الأولي السريع — في حالات الطوارئ القصوى اتصل بـ 123 فوراً
+      </span>
+    </div>
+    <a href="tel:123" class="emergency-call-btn">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span data-i18n="callNow">اتصل الآن (123)</span>
+    </a>
+  </aside>
+
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="../index.html" class="mobile-nav-item">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="chat.html" class="mobile-nav-item">
+      <i class="fa-solid fa-robot"></i>
+      <span>المساعد</span>
+    </a>
+    <a href="triage.html" class="mobile-nav-item active">
+      <i class="fa-solid fa-stethoscope"></i>
+      <span>الفرز</span>
+    </a>
+    <a href="contacts.html" class="mobile-nav-item">
+      <i class="fa-solid fa-hospital"></i>
+      <span>الطوارئ</span>
+    </a>
+    <a href="learn.html" class="mobile-nav-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>تعلّم</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="../components/severity-badge.js"></script>
+  <script src="../components/step-card.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/chat.js"></script>
+  <script src="../js/triage.js"></script>
+  <script src="../components/team-modal.js?v=60"></script>
+  <script src="../js/app.js?v=60"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      TriageController.init();
+    });
+  </script>
+
+</body>
+</html>

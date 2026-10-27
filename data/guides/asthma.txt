@@ -1,0 +1,32 @@
+TITLE: Acute Asthma Attack Management
+SOURCE: NHS UK
+DATE_REVIEWED: 2024-01-20
+URL: https://www.nhs.uk/conditions/asthma/treatment/
+LANGUAGE: EN
+CONDITION_TAG: asthma
+SEVERITY_TAGS: green, orange, red
+---
+An asthma attack occurs when the airways suddenly narrow, swell, and produce extra mucus, causing difficulty breathing.
+
+## What to do immediately
+1. Help the person sit upright comfortably. Do NOT allow them to lie flat.
+2. Stay calm and reassure them; panic increases breathing effort.
+3. Help them take their blue reliever inhaler (Salbutamol / Ventolin):
+   - Give 1 puff every 30 to 60 seconds, up to 10 puffs, preferably using a spacer device.
+4. If symptoms do not improve after 10 puffs, call 123 for an ambulance immediately.
+5. Repeat 10 puffs every 10 to 15 minutes if the ambulance is delayed.
+
+## Do NOT
+- Do NOT make them lie down.
+- Do NOT crowd around the casualty; ensure plenty of circulating fresh air.
+- Do NOT give cold drinks or expose them to smoke or strong scents.
+
+## When to go to hospital
+- No improvement after 10 puffs of reliever inhaler.
+- The person is too breathless to speak a full sentence in one breath.
+- Peak flow reading below 50% of personal best.
+
+## Signs of life-threatening asthma (RED FLAGS)
+- Exhaustion, drowsiness, or confusion.
+- Silent chest (no wheezing heard because airflow is too restricted).
+- Cyanosis (bluish tint on lips, face, or fingernails).

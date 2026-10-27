@@ -1,0 +1,111 @@
+{
+  "system": "First Aid Knowledge Base - Static Medical Facts & Triage Metadata",
+  "version": "1.0",
+  "last_updated": "2026-10-26",
+  "severity_levels": {
+    "red": "Life-threatening — Call 123 immediately (خطر يهدد الحياة - اتصل بالإسعاف 123 فوراً)",
+    "orange": "Urgent — Visit hospital ER or campus clinic now (حالة عاجلة - توجه للمستشفى أو عيادة الجامعة)",
+    "green": "Minor — Self-care at home and symptom monitoring (حالة طفيفة - إسعاف منزلي ومراقبة)",
+    "unknown": "Indeterminate — More clinical assessment needed (غير محدد - يتطلب تقييماً إضافياً)"
+  },
+  "conditions_list": [
+    "burn",
+    "cut",
+    "choking",
+    "cpr",
+    "poisoning",
+    "allergy_anaphylaxis",
+    "fainting",
+    "fracture",
+    "asthma",
+    "seizures",
+    "bites_stings",
+    "electric_shock",
+    "eye_injury",
+    "heatstroke",
+    "low_blood_sugar",
+    "nosebleed"
+  ],
+  "condition_aliases": {
+    "allergy": "allergy_anaphylaxis",
+    "anaphylaxis": "allergy_anaphylaxis",
+    "bleeding": "cut",
+    "cuts": "cut",
+    "seizure": "seizures",
+    "convulsions": "seizures",
+    "bite": "bites_stings",
+    "sting": "bites_stings",
+    "low_sugar": "low_blood_sugar",
+    "hypoglycemia": "low_blood_sugar",
+    "cardiac_arrest": "cpr",
+    "heart_attack": "cpr",
+    "epistaxis": "nosebleed",
+    "fractures": "fracture",
+    "burns": "burn"
+  },
+  "age_groups": [
+    "infant",
+    "child",
+    "adult",
+    "elderly"
+  ],
+  "age_group_details": {
+    "infant": {
+      "age_range": "< 1 year",
+      "risk_modifier": "high",
+      "special_rules": [
+        "Any burn in infants is automatically classified as RED",
+        "Respiratory distress in infants is critical (chest indrawing, grunting)",
+        "Use back slaps and chest thrusts for choking (Heimlich abdominal thrusts strictly prohibited)"
+      ]
+    },
+    "child": {
+      "age_range": "1 - 12 years",
+      "risk_modifier": "moderate_high",
+      "special_rules": [
+        "Burns covering > 5% of body surface area require hospital admission",
+        "Lower physiological threshold for dehydration and blood loss"
+      ]
+    },
+    "adult": {
+      "age_range": "13 - 64 years",
+      "risk_modifier": "standard",
+      "special_rules": [
+        "Standard adult first aid and CPR guidelines (30:2 ratio, 5-6 cm compression depth)"
+      ]
+    },
+    "elderly": {
+      "age_range": "> 65 years",
+      "risk_modifier": "high",
+      "special_rules": [
+        "High osteoporosis risk: any fall carries high risk of hip or cervical fracture",
+        "Atypical symptoms: myocardial infarction may present as confusion or fainting without chest pain"
+      ]
+    }
+  },
+  "body_locations_high_risk": [
+    "face",
+    "neck",
+    "airway",
+    "genitals",
+    "hands",
+    "feet",
+    "joints",
+    "chest"
+  ],
+  "vital_sign_thresholds": {
+    "normal_respiratory_rate_adult_cpm": [12, 20],
+    "normal_heart_rate_adult_bpm": [60, 100],
+    "fever_threshold_celsius": 38.0,
+    "heatstroke_threshold_celsius": 40.0,
+    "hypoglycemia_threshold_mg_dl": 70.0,
+    "severe_hypoglycemia_crisis_mg_dl": 54.0
+  },
+  "emergency_contacts": {
+    "ambulance": "123",
+    "police": "122",
+    "mansoura_poison_center": "0502202685",
+    "kafr_elsheikh_university_hospital": "0473220792",
+    "el_obour_health_insurance_hospital": "0473221990"
+  }
+}

@@ -1,0 +1,30 @@
+TITLE: Electric Shock and High Voltage Injury
+SOURCE: Red Cross
+DATE_REVIEWED: 2024-01-22
+URL: https://www.redcross.org.uk/first-aid/learn-first-aid/electric-shock
+LANGUAGE: EN
+CONDITION_TAG: electric_shock
+SEVERITY_TAGS: orange, red
+---
+Electric shock occurs when a person comes into contact with an electrical source. Electricity can cause severe thermal burns, deep internal muscle damage, and disrupt heart rhythms.
+
+## What to do immediately
+1. Ensure your own safety first: do NOT touch the casualty if they are still in contact with the live current.
+2. Turn off the power source at the main circuit breaker or unplug the appliance.
+3. If power cannot be switched off, use a dry, non-conductive object (wooden broom handle, dry cardboard, plastic rod) to push the wire away.
+4. Once safe, check responsiveness and breathing:
+   - If not breathing, call 123 and start CPR immediately.
+5. Cool superficial entry and exit burn wounds with clean water.
+6. Treat for shock and keep the casualty lying down and warm.
+
+## Do NOT
+- Do NOT touch the casualty with bare hands or conductive metal objects while current is live.
+- Do NOT approach high-voltage power lines until authorities confirm power is grounded and disabled.
+
+## When to go to hospital
+- All victims of electric shock require hospital evaluation and an ECG to detect cardiac arrhythmias.
+
+## Signs of severe electrical injury (RED FLAGS)
+- Unresponsiveness, apnea, or cardiac arrest (ventricular fibrillation).
+- Deep third-degree entry and exit burn wounds.
+- Fractures or spinal injury from severe muscle contractions or falls.

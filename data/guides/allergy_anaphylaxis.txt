@@ -1,0 +1,29 @@
+TITLE: Anaphylaxis and Severe Allergic Reactions
+SOURCE: Red Cross
+DATE_REVIEWED: 2024-01-19
+URL: https://www.redcross.org/take-a-class/first-aid/performing-first-aid/anaphylaxis
+LANGUAGE: EN
+CONDITION_TAG: allergy_anaphylaxis
+SEVERITY_TAGS: orange, red
+---
+Anaphylaxis is a severe, rapidly progressing, and life-threatening systemic allergic reaction involving airways and circulation. Common triggers include food (nuts, seafood), insect stings, and medications (penicillin).
+
+## What to do immediately
+1. Administer an Epinephrine Auto-Injector (EpiPen) immediately into the outer mid-thigh muscle.
+2. Call 123 (Ambulance) right away.
+3. Keep the person lying flat with legs elevated. If they have difficulty breathing, allow them to sit up slightly.
+4. If symptoms do not improve within 5 to 15 minutes, administer a second EpiPen dose if available.
+5. Remove or avoid the allergic trigger if possible.
+
+## Do NOT
+- Do NOT make the person stand up or walk; sudden standing can cause fatal circulatory collapse.
+- Do NOT delay giving epinephrine; antihistamines and inhalers are secondary and do not treat anaphylaxis.
+
+## When to go to hospital
+- Every patient with anaphylaxis must go to an emergency department and be monitored for at least 4 to 6 hours due to biphasic reactions.
+
+## Signs of anaphylaxis (RED FLAGS)
+- Swelling of the tongue, lips, throat, and uvula.
+- Severe wheezing, stridor, or inability to speak.
+- Widespread itchy hives and skin flushing.
+- Dizziness, hypotension, and collapse.

@@ -1,0 +1,33 @@
+TITLE: Epileptic Seizures and Convulsions First Aid
+SOURCE: Mayo Clinic
+DATE_REVIEWED: 2024-01-20
+URL: https://www.mayoclinic.org/first-aid/first-aid-seizures/basics/art-20056658
+LANGUAGE: EN
+CONDITION_TAG: seizures
+SEVERITY_TAGS: orange, red
+---
+A seizure is a sudden, uncontrolled electrical disturbance in the brain. It can cause changes in behavior, movements, feelings, and levels of consciousness.
+
+## What to do immediately
+1. Protect the person from injury: clear hard or sharp objects away from them.
+2. Cushion their head with something soft (folded jacket or pillow).
+3. Loosen tight neckwear or eyeglasses.
+4. Time the duration of the seizure from start to finish.
+5. When the shaking stops, gently roll the person onto their side into the Recovery Position to keep airway clear.
+6. Stay with them until they are fully awake, alert, and oriented.
+
+## Do NOT
+- Do NOT hold the person down or try to restrain their movements.
+- Do NOT put anything in their mouth (they cannot swallow their tongue; objects cause dental damage and airway obstruction).
+- Do NOT offer food or drink until they are completely conscious and alert.
+
+## When to go to hospital
+- The seizure lasts longer than 5 minutes (status epilepticus).
+- A second seizure occurs immediately without full recovery in between.
+- The person is pregnant, injured, or has diabetes.
+- This is the person's first known seizure.
+
+## Signs of severe seizure emergency (RED FLAGS)
+- Seizure lasting > 5 minutes.
+- Difficulty breathing or remaining blue after convulsions stop.
+- Failure to regain consciousness after 10-15 minutes.

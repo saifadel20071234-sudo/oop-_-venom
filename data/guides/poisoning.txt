@@ -1,0 +1,29 @@
+TITLE: Toxic Substance and Poisoning Management
+SOURCE: WHO / IPCS
+DATE_REVIEWED: 2024-01-19
+URL: https://www.who.int/teams/environment-climate-change-and-health/chemical-safety-and-health/incident-management/poisons-centres
+LANGUAGE: EN
+CONDITION_TAG: poisoning
+SEVERITY_TAGS: orange, red
+---
+Poisoning occurs through ingestion, inhalation, injection, or dermal contact with toxic substances, pesticides, or corrosive chemicals.
+
+## What to do immediately
+1. Call Emergency Poison Control Center immediately (Mansoura Poison Center: 0502202685 or 123).
+2. Identify the toxic agent, container, estimated quantity, and time of exposure.
+3. Inhaled poison: Move victim into fresh air immediately while ensuring your own safety.
+4. Skin contact: Strip contaminated clothing and irrigate skin with copious running water for 15 minutes.
+5. Ingested aluminum phosphide (Wheat Pill / حبة الغلة): Administer paraffin oil or medicinal coconut oil immediately to coat stomach walls and block phosphine release. Seek ICU immediately.
+
+## Do NOT
+- Do NOT induce vomiting (strictly prohibited for corrosives, bleach, acids, or hydrocarbons like kerosene).
+- Do NOT give water or milk for aluminum phosphide poisoning, as moisture accelerates toxic phosphine gas liberation.
+- Do NOT perform mouth-to-mouth resuscitation without a protective barrier if toxins are on the victim's mouth.
+
+## When to go to hospital
+- All deliberate poisonings, pesticide exposures, and corrosive ingestions require immediate hospital admission.
+
+## Signs of severe poisoning (RED FLAGS)
+- Garlic-like odor on breath (organophosphates or phosphine).
+- Pinpoint or dilated pupils, excessive salivation, and sweating.
+- Convulsions, drowsiness, or respiratory failure.

@@ -1,0 +1,36 @@
+TITLE: Diabetic Hypoglycemia Emergency Response
+SOURCE: NHS UK
+DATE_REVIEWED: 2024-01-22
+URL: https://www.nhs.uk/conditions/low-blood-sugar-hypoglycaemia/
+LANGUAGE: EN
+CONDITION_TAG: low_blood_sugar
+SEVERITY_TAGS: green, orange, red
+---
+Hypoglycemia occurs when blood glucose drops below normal levels (< 70 mg/dL or 3.9 mmol/L), commonly affecting individuals with diabetes taking insulin.
+
+## What to do immediately
+If the person is conscious and able to swallow (The "Rule of 15"):
+1. Give 15 to 20 grams of fast-acting simple carbohydrates:
+   - Half a glass (120-150 ml) of fruit juice or regular soda (non-diet).
+   - 3 to 4 glucose tablets or 3 teaspoons of sugar dissolved in water.
+2. Wait 15 minutes and recheck blood sugar level if a glucometer is available.
+3. If still below 70 mg/dL or symptoms persist, give another 15 grams of fast-acting sugar.
+4. Once recovered, have them eat a longer-acting complex carbohydrate snack (bread, crackers, or meal).
+
+If the person is unconscious or having seizures:
+1. Place in Recovery Position.
+2. Administer emergency Glucagon injection or nasal powder if trained and available.
+3. Call 123 (Ambulance) immediately.
+
+## Do NOT
+- Do NOT give fluids, sweets, or insulin to an unconscious person (severe choking and aspiration risk).
+- Do NOT administer insulin; insulin lowers blood sugar further and can be fatal.
+
+## When to go to hospital
+- Unconsciousness or seizures.
+- Blood sugar remains low despite two rounds of fast-acting sugar.
+
+## Signs of severe hypoglycemia (RED FLAGS)
+- Disorientation, combative behavior, or confusion.
+- Profuse sweating, trembling, and pale clammy skin.
+- Loss of consciousness and coma.

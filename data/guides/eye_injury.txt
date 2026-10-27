@@ -1,0 +1,34 @@
+TITLE: Chemical and Physical Eye Trauma First Aid
+SOURCE: MedlinePlus
+DATE_REVIEWED: 2024-01-21
+URL: https://medlineplus.gov/ency/article/000054.htm
+LANGUAGE: EN
+CONDITION_TAG: eye_injury
+SEVERITY_TAGS: green, orange, red
+---
+Eye injuries can result from chemical splashes (acids, alkalis), blunt trauma, or foreign objects penetrating the eyeball.
+
+## What to do immediately
+For chemical splashes:
+1. Immediately flush the eye with clean running water or sterile saline for at least 15 to 20 minutes continuously.
+2. Hold the eyelid open and ensure water flows from the inner corner outwards to avoid contaminating the other eye.
+3. Seek emergency ophthalmology care immediately.
+
+For penetrating objects:
+1. Protect the eye by covering it with a rigid shield (or the bottom of a paper cup taped around the eye).
+2. Cover the unaffected eye as well to minimize consensual eye movement.
+3. Keep the casualty calm and seated upright.
+
+## Do NOT
+- Do NOT rub the eye under any circumstances.
+- Do NOT attempt to remove an impaled or embedded foreign object from the eyeball.
+- Do NOT apply pressure or bandages tightly over the eye.
+
+## When to go to hospital
+- Any chemical splash in the eye.
+- Penetrating injury, visible blood inside the cornea, or loss of vision.
+
+## Signs of emergency eye trauma (RED FLAGS)
+- Severe sudden loss or distortion of vision.
+- Pupils unequal in size or irregular shape.
+- Leaking fluid or protruding tissue from the eyeball.

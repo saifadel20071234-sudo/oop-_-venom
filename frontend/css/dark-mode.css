@@ -1,0 +1,1543 @@
+/* ==========================================================================
+   Dark Mode Stylesheet - VENOM Medical Emergency System
+   New Palette (User-Selected):
+   - Main Background: #0B080B (أسود عميق)
+   - Navbar Background: #120A0E (أسود داكن للنافبار)
+   - Cards Background: #1B0C12 (نبيتي شبه أسود)
+   - Primary Color: #E91443 (أحمر Crimson)
+   - Hover State: #FF2D58 (أحمر فاتح)
+   - Headings / highlights: #FF8FA8 (وردي فاتح)
+   - Main text: #F5F1F3 (أبيض مائل للرمادي)
+   - Secondary Text: #B8ADB3 (رمادي هادئ)
+   - Borders: #2E1520 (نبيتي داكن)
+   - SOS Button: #FF1744 (أحمر طوارئ)
+   ========================================================================== */
+
+[data-theme="dark"], body.dark-mode {
+  /* Core Exact Palette Tokens */
+  --bg-body: #0B080B;
+  --bg-surface: #1B0C12;
+  --bg-surface-elevated: #251019;
+  --bg-subtle: #120A0E;
+  --border-color: #2E1520;
+  --border-focus: #E91443;
+
+  /* Typography */
+  --text-main: #F5F1F3;
+  --text-muted: #B8ADB3;
+  --text-subtle: rgba(184, 173, 179, 0.75);
+  --text-inverse: #0B080B;
+
+  /* Crimson Accents */
+  --primary: #E91443;
+  --primary-hover: #FF2D58;
+  --primary-light: rgba(233, 20, 67, 0.16);
+  --accent-tint: #2E1520;
+
+  /* Triage Severity System */
+  --severity-red: #FF1744;
+  --severity-red-bg: rgba(233, 20, 67, 0.2);
+  --severity-red-border: #2E1520;
+  --severity-red-glow: rgba(255, 23, 68, 0.45);
+
+  --severity-orange: #fb923c;
+  --severity-orange-bg: rgba(234, 88, 12, 0.2);
+  --severity-orange-border: rgba(249, 115, 22, 0.5);
+  --severity-orange-glow: rgba(249, 115, 22, 0.35);
+
+  --severity-green: #4ade80;
+  --severity-green-bg: rgba(22, 163, 74, 0.2);
+  --severity-green-border: rgba(34, 197, 94, 0.5);
+  --severity-green-glow: rgba(34, 197, 94, 0.35);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.85), 0 2px 4px -2px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.9), 0 4px 6px -4px rgba(0, 0, 0, 0.85);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.95), 0 8px 10px -6px rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================================================
+   [تعديل 3]: التباين — نصوص رئيسية أوضح، وصف رمادي فاتح للقراءة السهلة
+   Main text: #F5F1F3 (واضح) | Desc/muted: #C8C0C5 (فاتح بدل الغامق)
+   ========================================================================== */
+
+/* النصوص الرئيسية — أبيض واضح */
+[data-theme="dark"] .symptom-name,
+[data-theme="dark"] .cat-title,
+[data-theme="dark"] .result-diagnosis-title,
+[data-theme="dark"] .result-summary-text,
+[data-theme="dark"] .step-title-header h2 {
+  color: #F5F1F3 !important;
+}
+
+/* النصوص الوصفية — رمادي فاتح (أفتح من #B8ADB3) */
+[data-theme="dark"] .symptom-desc,
+[data-theme="dark"] .cat-subtitle,
+[data-theme="dark"] .step-title-header p,
+[data-theme="dark"] .triage-card p {
+  color: #C8C0C5 !important;
+}
+
+/* Base Body Styling */
+[data-theme="dark"] body {
+  background-color: #0B080B !important;
+  color: #F5F1F3 !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(27, 12, 18, 0.85) 0%, transparent 65%),
+    radial-gradient(circle at 90% 25%, rgba(233, 20, 67, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 10% 70%, rgba(18, 10, 14, 0.6) 0%, transparent 60%) !important;
+  background-attachment: fixed;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] p {
+  color: #B8ADB3 !important;
+}
+
+/* Header & Navigation */
+[data-theme="dark"] .main-header {
+  background: #120A0E !important;
+  border-bottom: 1.5px solid #2E1520 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+@media (min-width: 769px) {
+  [data-theme="dark"] .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+
+  [data-theme="dark"] .nav-link {
+    color: #B8ADB3 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  [data-theme="dark"] .nav-link span {
+    white-space: nowrap !important;
+    display: inline !important;
+  }
+
+  [data-theme="dark"] .nav-link:hover {
+    color: #F5F1F3 !important;
+    background: rgba(46, 21, 32, 0.5) !important;
+  }
+
+  [data-theme="dark"] .nav-link.active {
+    background: #1B0C12 !important;
+    border: 1.5px solid #E91443 !important;
+    color: #F5F1F3 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 0 12px rgba(233, 20, 67, 0.3) !important;
+  }
+
+  [data-theme="dark"] .nav-link.active i {
+    color: #E91443 !important;
+  }
+}
+
+/* Mobile Header & Bottom Navigation in Dark Mode (< 768px) */
+@media (max-width: 768px) {
+  [data-theme="dark"] .nav-links,
+  body.dark-mode .nav-links,
+  [data-theme="dark"] header nav,
+  body.dark-mode header nav {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  [data-theme="dark"] .main-header,
+  body.dark-mode .main-header {
+    background: rgba(18, 10, 14, 0.94) !important;
+    border-bottom: 1.5px solid #2E1520 !important;
+    box-shadow: 0 6px 26px rgba(0, 0, 0, 0.85), 0 0 15px rgba(233, 20, 67, 0.12) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-radius: 0 0 18px 18px !important;
+  }
+
+  [data-theme="dark"] .logo-badge,
+  body.dark-mode .logo-badge {
+    background: #1B0C12 !important;
+    border: 1.5px solid rgba(233, 20, 67, 0.4) !important;
+    box-shadow: 0 2px 12px rgba(233, 20, 67, 0.2) !important;
+  }
+
+  [data-theme="dark"] .lang-switch-btn,
+  body.dark-mode .lang-switch-btn {
+    background: #1B0C12 !important;
+    border: 1px solid #2E1520 !important;
+    color: #F5F1F3 !important;
+  }
+
+  [data-theme="dark"] .lang-switch-btn:hover,
+  body.dark-mode .lang-switch-btn:hover {
+    border-color: #E91443 !important;
+    color: #F5F1F3 !important;
+  }
+
+  [data-theme="dark"] .icon-btn,
+  [data-theme="dark"] #theme-toggle-btn,
+  body.dark-mode .icon-btn,
+  body.dark-mode #theme-toggle-btn {
+    background: #1B0C12 !important;
+    border: 1px solid #2E1520 !important;
+    color: #E91443 !important;
+  }
+
+  [data-theme="dark"] .mobile-bottom-nav,
+  body.dark-mode .mobile-bottom-nav {
+    background: rgba(18, 10, 14, 0.96) !important;
+    border-top: 1.5px solid #2E1520 !important;
+    box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.85), 0 0 15px rgba(233, 20, 67, 0.1) !important;
+  }
+
+  [data-theme="dark"] .mobile-nav-item,
+  body.dark-mode .mobile-nav-item {
+    color: #B8ADB3 !important;
+  }
+
+  [data-theme="dark"] .mobile-nav-item.active,
+  body.dark-mode .mobile-nav-item.active {
+    color: #E91443 !important;
+  }
+}
+
+[data-theme="dark"] .brand-ar-text,
+[data-theme="dark"] .brand-tagline {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .venom-text-gradient {
+  background: linear-gradient(135deg, #F5F1F3 0%, #FF8FA8 45%, #E91443 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+[data-theme="dark"] .hero-clean-section {
+  background-color: #0B080B !important;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(233, 20, 67, 0.1) 0%, transparent 60%),
+    radial-gradient(rgba(46, 21, 32, 0.22) 1.5px, transparent 1.5px) !important;
+  background-size: 100% 100%, 28px 28px !important;
+}
+
+[data-theme="dark"] .hero-wave-divider {
+  display: none !important;
+}
+
+[data-theme="dark"] .flank-left .flank-glow-blob {
+  background: radial-gradient(circle, rgba(233, 20, 67, 0.2) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] .flank-left .flank-img {
+  filter: drop-shadow(0 12px 28px rgba(233, 20, 67, 0.28));
+}
+
+[data-theme="dark"] .flank-right .flank-glow-blob {
+  background: radial-gradient(circle, rgba(46, 21, 32, 0.4) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] .flank-right .flank-img {
+  filter: drop-shadow(0 12px 28px rgba(56, 189, 248, 0.25));
+}
+
+/* Hero Pill Badge */
+[data-theme="dark"] .hero-clean-badge {
+  background: rgba(233, 20, 67, 0.13) !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 4px 14px rgba(233, 20, 67, 0.18) !important;
+}
+
+[data-theme="dark"] .hero-clean-badge i {
+  color: #E91443 !important;
+}
+
+/* Hero Title */
+[data-theme="dark"] .hero-title-top {
+  color: #F5F1F3 !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+}
+
+[data-theme="dark"] .hero-title-venom {
+  background: linear-gradient(135deg, #F5F1F3 0%, #FF8FA8 45%, #E91443 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 14px rgba(233, 20, 67, 0.45)) !important;
+}
+
+[data-theme="dark"] .hero-title-dash {
+  color: #E91443 !important;
+  filter: drop-shadow(0 0 10px rgba(233, 20, 67, 0.65)) !important;
+}
+
+[data-theme="dark"] .hero-title-slogan,
+[data-theme="dark"] .slogan-text {
+  color: #E91443 !important;
+  background: linear-gradient(135deg, #F5F1F3 0%, #FF8FA8 35%, #E91443 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 18px rgba(233, 20, 67, 0.5)) !important;
+}
+
+[data-theme="dark"] .slogan-swoosh-svg path {
+  stroke: #E91443 !important;
+  filter: drop-shadow(0 0 10px rgba(233, 20, 67, 0.75)) !important;
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: #B8ADB3 !important;
+}
+
+/* Quick Search Box */
+[data-theme="dark"] .quick-search-box {
+  background: #1B0C12 !important;
+  border: 1.5px solid #2E1520 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .quick-search-icon {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .quick-search-input {
+  background: transparent !important;
+  color: #F5F1F3 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .quick-search-input::placeholder {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .quick-search-submit {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(233, 20, 67, 0.45) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="dark"] .quick-search-submit:hover {
+  background: #FF2D58 !important;
+  box-shadow: 0 6px 22px rgba(255, 45, 88, 0.65) !important;
+}
+
+/* Hero Chips */
+[data-theme="dark"] .hero-chip {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-blue-main {
+  background: #1B0C12 !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-red {
+  background: rgba(233, 20, 67, 0.2) !important;
+  border: 1.5px solid #E91443 !important;
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-rose {
+  background: rgba(255, 45, 88, 0.16) !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-orange {
+  background: rgba(234, 88, 12, 0.2) !important;
+  border: 1.5px solid rgba(249, 115, 22, 0.45) !important;
+  color: #fdba74 !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-amber {
+  background: rgba(217, 119, 6, 0.2) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  color: #fde68a !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-teal {
+  background: rgba(13, 148, 136, 0.2) !important;
+  border: 1.5px solid rgba(20, 184, 166, 0.45) !important;
+  color: #99f6e4 !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-yellow {
+  background: rgba(202, 138, 4, 0.2) !important;
+  border: 1.5px solid rgba(234, 179, 8, 0.45) !important;
+  color: #fef08a !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-purple {
+  background: rgba(124, 58, 237, 0.2) !important;
+  border: 1.5px solid rgba(139, 92, 246, 0.45) !important;
+  color: #c4b5fd !important;
+}
+
+[data-theme="dark"] .hero-chip.chip-green {
+  background: rgba(22, 163, 74, 0.2) !important;
+  border: 1.5px solid rgba(34, 197, 94, 0.45) !important;
+  color: #86efac !important;
+}
+
+[data-theme="dark"] .hero-chip:hover {
+  border-color: #E91443 !important;
+  background: #251019 !important;
+}
+
+/* ==========================================================================
+   CARDS & CONTAINERS
+   ========================================================================== */
+[data-theme="dark"] .golden-rules-container,
+[data-theme="dark"] .golden-step-card,
+[data-theme="dark"] .service-clean-card,
+[data-theme="dark"] .clean-triage-card,
+[data-theme="dark"] .bodymap-silhouette-card,
+[data-theme="dark"] .bodymap-protocol-panel,
+[data-theme="dark"] .kit-rack-column,
+[data-theme="dark"] .kit-inspector-column,
+[data-theme="dark"] .learn-section-card,
+[data-theme="dark"] .chat-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .modal-content {
+  background: #1B0C12 !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .service-clean-card:hover,
+[data-theme="dark"] .golden-step-card:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Service Card Headings & Descriptions */
+[data-theme="dark"] .service-clean-card h3,
+[data-theme="dark"] .golden-step-card h3,
+[data-theme="dark"] .clean-triage-card h3 {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .service-clean-card p,
+[data-theme="dark"] .golden-step-card p {
+  color: #B8ADB3 !important;
+}
+
+/* Card Icons */
+[data-theme="dark"] .service-clean-icon-wrap {
+  background: rgba(233, 20, 67, 0.13) !important;
+  border: 1px solid #2E1520 !important;
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .golden-step-num {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+/* First Aid Kit Rack & Inspector */
+[data-theme="dark"] .tray-item {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .tray-item:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .tray-item.active {
+  background: #251019 !important;
+  border-right: 3px solid #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-purpose-text,
+[data-theme="dark"] .inspector-step-item,
+[data-theme="dark"] .inspector-storage-tip {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .inspector-step-num {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card {
+  background: rgba(233, 20, 67, 0.1) !important;
+  border-color: #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card i {
+  color: #FF1744 !important;
+}
+
+/* ==========================================================================
+   [تعديل 2]: التصنيفات — ألوان مختلفة حسب نوع الحالة
+   خلفيات شفافة غامقة + حدود خفيفة ملوّنة = اتساق ووضوح
+   ========================================================================== */
+
+/* حالة حمراء / طارئة جداً */
+[data-theme="dark"] .result-header-card.red,
+[data-theme="dark"] .triage-card.severity-red,
+[data-theme="dark"] .clean-triage-card.red {
+  background: rgba(255, 23, 68, 0.08) !important;
+  border-color: rgba(255, 23, 68, 0.35) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .result-header-card.red .result-severity-pill,
+[data-theme="dark"] .result-header-card.red .result-diagnosis-title {
+  color: #FF8FA8 !important;
+}
+
+/* حالة برتقالية / متوسطة */
+[data-theme="dark"] .result-header-card.orange,
+[data-theme="dark"] .triage-card.severity-orange,
+[data-theme="dark"] .clean-triage-card.orange {
+  background: rgba(234, 88, 12, 0.08) !important;
+  border-color: rgba(249, 115, 22, 0.32) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .result-header-card.orange .result-severity-pill,
+[data-theme="dark"] .result-header-card.orange .result-diagnosis-title {
+  color: #fdba74 !important;
+}
+
+/* حالة خضراء / خفيفة */
+[data-theme="dark"] .result-header-card.green,
+[data-theme="dark"] .triage-card.severity-green,
+[data-theme="dark"] .clean-triage-card.green {
+  background: rgba(22, 163, 74, 0.08) !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .result-header-card.green .result-severity-pill,
+[data-theme="dark"] .result-header-card.green .result-diagnosis-title {
+  color: #86efac !important;
+}
+
+/* Severity Pills (الشارات داخل الكروت) */
+[data-theme="dark"] .result-header-card.red .result-severity-pill {
+  background: rgba(255, 23, 68, 0.22) !important;
+  color: #FF8FA8 !important;
+  border: 1px solid rgba(255, 23, 68, 0.35) !important;
+}
+
+[data-theme="dark"] .result-header-card.orange .result-severity-pill {
+  background: rgba(249, 115, 22, 0.18) !important;
+  color: #fdba74 !important;
+  border: 1px solid rgba(249, 115, 22, 0.32) !important;
+}
+
+[data-theme="dark"] .result-header-card.green .result-severity-pill {
+  background: rgba(34, 197, 94, 0.15) !important;
+  color: #86efac !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Critical badge في الأعراض */
+[data-theme="dark"] .symptom-critical-badge {
+  background: rgba(255, 23, 68, 0.12) !important;
+  color: #FF8FA8 !important;
+  border: 1px solid rgba(255, 23, 68, 0.28) !important;
+}
+
+/* Category choice cards (تصنيفات الاختيار) */
+[data-theme="dark"] .category-choice-card {
+  background: #120A0E !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .category-choice-card:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .category-choice-card.selected {
+  background: rgba(233, 20, 67, 0.1) !important;
+  border-color: #E91443 !important;
+  box-shadow: none !important;
+}
+
+/* Symptom check cards */
+[data-theme="dark"] .symptom-check-card {
+  background: #120A0E !important;
+  border: 1.5px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .symptom-check-card:hover {
+  border-color: #E91443 !important;
+  background: #1B0C12 !important;
+}
+
+[data-theme="dark"] .symptom-check-card.checked {
+  border-color: #E91443 !important;
+  background: rgba(233, 20, 67, 0.08) !important;
+}
+
+[data-theme="dark"] .symptom-checkbox {
+  border-color: #2E1520 !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .symptom-check-card.checked .symptom-checkbox {
+  background: #E91443 !important;
+  border-color: #E91443 !important;
+}
+
+/* Triage progress nodes */
+[data-theme="dark"] .node-circle {
+  background: #120A0E !important;
+  border-color: #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .step-tracker-node.active .node-circle {
+  border-color: #E91443 !important;
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .step-tracker-node.completed .node-circle {
+  border-color: #4ade80 !important;
+  background: rgba(22, 163, 74, 0.2) !important;
+  color: #86efac !important;
+}
+
+[data-theme="dark"] .node-label {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .step-tracker-node.active .node-label {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .triage-steps-tracker::before {
+  background: #2E1520 !important;
+}
+
+[data-theme="dark"] .triage-progress-fill {
+  background: linear-gradient(90deg, #E91443, #FF8FA8) !important;
+}
+
+[data-theme="dark"] .bodymap-zone-pill {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .bodymap-zone-pill.active,
+[data-theme="dark"] .bodymap-zone-pill:hover {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+  border-color: #E91443 !important;
+}
+
+[data-theme="dark"] .bodymap-point {
+  background: #E91443 !important;
+  box-shadow: 0 0 16px rgba(233, 20, 67, 0.75) !important;
+}
+
+/* ==========================================================================
+   BUTTONS & SOS CALL
+   [تعديل 1]: إزالة الـ Glow القوي من الأزرار — أوضح واحترافية أكثر
+   Primary: #E91443 | Hover: #FF2D58 | SOS: #FF1744
+   ========================================================================== */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .chat-send-btn,
+[data-theme="dark"] .btn-action-primary {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+  border: none !important;
+  /* glow مخفف — خفيف وبعيد بدل القوي */
+  box-shadow: 0 2px 8px rgba(233, 20, 67, 0.18) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .chat-send-btn:hover,
+[data-theme="dark"] .btn-action-primary:hover {
+  background: #FF2D58 !important;
+  /* hover: زيادة بسيطة في العمق بدون glow شديد */
+  box-shadow: 0 4px 14px rgba(255, 45, 88, 0.28) !important;
+}
+
+/* Emergency Call / SOS Button & Floating Trigger */
+[data-theme="dark"] .emergency-call-btn,
+[data-theme="dark"] .banner-phone-link,
+[data-theme="dark"] .btn-sos,
+[data-theme="dark"] .floating-sos-btn,
+[data-theme="dark"] .sos-trigger-btn,
+[data-theme="dark"] #sosTriggerBtn,
+[data-theme="dark"] .contact-phone-btn,
+[data-theme="dark"] .call-action-btn,
+[data-theme="dark"] #sos-btn {
+  background: #FF1744 !important;
+  color: #F5F1F3 !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(255, 23, 68, 0.2) !important;
+}
+
+[data-theme="dark"] .emergency-call-btn:hover,
+[data-theme="dark"] .banner-phone-link:hover,
+[data-theme="dark"] .btn-sos:hover,
+[data-theme="dark"] .floating-sos-btn:hover,
+[data-theme="dark"] .sos-trigger-btn:hover,
+[data-theme="dark"] #sosTriggerBtn:hover,
+[data-theme="dark"] #sos-btn:hover {
+  background: #ff3360 !important;
+  box-shadow: 0 4px 16px rgba(255, 23, 68, 0.32) !important;
+}
+
+/* Secondary Buttons */
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .btn-cpr-reset {
+  background: #120A0E !important;
+  color: #F5F1F3 !important;
+  border: 1px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover,
+[data-theme="dark"] .btn-cpr-reset:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  color: #E91443 !important;
+}
+
+/* ==========================================================================
+   EMERGENCY BANNER IN DARK MODE
+   ========================================================================== */
+[data-theme="dark"] .emergency-banner {
+  background: #120A0E !important;
+  border-top: 1.5px solid #2E1520 !important;
+  border-bottom: 1.5px solid #2E1520 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9) !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .emergency-banner span,
+[data-theme="dark"] .emergency-banner p,
+[data-theme="dark"] .emergency-banner-content span {
+  color: #F5F1F3 !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .emergency-banner .emergency-beacon-wrapper {
+  background: rgba(233, 20, 67, 0.2) !important;
+  color: #FF1744 !important;
+}
+
+[data-theme="dark"] .emergency-banner .emergency-beacon-ring {
+  border-color: rgba(255, 23, 68, 0.42) !important;
+}
+
+[data-theme="dark"] .emergency-banner .emergency-call-btn,
+[data-theme="dark"] .emergency-banner .banner-phone-link {
+  background: #FF1744 !important;
+  color: #F5F1F3 !important;
+}
+
+/* ==========================================================================
+   LEARN PAGE - CPR METRONOME & QUIZ
+   ========================================================================== */
+[data-theme="dark"] .metronome-box,
+[data-theme="dark"] .quiz-options-list {
+  background: #1B0C12 !important;
+}
+
+[data-theme="dark"] .cpr-pulse-ring {
+  background: #120A0E !important;
+  border: 3px solid #2E1520 !important;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .cpr-pulse-ring.pulsing {
+  border-color: #E91443 !important;
+  box-shadow: 0 0 35px rgba(233, 20, 67, 0.55) !important;
+}
+
+[data-theme="dark"] .cpr-bpm-label {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .cpr-unit-label {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .cpr-counter-display {
+  background: #180D13 !important;
+  border-color: rgba(233, 20, 67, 0.45) !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .cpr-counter-display .cpr-hud-label,
+[data-theme="dark"] .cpr-counter-display span:not(#cpr-press-counter) {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .cpr-counter-display .cpr-hud-total {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .cpr-cycle-badge {
+  background: #180D13 !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .cpr-cycle-badge .cpr-hud-label,
+[data-theme="dark"] .cpr-cycle-badge span:not(#cpr-cycle-counter) {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .cpr-rate-selector {
+  background: #120A0E !important;
+  border-color: #2E1520 !important;
+}
+
+[data-theme="dark"] .cpr-rate-btn {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .cpr-rate-btn.active {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+/* Quiz Option Buttons in Dark Mode */
+[data-theme="dark"] .quiz-option-btn {
+  background: #120A0E !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .quiz-option-btn:hover:not(:disabled) {
+  border-color: #E91443 !important;
+  background: #251019 !important;
+}
+
+[data-theme="dark"] .quiz-option-btn.correct {
+  background: rgba(22, 163, 74, 0.28) !important;
+  border-color: #4ade80 !important;
+  color: #4ade80 !important;
+}
+
+[data-theme="dark"] .quiz-option-btn.wrong {
+  background: rgba(233, 20, 67, 0.28) !important;
+  border-color: #FF1744 !important;
+  color: #FF1744 !important;
+}
+
+/* ==========================================================================
+   CHAT / VIRTUAL ASSISTANT PAGE
+   ========================================================================== */
+[data-theme="dark"] .chat-container,
+[data-theme="dark"] .chat-window {
+  background: #1B0C12 !important;
+  border: 1px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .chat-bubble.assistant-bubble {
+  background: #120A0E !important;
+  color: #F5F1F3 !important;
+  border: 1px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .chat-bubble.user-bubble {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .chat-input-wrapper {
+  background: #120A0E !important;
+  border: 1.5px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .chat-input-wrapper input {
+  color: #F5F1F3 !important;
+}
+
+/* ==========================================================================
+   APP FOOTER
+   ========================================================================== */
+[data-theme="dark"] .app-footer {
+  background: #120A0E !important;
+  border-top: 1.5px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .app-footer h4,
+[data-theme="dark"] .app-footer h3 {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .app-footer a {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .app-footer a:hover {
+  color: #E91443 !important;
+}
+
+/* Body Map Protocol Panel Specific Dark Rules */
+[data-theme="dark"] .bodymap-protocol-panel {
+  background: #1B0C12 !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .bodymap-protocol-panel h4,
+[data-theme="dark"] #bmZoneTitle {
+  color: #FF8FA8 !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .protocol-subtitle,
+[data-theme="dark"] #bmZoneSubtitle {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .protocol-alert-banner,
+[data-theme="dark"] #bmAlertBanner {
+  background: rgba(233, 20, 67, 0.13) !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .protocol-alert-banner i {
+  color: #FF1744 !important;
+}
+
+[data-theme="dark"] .protocol-alert-banner span,
+[data-theme="dark"] #bmAlertText {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .protocol-steps-list h5 {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .bm-steps,
+[data-theme="dark"] #bmStepsList {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .bm-steps li {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .bm-steps li span {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .bm-steps li strong {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .bm-step-num {
+  background: rgba(233, 20, 67, 0.2) !important;
+  border: 1.5px solid #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .protocol-zone-icon,
+[data-theme="dark"] #bmZoneIcon {
+  background: rgba(233, 20, 67, 0.18) !important;
+  border: 1px solid #2E1520 !important;
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .protocol-severity-pill,
+[data-theme="dark"] #bmSeverityPill {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+/* ==========================================================================
+   INTERACTIVE BODYMAP SECTION & FIRST AID KIT INSPECTOR (DARK MODE)
+   ========================================================================== */
+[data-theme="dark"] .interactive-bodymap-section {
+  background: #0B080B !important;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(233, 20, 67, 0.07) 0%, transparent 60%),
+    radial-gradient(rgba(46, 21, 32, 0.18) 1.5px, transparent 1.5px) !important;
+  background-size: 100% 100%, 28px 28px !important;
+  border-top: 1.5px solid #2E1520 !important;
+  border-bottom: 1.5px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .bodymap-title {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .bodymap-desc {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .bodymap-badge {
+  background: rgba(233, 20, 67, 0.14) !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .bodymap-badge i {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .inspector-card,
+[data-theme="dark"] .kit-inspector-column,
+[data-theme="dark"] .kit-rack-column {
+  background: #1B0C12 !important;
+  border: 1.5px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .inspector-header {
+  border-bottom: 1.5px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .inspector-item-title {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-item-subtitle {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .inspector-counter-badge {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .inspector-section-label {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .inspector-section-label i {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .inspector-section-label span {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .inspector-purpose-text {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-step-item {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-step-text {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-step-num {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card {
+  background: rgba(233, 20, 67, 0.14) !important;
+  border: 1.5px solid #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card i {
+  color: #FF1744 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card strong {
+  color: #FF1744 !important;
+}
+
+[data-theme="dark"] .inspector-warning-card p {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-storage-tip {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .inspector-storage-tip i {
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .inspector-storage-tip strong {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-nav-btn {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .inspector-nav-btn:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  color: #E91443 !important;
+}
+
+/* Floating SOS Menu in Dark Mode */
+[data-theme="dark"] .sos-expand-menu {
+  background: #1B0C12 !important;
+  border: 1px solid #2E1520 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-theme="dark"] .sos-menu-header {
+  border-bottom: 1px solid #2E1520 !important;
+}
+
+[data-theme="dark"] .sos-menu-title {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .sos-menu-close {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .sos-menu-close:hover {
+  color: #FF1744 !important;
+}
+
+[data-theme="dark"] .sos-menu-item {
+  background: #120A0E !important;
+  border: 1px solid #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .sos-menu-item:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+}
+
+[data-theme="dark"] .sos-item-name {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .sos-item-sub {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .sos-pulse-ring,
+[data-theme="dark"] .sos-pulse-ring-2 {
+  border-color: rgba(233, 20, 67, 0.6) !important;
+}
+/* ==========================================================================
+   TEAM ROSTER MODAL - DARK MODE PALETTE
+   Exact User Palette:
+   - Modal background: #1B0C12
+   - Card background: #120A0E
+   - Elevated: #251019
+   - Border: #2E1520
+   - Accent: #E91443
+   - Highlights: #FF8FA8
+   - Main text: #F5F1F3
+   - Secondary text: #B8ADB3
+   ========================================================================== */
+[data-theme="dark"] .team-credit-name-btn {
+  background: #E91443 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(233, 20, 67, 0.5) !important;
+}
+
+[data-theme="dark"] .team-credit-name-btn:hover {
+  background: #FF2D58 !important;
+  box-shadow: 0 4px 16px rgba(255, 45, 88, 0.65) !important;
+}
+
+[data-theme="dark"] .team-launch-badge {
+  background: #251019 !important;
+  border: 1.5px solid #E91443 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 12px rgba(233, 20, 67, 0.25) !important;
+}
+
+[data-theme="dark"] .team-launch-badge i {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .team-launch-badge:hover {
+  background: #E91443 !important;
+  color: #FFFFFF !important;
+  border-color: #E91443 !important;
+  box-shadow: 0 4px 18px rgba(233, 20, 67, 0.45) !important;
+}
+
+[data-theme="dark"] .team-launch-badge:hover i {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .team-modal-backdrop {
+  background: rgba(11, 8, 11, 0.82) !important;
+}
+
+[data-theme="dark"] .team-modal-container {
+  background: #1B0C12 !important;
+  border-color: #2E1520 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-theme="dark"] .team-modal-glow {
+  background: radial-gradient(circle, rgba(233, 20, 67, 0.18) 0%, transparent 70%) !important;
+}
+
+[data-theme="dark"] .team-modal-header {
+  border-color: #2E1520 !important;
+}
+
+[data-theme="dark"] .team-cadre-badge {
+  background: #251019 !important;
+  border-color: #2E1520 !important;
+  color: #E91443 !important;
+  box-shadow: 0 4px 14px rgba(233, 20, 67, 0.15) !important;
+}
+
+[data-theme="dark"] .team-modal-heading {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .team-cadre-pill {
+  background: rgba(233, 20, 67, 0.15) !important;
+  color: #FF8FA8 !important;
+  border-color: rgba(233, 20, 67, 0.35) !important;
+}
+
+[data-theme="dark"] .team-supervisor-line {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .team-supervisor-line strong {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .team-modal-close-btn {
+  background: #120A0E !important;
+  border-color: #2E1520 !important;
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .team-modal-close-btn:hover {
+  background: #251019 !important;
+  color: #E91443 !important;
+  border-color: #E91443 !important;
+}
+
+[data-theme="dark"] .team-ecg-path {
+  stroke: #E91443 !important;
+  filter: drop-shadow(0 0 8px rgba(233, 20, 67, 0.75)) !important;
+}
+
+[data-theme="dark"] .team-member-card {
+  background: #120A0E !important;
+  border-color: #2E1520 !important;
+}
+
+[data-theme="dark"] .team-member-card:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  box-shadow: 0 8px 24px rgba(233, 20, 67, 0.2) !important;
+}
+
+[data-theme="dark"] .member-avatar-circle {
+  background: #1B0C12 !important;
+}
+
+[data-theme="dark"] .member-active-beacon {
+  border-color: #120A0E !important;
+}
+
+[data-theme="dark"] .member-name {
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .member-role-title {
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .member-role-desc {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .member-card-footer {
+  border-color: #2E1520 !important;
+}
+
+[data-theme="dark"] .member-id-pill {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .member-portfolio-link {
+  background: rgba(233, 20, 67, 0.16) !important;
+  border-color: #2E1520 !important;
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .member-portfolio-link:hover {
+  background: #E91443 !important;
+  border-color: #E91443 !important;
+  color: #F5F1F3 !important;
+  box-shadow: 0 4px 12px rgba(233, 20, 67, 0.35) !important;
+}
+
+[data-theme="dark"] .member-linkedin-link {
+  background: rgba(233, 20, 67, 0.12) !important;
+  border-color: #2E1520 !important;
+  color: #FF8FA8 !important;
+}
+
+[data-theme="dark"] .member-linkedin-link:hover {
+  background: #E91443 !important;
+  border-color: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .team-modal-footer {
+  background: #120A0E !important;
+  border-color: #2E1520 !important;
+}
+
+[data-theme="dark"] .team-footer-motto {
+  color: #B8ADB3 !important;
+}
+
+[data-theme="dark"] .team-copy-btn {
+  background: #1B0C12 !important;
+  border-color: #2E1520 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .team-copy-btn:hover {
+  background: #251019 !important;
+  border-color: #E91443 !important;
+  color: #E91443 !important;
+}
+
+[data-theme="dark"] .team-dismiss-btn {
+  background: #E91443 !important;
+  color: #F5F1F3 !important;
+}
+
+[data-theme="dark"] .team-dismiss-btn:hover {
+  background: #FF2D58 !important;
+}
+
+/* ==========================================================================
+   HIGH-DEFINITION DARK MODE TEXT CONTRAST & LEGIBILITY (v49)
+   ========================================================================== */
+[data-theme="dark"] .team-modal-container {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+[data-theme="dark"] .team-modal-backdrop.active .team-modal-container {
+  transform: none !important;
+}
+
+[data-theme="dark"] .member-name {
+  color: #FFFFFF !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+}
+
+[data-theme="dark"] .member-role-title {
+  color: #FF8FA8 !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+[data-theme="dark"] .member-role-desc {
+  color: #E2D9DE !important;
+  font-size: 0.82rem !important;
+  font-weight: 450 !important;
+  line-height: 1.55 !important;
+}
+
+[data-theme="dark"] .team-supervisor-line {
+  color: #D1C7CD !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .team-supervisor-line strong {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .member-role-tag {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .member-linkedin-link {
+  background: rgba(10, 102, 194, 0.16) !important;
+  border-color: rgba(10, 102, 194, 0.35) !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .member-linkedin-link:hover {
+  background: #0a66c2 !important;
+  color: #ffffff !important;
+  border-color: #0a66c2 !important;
+}
+
+[data-theme="dark"] .member-avatar-circle {
+  overflow: hidden !important;
+}
+[data-theme="dark"] .member-avatar-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   NATIVE APP TOUCH ENGINE - REMOVE BLUE TAP HIGHLIGHT & OUTLINES (v58)
+   ========================================================================== */
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Eliminate tap highlight, outline, and accidental text selection on all interactive elements */
+button,
+a,
+input,
+select,
+textarea,
+svg,
+svg *,
+[role="button"],
+[tabindex],
+.btn,
+.nav-link,
+.mobile-nav-item,
+.footer-badge,
+.bodymap-zone-pill,
+.interactive-point,
+.human-silhouette-svg,
+.interactive-bodymap-section,
+.category-pill,
+.team-member-card,
+.sos-trigger-btn,
+.sos-menu-item,
+.team-launch-badge,
+.team-credit-name-btn,
+.theme-switch-btn,
+.lang-btn {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  outline: none !important;
+}
+
+/* Prevent accidental text selection when tapping buttons/interactive items */
+button,
+a,
+.btn,
+.mobile-nav-item,
+.footer-badge,
+.bodymap-zone-pill,
+.category-pill,
+.sos-trigger-btn,
+.sos-menu-item,
+.team-launch-badge,
+.team-credit-name-btn,
+.theme-switch-btn,
+.lang-btn,
+svg,
+svg * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Keep user input fields selectable and typable */
+input[type="text"],
+input[type="search"],
+textarea {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Kill all default browser blue focus rings and outlines on active/focus */
+:focus,
+:active,
+:focus-visible {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Custom dark theme selection color when text is highlighted by user */
+::selection {
+  background: rgba(233, 20, 67, 0.4) !important;
+  color: #FFFFFF !important;
+}
+::-moz-selection {
+  background: rgba(233, 20, 67, 0.4) !important;
+  color: #FFFFFF !important;
+}

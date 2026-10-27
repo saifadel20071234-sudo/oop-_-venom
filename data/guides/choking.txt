@@ -1,0 +1,41 @@
+TITLE: Choking and Airway Obstruction Protocol
+SOURCE: Mayo Clinic
+DATE_REVIEWED: 2024-01-16
+URL: https://www.mayoclinic.org/first-aid/first-aid-choking/basics/art-20056637
+LANGUAGE: EN
+CONDITION_TAG: choking
+SEVERITY_TAGS: orange, red
+---
+Choking happens when an object or food lodges in the throat or windpipe (trachea), completely blocking the flow of air. Immediate recognition and intervention are life-saving.
+
+## What to do immediately
+For a conscious adult or child over 1 year:
+1. Ask "Are you choking?" If they can cough forcefully or speak, encourage them to cough.
+2. If they cannot speak, breathe, or make sound, give 5 back blows:
+   - Stand behind them and lean them forward.
+   - Deliver 5 firm blows between the shoulder blades with the heel of your hand.
+3. If back blows fail, give 5 abdominal thrusts (Heimlich Maneuver):
+   - Stand behind the person and wrap arms around their waist.
+   - Make a fist with one hand and place it just above the navel.
+   - Grasp your fist with the other hand and pull sharply inward and upward.
+4. Repeat cycles of 5 back blows and 5 abdominal thrusts until the airway is clear.
+
+For choking infants (under 1 year):
+1. Lay the infant face down along your forearm, supporting their head and jaw with your fingers.
+2. Deliver 5 quick back slaps between the shoulder blades.
+3. Turn the infant face up and give 5 chest thrusts using 2 fingers in the center of the breastbone.
+
+## Do NOT
+- Do NOT perform abdominal thrusts on infants or pregnant women (use chest thrusts instead).
+- Do NOT slap a person on the back while they are standing completely upright.
+- Do NOT perform blind finger sweeps in the mouth; it may push the object deeper.
+
+## When to go to hospital
+- Anyone who required abdominal thrusts must be checked by a doctor for internal abdominal injuries.
+- Persistent cough, painful swallowing, or hoarseness after choking.
+
+## Signs of complete airway obstruction (RED FLAGS)
+- Universal choking sign (hands clutching the throat).
+- Inability to talk, cry, or cough.
+- Skin, lips, and nail beds turning blue or grey (cyanosis).
+- Loss of consciousness.

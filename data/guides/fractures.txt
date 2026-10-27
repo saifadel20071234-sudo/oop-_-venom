@@ -1,0 +1,30 @@
+TITLE: Fractures and Sprains Immobilization
+SOURCE: NHS UK
+DATE_REVIEWED: 2024-01-17
+URL: https://www.nhs.uk/conditions/broken-bone/
+LANGUAGE: EN
+CONDITION_TAG: fracture
+SEVERITY_TAGS: green, orange, red
+---
+A fracture is a break or crack in a bone. A sprain is an injury to ligaments around a joint. Proper immobilization prevents further neurovascular damage.
+
+## What to do immediately
+1. Keep the injured limb as still as possible; do not attempt to straighten or realign it.
+2. Support the limb using a splint, sling, or soft padding above and below the injured joint.
+3. Apply a cold pack wrapped in a cloth for 15-20 minutes to reduce swelling.
+4. Elevate the injured extremity if it does not increase pain.
+5. If bone pokes through the skin (open fracture), cover with a clean sterile dressing without pressing.
+
+## Do NOT
+- Do NOT move the casualty if a spinal, neck, or pelvic fracture is suspected unless in danger.
+- Do NOT apply ice directly to the bare skin.
+- Do NOT allow the patient to bear weight or walk on an injured lower limb.
+
+## When to go to hospital
+- All suspected fractures require X-ray evaluation and orthopedic casting.
+- Compound open fractures with bone protrusion or heavy bleeding.
+
+## Signs of severe fracture (RED FLAGS)
+- Obvious limb deformity or bone protruding through skin.
+- Pale, cold, or bluish toes/fingers below the injury site with loss of pulse.
+- Numbness, tingling, or inability to feel sensation in the fingers or toes.

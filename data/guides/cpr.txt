@@ -1,0 +1,33 @@
+TITLE: Cardiopulmonary Resuscitation (CPR) & AED
+SOURCE: WHO / ILCOR
+DATE_REVIEWED: 2024-01-16
+URL: https://www.who.int/publications/i/item/9789241513807
+LANGUAGE: EN
+CONDITION_TAG: cpr
+SEVERITY_TAGS: red
+---
+Sudden cardiac arrest occurs when the heart suddenly stops pumping blood. Immediate CPR and early defibrillation double or triple the chances of survival.
+
+## What to do immediately
+1. Verify scene safety and check responsiveness: tap shoulders and shout loudly "Are you OK?".
+2. If unresponsive and not breathing normally (gasping or no breathing), yell for help: "Call 123 (Ambulance) and bring an AED!".
+3. Place casualty on their back on a firm, flat surface.
+4. Place the heel of one hand in the center of the chest (lower half of breastbone), and interlock your other hand on top.
+5. Push hard and fast at a rate of 100 to 120 compressions per minute, depressing the chest at least 5 to 6 cm (2 inches).
+6. Allow complete chest recoil between compressions.
+7. If trained in rescue breaths, give 2 breaths after every 30 compressions (30:2 ratio).
+8. If untrained or unwilling to give breaths, deliver continuous Hands-Only CPR.
+9. As soon as an Automated External Defibrillator (AED) arrives, turn it on and follow voice prompts.
+
+## Do NOT
+- Do NOT interrupt chest compressions for more than 10 seconds.
+- Do NOT place your hands on the ribs or lower tip of the breastbone (xiphoid process).
+- Do NOT hesitate to use an AED; it will only shock if a shockable rhythm is detected.
+
+## When to go to hospital
+- Immediate emergency ambulance transfer to a cardiac care center is essential for all cardiac arrests.
+
+## Signs of cardiac arrest (RED FLAGS)
+- Unresponsiveness (no reaction to shaking or shouting).
+- Absence of normal breathing (agonal gasping).
+- Absence of pulse (if checked by healthcare personnel).

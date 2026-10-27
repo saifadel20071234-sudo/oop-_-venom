@@ -1,0 +1,33 @@
+TITLE: Burns Management
+SOURCE: NHS UK
+DATE_REVIEWED: 2024-01-15
+URL: https://www.nhs.uk/conditions/burns-and-scalds/treatment/
+LANGUAGE: EN
+CONDITION_TAG: burn
+SEVERITY_TAGS: green, orange, red
+---
+Burns and scalds are damage to the skin caused by heat, chemicals, electricity, or radiation. Immediate and correct first aid can dramatically reduce pain and permanent tissue scarring.
+
+## What to do immediately
+1. Stop the burning process immediately by removing the person from the heat source or turning off electricity.
+2. Cool the burn under clean, cool running tap water (12°C to 18°C) for at least 20 minutes.
+3. Remove constrictive clothing, rings, and jewelry near the affected area before swelling begins. Do not remove anything that is stuck to the burn.
+4. Keep the person warm using a blanket to prevent hypothermia, but do not touch the burned area.
+5. Cover the burn loosely with clean cling film or a sterile, non-adherent dressing.
+
+## Do NOT
+- Do NOT apply ice or iced water; extreme cold damages delicate healing cells.
+- Do NOT burst blisters; they act as a natural sterile biological barrier against infection.
+- Do NOT apply butter, toothpaste, oil, or home remedies, as they trap heat and introduce bacteria.
+- Do NOT touch the burn directly with bare hands or adhesive bandages.
+
+## When to go to hospital
+- All chemical and electrical burns.
+- Large or deep burns bigger than the palm of the casualty's hand.
+- Burns on the face, neck, hands, feet, joints, or genitals.
+- Any burn on infants, young children, or elderly patients.
+
+## Signs of serious burn (RED FLAGS)
+- White, charred, or leathery skin that is numb to touch.
+- Difficulty breathing or coughing up black soot (inhalation injury).
+- Signs of shock: rapid shallow breathing, cold clammy skin, or dizziness.

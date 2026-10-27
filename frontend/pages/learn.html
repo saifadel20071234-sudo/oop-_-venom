@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ziad Asaad">
+  <title>VENOM — تعلّم الإسعافات وتدريب CPR</title>
+  <link rel="icon" type="image/png" href="../assets/images/medical-favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <!-- Font Awesome 6 (Local 100% Offline) -->
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css?v=60">
+  <link rel="stylesheet" href="../css/dark-mode.css?v=60">
+  <style>
+    .learn-container {
+      max-width: 1100px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .learn-section-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* CPR Metronome Styling - Ultra-Professional Medical Device UI */
+    .metronome-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px 40px;
+      text-align: center;
+      background: linear-gradient(160deg, #ffffff 0%, #f0f7ff 50%, #e8f2fe 100%);
+      border-radius: 28px;
+      border: 1.5px solid rgba(37, 99, 235, 0.2);
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      margin-top: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metronome-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563EB, #06B6D4, #F43F5E, #2563EB);
+      background-size: 200% 100%;
+      animation: cprBorderFlow 4s linear infinite;
+    }
+
+    @keyframes cprBorderFlow {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    /* Medical Device Top Bar */
+    .metronome-device-header {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+    }
+
+    .device-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #065f46;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+
+    .device-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: cprDotPulse 1.5s infinite;
+    }
+
+    @keyframes cprDotPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .device-guideline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1e40af;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    /* Counter HUD Display */
+    .cpr-hud-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .cpr-counter-display {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card, #ffffff);
+      border: 1.5px solid rgba(225, 29, 72, 0.35);
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 16px rgba(225, 29, 72, 0.08);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      font-family: 'Tajawal', system-ui, sans-serif;
+    }
+
+    .cpr-cycle-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card, #ffffff);
+      border: 1.5px solid rgba(37, 99, 235, 0.3);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.06);
+    }
+
+    /* 30-Press Progress Track */
+    .cpr-progress-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+
+    .cpr-progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cpr-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2563EB 0%, #06B6D4 50%, #F43F5E 100%);
+      border-radius: 999px;
+      transition: width 0.1s linear;
+    }
+
+    .cpr-progress-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Rescue Breath Dynamic Alert */
+    .cpr-breath-alert {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+      margin-bottom: 20px;
+      animation: alertBounce 0.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes alertBounce {
+      0% { transform: scale(0.98); }
+      100% { transform: scale(1.02); }
+    }
+
+    /* 3D Pulse Disc */
+    .cpr-pulse-ring {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff3366 0%, #e11d48 50%, #be123c 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 36px rgba(225, 29, 72, 0.42), 0 0 0 8px rgba(255, 51, 102, 0.12), 0 0 0 20px rgba(255, 51, 102, 0.05);
+      margin: 12px 0 24px;
+      transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.08s ease-out;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cpr-pulse-ring.pulsing {
+      transform: scale(1.18);
+      box-shadow: 0 20px 50px rgba(225, 29, 72, 0.7), 0 0 0 16px rgba(255, 51, 102, 0.32), 0 0 0 34px rgba(255, 51, 102, 0.14);
+    }
+
+    .cpr-heart-icon-badge {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+      color: #ffffff;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+      transition: transform 0.08s ease;
+    }
+
+    .cpr-pulse-ring.pulsing .cpr-heart-icon-badge {
+      transform: scale(1.25);
+    }
+
+    .cpr-bpm-label {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .cpr-unit-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      opacity: 0.95;
+      margin-top: 4px;
+    }
+
+    /* Rate Presets (100 / 110 / 120) */
+    .cpr-rate-selector {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: rgba(0, 0, 0, 0.04);
+      padding: 4px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .cpr-rate-btn {
+      background: transparent;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: 'Tajawal', system-ui, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .cpr-rate-btn.active {
+      background: #ffffff;
+      color: #2563EB;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      font-weight: 800;
+    }
+
+    /* Ultra-Refined Buttons */
+    .cpr-actions-container {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .btn-cpr-start {
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+      color: #FFFFFF !important;
+      border: none;
+      border-radius: var(--radius-full);
+      padding: 15px 38px;
+      font-family: 'Tajawal', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.38), 0 2px 6px rgba(37, 99, 235, 0.2);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      position: relative;
+    }
+
+    .btn-cpr-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.48), 0 4px 10px rgba(37, 99, 235, 0.25);
+      background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+    }
+
+    .btn-cpr-start:active {
+      transform: scale(0.97);
+    }
+
+    .btn-cpr-start.is-active-cpr {
+      background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+      box-shadow: 0 10px 28px rgba(239, 68, 68, 0.5) !important;
+    }
+
+    .btn-cpr-reset {
+      background: #FFFFFF;
+      color: #1E293B !important;
+      border: 1.5px solid #CBD5E1;
+      border-radius: var(--radius-full);
+      padding: 14px 30px;
+      font-family: 'Tajawal', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .btn-cpr-reset:hover {
+      transform: translateY(-2px);
+      border-color: #2563EB;
+      color: #2563EB !important;
+      background: #F0F9FF;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+    }
+
+    .btn-cpr-reset:active {
+      transform: scale(0.97);
+    }
+
+    /* Quiz Styling */
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .quiz-option-btn {
+      background: var(--bg-body);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      text-align: start;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quiz-option-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .quiz-option-btn.correct {
+      border-color: var(--severity-green) !important;
+      background: var(--severity-green-bg) !important;
+      color: var(--severity-green) !important;
+    }
+    .quiz-option-btn.wrong {
+      border-color: var(--severity-red) !important;
+      background: var(--severity-red-bg) !important;
+      color: var(--severity-red) !important;
+    }
+    .quiz-explanation-box {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      display: none;
+      animation: fadeInMsg 0.25s ease;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .learn-container {
+        padding: 0 12px;
+        margin: 16px auto 30px;
+        gap: 20px;
+      }
+      .learn-section-card {
+        padding: 20px 14px;
+        border-radius: var(--radius-lg);
+      }
+      .metronome-box {
+        padding: 20px 12px;
+      }
+      .cpr-pulse-ring {
+        width: 110px;
+        height: 110px;
+      }
+      .cpr-bpm-label {
+        font-size: 1.6rem;
+      }
+      .quiz-option-btn {
+        padding: 12px 14px;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+  <!-- Google Fonts: Inter (Crystal-clear English UI) + Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@500;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN Fallback for Brands Icons (LinkedIn, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- 1. Mandatory Unclosable Emergency Banner -->
+  
+
+  <!-- 2. Header & Navigation -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-logo" title="VENOM مسعف الذكي">
+        <div class="logo-badge">
+          <img src="../assets/images/venom-official-logo.png" alt="VENOM مسعف الذكي" class="brand-badge-img">
+        </div>
+        <div class="logo-text">
+          <h1 class="brand-heading">
+            <span class="venom-text-gradient">VENOM</span>
+            <span class="brand-ar-text">مسعف الذكي</span>
+          </h1>
+          <span class="brand-tagline">منظومة الإسعاف والتوجيه الطبي الفوري</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="../index.html" class="nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span data-i18n="navHome">الرئيسية</span>
+            </a>
+          </li>
+          <li>
+            <a href="chat.html" class="nav-link">
+              <i class="fa-solid fa-robot"></i>
+              <span data-i18n="navChat">المساعد الذكي</span>
+            </a>
+          </li>
+          <li>
+            <a href="triage.html" class="nav-link">
+              <i class="fa-solid fa-stethoscope"></i>
+              <span data-i18n="navTriage">الفرز السريع</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacts.html" class="nav-link">
+              <i class="fa-solid fa-hospital"></i>
+              <span data-i18n="navContacts">أرقام الطوارئ</span>
+            </a>
+          </li>
+          <li>
+            <a href="learn.html" class="nav-link active">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span data-i18n="navLearn">تعلّم الإسعافات</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin" class="nav-link admin-nav-link" title="لوحة التحكم الإدارية (Admin)">
+              <i class="fa-solid fa-gear"></i>
+              <span>لوحة الإدارة</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+            <div class="nav-controls">
+        <!-- Admin Shortcut Button -->
+        <a href="/admin" class="admin-quick-btn" title="لوحة تحكم المشرف (Admin Dashboard)">
+          <i class="fa-solid fa-user-shield"></i>
+          <span class="admin-btn-text">لوحة الإدارة</span>
+        </a>
+        <button id="lang-switch-btn" class="lang-switch-btn" title="تبديل اللغة">
+          <i class="fa-solid fa-globe"></i>
+          <span id="lang-btn-text">English</span>
+        </button>
+        <button id="theme-toggle-btn" class="icon-btn" title="الوضع الليلي">
+          <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Learning Main Content -->
+  <main class="learn-container">
+
+    
+    <!-- ====================================================================
+         SECTION 0: INTERACTIVE FIRST AID KIT STATION (محطة حقيبة الإسعافات الذكية)
+         ==================================================================== -->
+    <section class="learn-section-card kit-guide-section" id="kitGuideSection">
+      <div class="kit-section-header">
+        <div class="kit-title-group">
+          <div class="kit-badge-wrap">
+            <img src="../assets/images/hero-kit-3d.png?v=63" alt="حقيبة الإسعافات الأولية" class="kit-badge-3d-icon">
+            <span class="kit-live-pill">
+              <i class="fa-solid fa-kit-medical"></i>
+              <span>محطة فحص معدات الإسعاف التفاعلية</span>
+            </span>
+          </div>
+          <h2 class="kit-main-heading">دليل حقيبة الإسعافات الأولية ومكوناتها وطريقة استخدامها</h2>
+          <p class="kit-lead-text">
+            اختر أي أداة من درج الحقيبة على اليمين لعرض طريقة استخدامها الصحيحة، دواعي استعمالها السريرية، والتحذيرات الطبية المعتمدة لتجنب الأخطاء الشائعة.
+          </p>
+        </div>
+
+        <div class="kit-stats-badge">
+          <span class="kit-count-number" id="kitItemsCount">16</span>
+          <span class="kit-count-label">أداة طبية معتمدة</span>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Category Filter & Search -->
+      <div class="kit-toolbar">
+        <div class="kit-category-pills" id="kitCategoryPills">
+          <button type="button" class="kit-cat-pill active" data-category="all">
+            <i class="fa-solid fa-border-all"></i>
+            <span>كافة المحتويات (16)</span>
+          </button>
+          <button type="button" class="kit-cat-pill" data-category="wound">
+            <i class="fa-solid fa-bandage"></i>
+            <span>التضميد والنزيف</span>
+          </button>
+          <button type="button" class="kit-cat-pill" data-category="sterilize">
+            <i class="fa-solid fa-hand-dots"></i>
+            <span>التعقيم والحماية</span>
+          </button>
+          <button type="button" class="kit-cat-pill" data-category="tools">
+            <i class="fa-solid fa-scissors"></i>
+            <span>الأدوات الطبية</span>
+          </button>
+          <button type="button" class="kit-cat-pill" data-category="emergency">
+            <i class="fa-solid fa-truck-medical"></i>
+            <span>طوارئ وإنقاذ حرج</span>
+          </button>
+        </div>
+
+        <div class="kit-search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="kitSearchInput" placeholder="ابحث عن أداة (مثال: شاش، مقص، تورنيكيت، حروق)..." autocomplete="off">
+          <button type="button" id="kitClearSearch" class="kit-clear-btn" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Two-Column Master-Detail Console -->
+      <div class="kit-console-grid">
+        <!-- Right Column: Interactive Tool Rack (درج محتويات الحقيبة) -->
+        <div class="kit-rack-column">
+          <div class="kit-rack-header">
+            <span class="rack-title"><i class="fa-solid fa-boxes-stacked"></i> قائمة أدوات الحقيبة</span>
+            <span class="rack-hint">انقر على الأداة للفحص</span>
+          </div>
+          <div class="kit-tray-list" id="kitTrayList">
+            <!-- Dynamically populated 16 items -->
+          </div>
+        </div>
+
+        <!-- Left Column: Live Inspection & Protocol Monitor (شاشة الفحص والبروتوكول) -->
+        <div class="kit-inspector-column" id="kitInspectorColumn">
+          <!-- Dynamically populated active tool detail card -->
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ====================================================================
+         SECTION A: INTERACTIVE CPR METRONOME (Section 6.8 Requirement)
+         ==================================================================== -->
+    <section class="learn-section-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-heart-pulse" style="color: var(--severity-red);"></i>
+            <span>جهاز ضبط إيقاع ضغطات الصدر التفاعلي (CPR Metronome)</span>
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            التوصيات العالمية (AHA / ERC) تنص على الضغط بمعدل <strong>100 إلى 120 ضغطة في الدقيقة</strong> بعمق 5-6 سم.
+          </p>
+        </div>
+        <span class="badge-severity red">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span class="badge-dot"></span>
+          <span>110 BPM معدل مثالي</span>
+        </span>
+      </div>
+
+      <div class="metronome-box">
+        <!-- Medical Device Status Header -->
+        <div class="metronome-device-header">
+          <div class="device-status-pill">
+            <span class="device-status-dot"></span>
+            <span>نظام التوجيه الإسعافي جاهز (AHA Ready)</span>
+          </div>
+          <div class="device-guideline-pill">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>معايير جمعية القلب الأمريكية 2024</span>
+          </div>
+          <div class="device-guideline-pill">
+            <i class="fa-solid fa-volume-high"></i>
+            <span>مزامنة صوتية وضوئية</span>
+          </div>
+        </div>
+
+        <!-- HUD Displays -->
+        <div class="cpr-hud-container">
+          <div class="cpr-counter-display">
+            <i class="fa-solid fa-hands-holding-circle" style="color: var(--severity-red);"></i>
+            <span class="cpr-hud-label">الضغطات:</span>
+            <span id="cpr-press-counter" style="color: var(--severity-red); font-size: 1.5rem; font-weight: 900; min-width: 28px; display: inline-block;">0</span>
+            <span class="cpr-hud-total" style="font-size: 1rem;">/ 30</span>
+          </div>
+          <div class="cpr-cycle-badge">
+            <i class="fa-solid fa-arrows-spin" style="color: var(--primary);"></i>
+            <span class="cpr-hud-label">الدورة الحالية:</span>
+            <span id="cpr-cycle-counter" style="color: var(--primary); font-size: 1.3rem;">1</span>
+          </div>
+        </div>
+
+        <!-- 30-Press Progress Track -->
+        <div class="cpr-progress-wrap">
+          <div class="cpr-progress-track">
+            <div id="cpr-progress-fill" class="cpr-progress-fill"></div>
+          </div>
+          <div class="cpr-progress-labels">
+            <span>البداية (0)</span>
+            <span id="cpr-progress-status">دورة ضغطات الصدر</span>
+            <span>نَفَسَا الإنقاذ (30)</span>
+          </div>
+        </div>
+
+        <!-- Rescue Breath Dynamic Alert -->
+        <div id="cpr-breath-alert" class="cpr-breath-alert">
+          <i class="fa-solid fa-lungs" style="font-size: 1.4rem;"></i>
+          <span>أعطِ نَفَسَي إنقاذ الآن! (Rescue Breaths 2x) ثم واصل الضغط</span>
+        </div>
+
+        <!-- Pulsing Heart Metronome Disc -->
+        <div class="cpr-pulse-ring" id="cpr-pulse-circle" title="انقر لتشغيل أو إيقاف الإيقاع">
+          <i class="fa-solid fa-heart-pulse cpr-heart-icon-badge"></i>
+          <div class="cpr-bpm-label" id="cpr-bpm-display">110</div>
+          <div class="cpr-unit-label">BPM / ضغطة بالدقيقة</div>
+        </div>
+
+        <!-- Speed Presets Selector -->
+        <div class="cpr-rate-selector">
+          <span style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); padding: 0 8px;">سرعة النبض:</span>
+          <button type="button" class="cpr-rate-btn" onclick="CPRMetronome.setBpm(100)">100 BPM</button>
+          <button type="button" class="cpr-rate-btn active" id="bpm-110-btn" onclick="CPRMetronome.setBpm(110)">110 BPM (المثالي)</button>
+          <button type="button" class="cpr-rate-btn" onclick="CPRMetronome.setBpm(120)">120 BPM</button>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 560px; margin-bottom: 22px; line-height: 1.6; font-weight: 600;">
+          اضغط زر التشغيل واضغط بقوة وسرعة (عمق 5-6 سم) على منتصف القفص الصدري تزامناً مع كل ومضة ونبضة صوتية.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="cpr-actions-container">
+          <button id="start-metronome-btn" class="btn-cpr-start">
+            <i class="fa-solid fa-play"></i>
+            <span>بدء إيقاع النبض الصوتي</span>
+          </button>
+          <button id="reset-cpr-btn" class="btn-cpr-reset">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>تصفير العداد</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION B: INTERACTIVE FIRST AID QUIZ (Section 6.8 Requirement)
+         ==================================================================== -->
+    <section class="learn-section-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-brain" style="color: var(--primary);"></i>
+            <span>اختبار الإسعافات السريع (Interactive Quiz)</span>
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            سؤال وجواب لاختبار سرعة بديهتك وتصحيح المفاهيم الخاطئة الشائعة
+          </p>
+        </div>
+        <div style="background: var(--bg-body); border: 1px solid var(--border-color); padding: 6px 14px; border-radius: var(--radius-full); font-weight: 700; font-size: 0.9rem;">
+          النتيجة: <span id="quiz-score" style="color: var(--primary);">0</span> / <span id="quiz-total">4</span>
+        </div>
+      </div>
+
+      <div id="quiz-wrapper">
+        <h3 id="quiz-question-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px;">
+          السؤال 1: ما هو الإجراء الصحيح فور حدوث حرق منزلي بسيط بماء ساخن؟
+        </h3>
+
+        <div class="quiz-options-list" id="quiz-options">
+          <!-- Dynamically populated options -->
+        </div>
+
+        <div class="quiz-explanation-box" id="quiz-explanation">
+          <!-- Explanation box -->
+        </div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+          <button id="next-quiz-btn" class="btn-primary" style="display: none; align-items: center; gap: 8px;">
+            <span>السؤال التالي</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Bottom App Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="../index.html" class="mobile-nav-item">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="chat.html" class="mobile-nav-item">
+      <i class="fa-solid fa-robot"></i>
+      <span>المساعد</span>
+    </a>
+    <a href="triage.html" class="mobile-nav-item">
+      <i class="fa-solid fa-stethoscope"></i>
+      <span>الفرز</span>
+    </a>
+    <a href="contacts.html" class="mobile-nav-item">
+      <i class="fa-solid fa-hospital"></i>
+      <span>الطوارئ</span>
+    </a>
+    <a href="learn.html" class="mobile-nav-item active">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>تعلّم</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="../components/severity-badge.js"></script>
+  <script src="../components/team-modal.js?v=60"></script>
+  <script src="../js/app.js?v=60"></script>
+
+  <!-- Quiz & Metronome Logic -->
+  <script>
+    
+    /* ==========================================================================
+       1. CPR METRONOME AUDIO & VISUAL ENGINE
+       ========================================================================== */
+    const Metronome = {
+      bpm: 110,
+      intervalId: null,
+      isRunning: false,
+      pressCount: 0,
+      cycleCount: 1,
+      audioCtx: null,
+
+      init() {
+        const startBtn = document.getElementById('start-metronome-btn');
+        const resetBtn = document.getElementById('reset-cpr-btn');
+        const pulseCircle = document.getElementById('cpr-pulse-circle');
+
+        if (startBtn) {
+          startBtn.addEventListener('click', () => this.toggle());
+        }
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => this.resetCounter());
+        }
+        if (pulseCircle) {
+          pulseCircle.addEventListener('click', () => this.toggle());
+        }
+      },
+
+      setBpm(newBpm) {
+        this.bpm = newBpm;
+        const display = document.getElementById('cpr-bpm-display');
+        if (display) display.innerText = newBpm;
+        const rateBtns = document.querySelectorAll('.cpr-rate-btn');
+        rateBtns.forEach(btn => {
+          if (btn.innerText.includes(newBpm.toString())) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        if (this.isRunning) {
+          clearInterval(this.intervalId);
+          const ms = (60 / this.bpm) * 1000;
+          this.intervalId = setInterval(() => {
+            this.tick();
+          }, ms);
+        }
+      },
+
+      toggle() {
+        if (this.isRunning) {
+          this.stop();
+        } else {
+          this.start();
+        }
+      },
+
+      start() {
+        this.isRunning = true;
+        const startBtn = document.getElementById('start-metronome-btn');
+        if (startBtn) {
+          startBtn.innerHTML = '<i class="fa-solid fa-pause"></i><span>إيقاف مؤقت للإيقاع</span>';
+          startBtn.style.background = '#dc2626';
+        }
+
+        const ms = (60 / this.bpm) * 1000;
+        this.intervalId = setInterval(() => {
+          this.tick();
+        }, ms);
+      },
+
+      stop() {
+        this.isRunning = false;
+        clearInterval(this.intervalId);
+        const startBtn = document.getElementById('start-metronome-btn');
+        if (startBtn) {
+          startBtn.innerHTML = '<i class="fa-solid fa-play"></i><span>بدء إيقاع النبض الصوتي</span>';
+          startBtn.style.background = '';
+        }
+      },
+
+      tick() {
+        // Visual Pulse
+        const ring = document.getElementById('cpr-pulse-circle');
+        if (ring) {
+          ring.classList.add('pulsing');
+          setTimeout(() => ring.classList.remove('pulsing'), 90);
+        }
+
+        // Web Audio Synthesizer Click
+        this.playBeep();
+
+        // Increment CPR counter
+        this.pressCount++;
+        if (this.pressCount > 30) {
+          this.pressCount = 1;
+          this.cycleCount++;
+        }
+
+        const pressEl = document.getElementById('cpr-press-counter');
+        const cycleEl = document.getElementById('cpr-cycle-counter');
+        if (pressEl) pressEl.innerText = this.pressCount;
+        if (cycleEl) cycleEl.innerText = this.cycleCount;
+
+        const alert = document.getElementById('cpr-breath-alert');
+        if (alert) {
+          if (this.pressCount === 30) {
+            alert.classList.add('show');
+          } else if (this.pressCount === 1) {
+            alert.classList.remove('show');
+          }
+        }
+      },
+
+      playBeep() {
+        try {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (!this.audioCtx && AudioCtx) {
+            this.audioCtx = new AudioCtx();
+          }
+          if (!this.audioCtx) return;
+
+          const osc = this.audioCtx.createOscillator();
+          const gain = this.audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(this.pressCount === 30 ? 1000 : 750, this.audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.2, this.audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + 0.06);
+
+          osc.connect(gain);
+          gain.connect(this.audioCtx.destination);
+          osc.start();
+          osc.stop(this.audioCtx.currentTime + 0.06);
+        } catch (e) {}
+      },
+
+      resetCounter() {
+        this.pressCount = 0;
+        this.cycleCount = 1;
+        const pressEl = document.getElementById('cpr-press-counter');
+        const cycleEl = document.getElementById('cpr-cycle-counter');
+        if (pressEl) pressEl.innerText = '0';
+        if (cycleEl) cycleEl.innerText = '1';
+        const alert = document.getElementById('cpr-breath-alert');
+        if (alert) alert.classList.remove('show');
+      }
+    };
+    window.Metronome = Metronome;
+    window.CPRMetronome = Metronome;
+
+    /* ==========================================================================
+       2. INTERACTIVE FIRST AID QUIZ ENGINE
+       ========================================================================== */
+    const Quiz = {
+      currentIndex: 0,
+      score: 0,
+      questions: [
+        {
+          title: 'ما هو الإجراء الصحيح فور حدوث حرق منزلي بسيط بماء ساخن؟',
+          options: [
+            'وضع معجون أسنان أو طحينة لتبريد الجرح',
+            'سكب ماء جارٍ فاتر من الصنبور لمدة 10 إلى 20 دقيقة',
+            'وضع مكعبات ثلج مباشرة فوق الجلد المحترق',
+            'فقأ الفقاقيع المائية لتفريغ السوائل'
+          ],
+          correct: 1,
+          explanation: 'الإجراء المعتمد عالمياً هو تبريد الحرق بماء الصنبور الفاتر لمدة 10-20 دقيقة. الثلج ومعجون الأسنان يسببان تلفاً إضافياً في الأنسجة.'
+        },
+        {
+          title: 'عند حدوث نزيف من الأنف (رعاف)، ما هي الوضعية الصحيحة لرأس المصاب؟',
+          options: [
+            'إرجاع الرأس للخلف مع الاستلقاء',
+            'إمالة الرأس قليلاً للأمام مع الضغط على أرنبة الأنف اللينة',
+            'النوم على البطن ووضع ثلج على مؤخرة الرقبة',
+            'سد فتحتي الأنف بقطن جاف ونفث الهواء بقوة'
+          ],
+          correct: 1,
+          explanation: 'يجب إمالة الرأس للأمام لتجنب ابتلاع الدم أو نزوله لمجرى التنفس مع الضغط المستمر لمدة 10 دقائق.'
+        },
+        {
+          title: 'ما هو معدل ضغطات الصدر الموصى به أثناء الإنعاش القلبي الرئوي (CPR) للبالغين؟',
+          options: [
+            '30 إلى 50 ضغطة في الدقيقة',
+            '100 إلى 120 ضغطة في الدقيقة',
+            '200 ضغطة سريعة جداً في الدقيقة',
+            'ضغطات متقطعة فقط عند سماع تأوه المصاب'
+          ],
+          correct: 1,
+          explanation: 'توصي جمعية القلب الأمريكية (AHA) بمعدل 100-120 ضغطة بالدقيقة للحفاظ على تدفق الدم والأكسجين للدماغ.'
+        },
+        {
+          title: 'إذا ابتلع طفل مادة تنظيف كيميائية كاوية بالخطأ، ماذا تفعل فوراً؟',
+          options: [
+            'إجباره على التقيؤ فوراً بوضع إصبعك في حلقه',
+            'إعطاؤه لتراً من الحليب أو عصير الليمون لمعادلة المادة',
+            'الاتصال بمركز السموم أو 123 والاحتفاظ بعبوة المنظف دون إجباره على القيء',
+            'الانتظار حتى يشكو من مغص أو قيء'
+          ],
+          correct: 2,
+          explanation: 'لا تجبر المصاب على التقيؤ أبداً لأن المادة الكاوية ستحرق المريء والحلق مرة ثانية أثناء خروجها. اتصل بمركز السموم فوراً.'
+        }
+      ],
+
+      init() {
+        this.score = parseInt(localStorage.getItem('fa_quiz_score') || '0', 10);
+        const scoreEl = document.getElementById('quiz-score');
+        const totalEl = document.getElementById('quiz-total');
+        if (scoreEl) scoreEl.innerText = this.score;
+        if (totalEl) totalEl.innerText = this.questions.length;
+        this.renderQuestion();
+
+        const nextBtn = document.getElementById('next-quiz-btn');
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            this.currentIndex++;
+            if (this.currentIndex < this.questions.length) {
+              this.renderQuestion();
+            } else {
+              this.showQuizComplete();
+            }
+          });
+        }
+      },
+
+      renderQuestion() {
+        const q = this.questions[this.currentIndex];
+        const titleEl = document.getElementById('quiz-question-title');
+        if (titleEl) titleEl.innerText = `السؤال ${this.currentIndex + 1}: ${q.title}`;
+        
+        const optContainer = document.getElementById('quiz-options');
+        const expBox = document.getElementById('quiz-explanation');
+        const nextBtn = document.getElementById('next-quiz-btn');
+
+        if (expBox) expBox.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+
+        if (optContainer) {
+          optContainer.innerHTML = q.options.map((opt, idx) => `
+            <button class="quiz-option-btn" data-index="${idx}" onclick="Quiz.chooseOption(${idx})">
+              <span>${opt}</span>
+              <span class="opt-status"></span>
+            </button>
+          `).join('');
+        }
+      },
+
+      chooseOption(selectedIndex) {
+        const q = this.questions[this.currentIndex];
+        const buttons = document.querySelectorAll('.quiz-option-btn');
+        const expBox = document.getElementById('quiz-explanation');
+        const nextBtn = document.getElementById('next-quiz-btn');
+
+        buttons.forEach((btn, idx) => {
+          btn.disabled = true;
+          const statusSpan = btn.querySelector('.opt-status');
+          if (idx === q.correct) {
+            btn.classList.add('correct');
+            if (statusSpan) statusSpan.innerHTML = '<i class="fa-solid fa-check" style="color: var(--severity-green); margin-inline-end: 4px;"></i><span>صحيح</span>';
+          } else if (idx === selectedIndex) {
+            btn.classList.add('wrong');
+            if (statusSpan) statusSpan.innerHTML = '<i class="fa-solid fa-xmark" style="color: var(--severity-red); margin-inline-end: 4px;"></i><span>غير صحيح</span>';
+          }
+        });
+
+        if (selectedIndex === q.correct) {
+          this.score++;
+          localStorage.setItem('fa_quiz_score', this.score);
+          const scoreEl = document.getElementById('quiz-score');
+          if (scoreEl) scoreEl.innerText = this.score;
+          if (expBox) {
+            expBox.style.background = 'var(--severity-green-bg)';
+            expBox.style.border = '1px solid var(--severity-green-border)';
+            expBox.style.color = 'var(--severity-green)';
+            expBox.innerHTML = `<i class="fa-solid fa-circle-check" style="margin-inline-end: 6px;"></i> ${q.explanation}`;
+          }
+        } else {
+          if (expBox) {
+            expBox.style.background = 'var(--severity-red-bg)';
+            expBox.style.border = '1px solid var(--severity-red-border)';
+            expBox.style.color = 'var(--severity-red)';
+            expBox.innerHTML = `<i class="fa-solid fa-circle-xmark" style="margin-inline-end: 6px;"></i> ${q.explanation}`;
+          }
+        }
+
+        if (expBox) expBox.style.display = 'block';
+        if (nextBtn) nextBtn.style.display = 'inline-flex';
+      },
+
+      selectOption(idx) {
+        this.chooseOption(idx);
+      },
+
+      showQuizComplete() {
+        const wrapper = document.getElementById('quiz-wrapper');
+        if (wrapper) {
+          wrapper.innerHTML = `
+            <div style="text-align: center; padding: 40px 20px;">
+              <div style="font-size: 3.5rem; color: #f59e0b; margin-bottom: 16px;">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h3 style="font-size: 1.6rem; font-weight: 900; margin-bottom: 8px; color: var(--text-main);">أحسنت! أكملت الاختبار الإسعافي</h3>
+              <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;">
+                نتيجتك النهائية: <strong>${this.score} من ${this.questions.length}</strong>
+              </p>
+              <button onclick="location.reload()" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>إعادة الاختبار من البداية</span>
+              </button>
+            </div>
+          `;
+        }
+      }
+    };
+    window.Quiz = Quiz;
+
+    /* ====================================================================
+       INTERACTIVE FIRST AID KIT CONTROLLER (16 Clinically Verified Tools)
+       ==================================================================== */
+    const KitGuide = {
+      items: [
+        {
+          id: 'gauze',
+          category: 'wound',
+          categoryName: 'تضميد الجروح والنزيف',
+          nameAr: 'شاش معقم',
+          nameEn: 'Sterile Gauze Swabs',
+          icon: 'fa-solid fa-bandage',
+          color: 'wound-color',
+          purpose: 'الضغط المباشر والسيطرة الفورية على النزيف وتغطية الجروح المفتوحة لمنع دخول البكتيريا والجراثيم.',
+          steps: [
+            'ضع قطعة الشاش المعقمة مباشرة فوق موضع النزيف.',
+            'اضغط بقوة وثبات براحة يدك لمدة 5 إلى 10 دقائق متواصلة.',
+            'إذا تشبع الشاش بالدم، لا تنزعه أبداً بل ضع طبقة شاش جديدة فوقه وواصل الضغط.'
+          ],
+          warning: 'نزع الشاش القديم المشبع بالدم يمزق الخثرة الدموية المتكونة حديثاً ويعيد النزيف الحاد من جديد.',
+          shelfLife: 'يُحفظ في مكان جاف ومغلق تماماً؛ لا تستخدم العبوة إذا كانت ممزقة أو رطبة.'
+        },
+        {
+          id: 'crepe',
+          category: 'wound',
+          categoryName: 'تضميد الجروح والنزيف',
+          nameAr: 'الرباط الضاغط المرن',
+          nameEn: 'Elastic Crepe Bandage',
+          icon: 'fa-solid fa-ring',
+          color: 'wound-color',
+          purpose: 'تثبيت المفاصل المصابة (التواء الكاحل والمعصم)، تقليل التورم والنزيف الداخلي، وتأمين الضمادات.',
+          steps: [
+            'ابدأ اللف من أبعد نقطة في الطرف المصاب (الأسفل) باتجاه القلب.',
+            'لف الرباط بشكل حلزوني متداخل بنسبة الثلث مع شد معتدل ومريح.',
+            'تأكد من دفء أصابع الطرف المصاب وعودة لونها الوردي الطبيعي عند الضغط عليها.'
+          ],
+          warning: 'الشد المفرط للرباط يقطع الدورة الدموية الشريانية عن الأصابع؛ راقب أي تنميل أو برودة أو زرقة فوراً.',
+          shelfLife: 'قابل للغسل وإعادة الاستخدام؛ احرص على بقائه نظيفاً وجافاً.'
+        },
+        {
+          id: 'plasters',
+          category: 'wound',
+          categoryName: 'تضميد الجروح والنزيف',
+          nameAr: 'الضمادات اللاصقة الجاهزة',
+          nameEn: 'Adhesive Plasters (Band-Aids)',
+          icon: 'fa-solid fa-tape',
+          color: 'wound-color',
+          purpose: 'حماية الخدوش والجروح اليومية السطحية الصغيرة من الميكروبات واحتكاك الملابس.',
+          steps: [
+            'اغسل الجرح بماء نظيف وصابون ثم جففه جيداً بقطعة شاش.',
+            'أزل الغلاف الواقي وضع الوسادة المعقمة مباشرة فوق الجرح.',
+            'ثبت الأطراف اللاصقة على الجلد السليم، وغير الضمادة يومياً أو فور تبللها.'
+          ],
+          warning: 'لا تضع الضمادة اللاصقة على الجروح الملتهبة أو المتقيحة دون استشارة الطبيب.',
+          shelfLife: 'تحقق من تاريخ الصلاحية على العبوة وتجنب حفظها في أماكن شديدة الحرارة.'
+        },
+        {
+          id: 'tape',
+          category: 'wound',
+          categoryName: 'تضميد الجروح والنزيف',
+          nameAr: 'الشريط اللاصق الطبي',
+          nameEn: 'Micropore Surgical Tape',
+          icon: 'fa-solid fa-scroll',
+          color: 'wound-color',
+          purpose: 'تثبيت الشاش والضمادات والجبائر الخفيفة على الجلد دون إحداث تهيج أو ألم عند النزع.',
+          steps: [
+            'قص أو اقطع الطول المناسب من الشريط دون لمس السطح اللاصق.',
+            'ثبت أطراف الشاش على الجلد السليم الجاف المحيط بالجرح.',
+            'اضغط بلطف على الشريط لضمان التصاقه المحكم وثباته.'
+          ],
+          warning: 'تأكد من جفاف الجلد تماماً قبل وضع الشريط حتى لا يفقد قدرته على الالتصاق.',
+          shelfLife: 'احفظ البكرة داخل علبة محكمة بعيداً عن الغبار والرطوبة.'
+        },
+        {
+          id: 'burn_pad',
+          category: 'wound',
+          categoryName: 'تضميد الجروح والنزيف',
+          nameAr: 'شاش ومرهم الحروق المائي',
+          nameEn: 'Hydrogel Burn Dressing',
+          icon: 'fa-solid fa-fire-flame-curved',
+          color: 'wound-color',
+          purpose: 'تبريد أنسجة الحرق فوراً، تسكين الألم، وترطيب موضع الإصابة دون الالتصاق المؤلم بالجلد.',
+          steps: [
+            'برد الحرق أولاً بماء صنبور فاتر وجارٍ لمدة 15 إلى 20 دقيقة.',
+            'ضع ضمادة الجل المائي برفق فوق موضع الحرق دون أي فرك.',
+            'ثبتها برباط شاش خفيف غير ضاغط وتوجه للرعاية الطبية إن كان الحرق كبيراً.'
+          ],
+          warning: 'ممنوع وضع معجون الأسنان، الزبدة، أو مكعبات الثلج المباشرة لأنها تحبس الحرارة وتضاعف تلف الأنسجة.',
+          shelfLife: 'استخدم الضمادة فور فتح الغلاف؛ تخلص منها إن كانت العبوة جافة.'
+        },
+        {
+          id: 'gloves',
+          category: 'sterilize',
+          categoryName: 'التعقيم والحماية الشخصية',
+          nameAr: 'قفازات الفحص الطبية النيتريل',
+          nameEn: 'Nitrile Examination Gloves',
+          icon: 'fa-solid fa-hand-dots',
+          color: 'sterilize-color',
+          purpose: 'حاجز الحماية الأول والأساسي لعزل المسعف عن ملامسة دماء وسوائل المصاب منعاً لانتقال العدوى الفيروسية.',
+          steps: [
+            'ارتد القفازات قبل لمس المصاب أو فتح أي عبوة شاش أو مطهر.',
+            'تعامل مع المصاب وتجنب لمس وجهك أو هاتفك أثناء ارتدائها.',
+            'انزع القفازات بسحبها من المعصم لتقلب من الداخل للخارج وتخلص منها في سلة المهملات فوراً.'
+          ],
+          warning: 'يُفضل قفازات النيتريل الخالية من اللاتكس (Latex-Free) لتجنب تحسس المصاب أو المسعف.',
+          shelfLife: 'تجنب تعريضها لأشعة الشمس المباشرة أو الحرارة حتى لا تفقد مرونتها وتتمزق.'
+        },
+        {
+          id: 'wipes',
+          category: 'sterilize',
+          categoryName: 'التعقيم والحماية الشخصية',
+          nameAr: 'مسحات كحولية ومطهرة',
+          nameEn: 'Antiseptic Alcohol Wipes',
+          icon: 'fa-solid fa-pump-medical',
+          color: 'sterilize-color',
+          purpose: 'تطهير أيدي المسعف، تعقيم الأدوات الطبية (المقص والملقط)، وتنظيف الجلد السليم المحيط بالجرح.',
+          steps: [
+            'امسح الجلد المحيط بالجرح بحركة دائرية من الداخل إلى الخارج.',
+            'استخدم مسحة منفصلة لتعقيم أطراف الملقط أو مقص الطوارئ.',
+            'اترك الكحول ليجف في الهواء تماماً لمدة 30 ثانية ليعطي مفعوله القاتل للبكتيريا.'
+          ],
+          warning: 'خطأ طبي شائع: يُمنع مسح الجرح العميق المفتوح بالكحول لأنه يتلف الخلايا الحية ويبطئ التئام الجرح بشدة.',
+          shelfLife: 'مغلفة بشكل فردي؛ لا تستخدم المسحة إذا كانت العبوة جافة.'
+        },
+        {
+          id: 'saline',
+          category: 'sterilize',
+          categoryName: 'التعقيم والحماية الشخصية',
+          nameAr: 'محلول غسيل العين المعقم والملحي',
+          nameEn: 'Sterile Saline / Eye Wash',
+          icon: 'fa-solid fa-eye-dropper',
+          color: 'sterilize-color',
+          purpose: 'غسل العين المصابة بالمواد الكيميائية أو الأتربة، وشطف وتنظيف الجروح الملوثة بلطف فسيولوجي آمن.',
+          steps: [
+            'افتح جفني العين المصابة بأصابعك المعقمة برفق.',
+            'اسكب المحلول باستمرار من الزاوية الداخلية للعين باتجاه الزاوية الخارجية لمنع وصول الملوثات للعين السليمة.',
+            'استمر في الغسيل لمدة 15 دقيقة على الأقل في حالات المواد الكيميائية.'
+          ],
+          warning: 'ممنوع فرك العين نهائياً عند دخول جسم غريب أو مادة كيميائية تجنباً لخدش القرنية.',
+          shelfLife: 'تخلص من الأمبولة المفتوحة بعد 24 ساعة لضمان خلوها من البكتيريا.'
+        },
+        {
+          id: 'shears',
+          category: 'tools',
+          categoryName: 'الأدوات الطبية',
+          nameAr: 'مقص الطوارئ الطبي لملابس الحوادث',
+          nameEn: 'Trauma Shears (Bandage Scissors)',
+          icon: 'fa-solid fa-scissors',
+          color: 'tools-color',
+          purpose: 'قص الملابس القاسية (الجينز والجلد) بسرعة لكشف موضع الجرح أو الكسر، وقص الشاش والضمادات السميكة بأمان.',
+          steps: [
+            'أدخل الطرف السفلي المسطح والمستدير بين ملابس المصاب وجلده.',
+            'قص القماش بحركات ثابتة ومستقيمة لكشف موضع النزيف أو الكسر فوراً.',
+            'عقم شفرات المقص بمسحة كحولية بعد الانتهاء وأعده للحقيبة.'
+          ],
+          warning: 'تصميم الرأس السفلي المسطح يضمن عدم جرح أو وخز جلد المصاب حتى أثناء الحركة أو التوتر.',
+          shelfLife: 'مصنوع من الستانلس ستيل الطبي غير القابل للصدأ؛ يدوم لسنوات.'
+        },
+        {
+          id: 'tweezers',
+          category: 'tools',
+          categoryName: 'الأدوات الطبية',
+          nameAr: 'الملقط الطبي المعقم',
+          nameEn: 'Sterile Splinter Forceps',
+          icon: 'fa-solid fa-wand-magic-sparkles',
+          color: 'tools-color',
+          purpose: 'إزالة الشظايا الصغيرة، الأشواك، وشظايا الزجاج السطحية البسيطة العالقة في الجلد.',
+          steps: [
+            'عقم طرف الملقط بمسحة كحولية قبل الاستخدام.',
+            'امسك الشظية من قاعدتها القريبة من الجلد واسحبها بنفس زاوية دخولها بهدوء.',
+            'طهر موضع خروج الشظية بماء وصابون وضع ضمادة لاصقة.'
+          ],
+          warning: 'لا تستخدم الملقط في نزع الأجسام الغريبة الكبيرة أو المغروزة بعمق في الجروح أو العين لأنها تسد نزيفاً داخلياً.',
+          shelfLife: 'يُحفظ في غلاف نظيف وجاف بعد تطهيره.'
+        },
+        {
+          id: 'thermometer',
+          category: 'tools',
+          categoryName: 'الأدوات الطبية',
+          nameAr: 'ميزان الحرارة الرقمي',
+          nameEn: 'Digital Clinical Thermometer',
+          icon: 'fa-solid fa-temperature-half',
+          color: 'tools-color',
+          purpose: 'قياس دقيق لدرجة حرارة الجسم للكشف عن الحمى والالتهابات، أو ضربات الشمس، أو انخفاض الحرارة.',
+          steps: [
+            'عقم رأس المجس بمسحة كحولية قبل الاستخدام.',
+            'ضعه تحت لسان المصاب أو تحت الإبط وانتظر صدور الصافرة الصوتية (حوالي 30-60 ثانية).',
+            'اقرأ النتيجة على الشاشة الرقمية وسجل درجة الحرارة لمشاركتها مع الطبيب.'
+          ],
+          warning: 'تعتبر الحرارة فوق 38.5° م حمى تستوجب الكمادات ومخفضات الحرارة، وفوق 39.5° م حالة طارئة.',
+          shelfLife: 'افحص البطارية دورياً (كل 6 أشهر) وتأكد من عمل الشاشة بوضوح.'
+        },
+        {
+          id: 'sling',
+          category: 'emergency',
+          categoryName: 'طوارئ وإنقاذ حرج',
+          nameAr: 'الشال المثلث الطبي (معلاق الكسور)',
+          nameEn: 'Triangular Bandage (Arm Sling)',
+          icon: 'fa-solid fa-triangle-circle-square',
+          color: 'emergency-color',
+          purpose: 'عمل معلاق لدعم وتثبيت الذراع المكسور أو الكتف المخلوع (Arm Sling) لمنع الحركة المؤذية للأعصاب.',
+          steps: [
+            'مرر قماش الشال تحت ساعد المصاب مع وضع قمة المثلث عند الكوع.',
+            'اربط طرفي الشال خلف رقبة المصاب بلطف مع وضع وسادة صغيرة تحت العقدة لراحة الرقبة.',
+            'تأكد من أن اليد مرفوعة أعلى قليلاً من مستوى الكوع لتخفيف التورم والألم.'
+          ],
+          warning: 'لا تحاول إعادة عظم مكسور أو كتف مخلوع إلى مكانه؛ وظيفة المعلاق هي التثبيت فقط حتى وصول الإسعاف.',
+          shelfLife: 'قماش طبي متين قابل للغسل وإعادة الاستخدام لسنوات.'
+        },
+        {
+          id: 'cpr_mask',
+          category: 'emergency',
+          categoryName: 'طوارئ وإنقاذ حرج',
+          nameAr: 'قناع الإنعاش القلبي الواقي',
+          nameEn: 'CPR Pocket Mask / Face Shield',
+          icon: 'fa-solid fa-shield-virus',
+          color: 'emergency-color',
+          purpose: 'تقديم أنفاس الإنقاذ لمصاب توقف التنفس والقلب بأمان تام بفضل صمام عدم الرجوع (One-Way Valve).',
+          steps: [
+            'افتح مجرى الهواء للمصاب بإمالة الرأس للخلف ورفع الذقن.',
+            'ضع القناع فوق أنف وفم المصاب وثبته بإحكام بكلتا يديك لضمان عدم تسرب الهواء.',
+            'انفخ نفَس إنقاذ طبيعي لمدة ثانية واحدة وراقب ارتفاع الصدر، ثم كرر النفس الثاني بعد ثوانٍ.'
+          ],
+          warning: 'صمام الأمان يحمي المسعف بنسبة 100% من ارتداد هواء الزفير، القيء، أو السوائل التنفسية.',
+          shelfLife: 'أقنعة الجيب السيليكونية معمرة؛ افحص الصمام كل سنة لضمان سلامته.'
+        },
+        {
+          id: 'space_blanket',
+          category: 'emergency',
+          categoryName: 'طوارئ وإنقاذ حرج',
+          nameAr: 'البطانية الحرارية الفضائية العاكسة',
+          nameEn: 'Emergency Foil Space Blanket',
+          icon: 'fa-solid fa-shield-heart',
+          color: 'emergency-color',
+          purpose: 'علاج ومنع انخفاض حرارة الجسم المميت (Hypothermia) والحفاظ على حرارة المصاب بعد حوادث النزيف الشديد والصدمة.',
+          steps: [
+            'افرد البطانية الفضائية وافحص وضع المصاب.',
+            'لف المصاب بالكامل من الكتفين حتى القدمين مع جعل السطح الفضي العاكس للداخل باتجاه جسم المصاب.',
+            'تأكد من عزل المصاب عن الأرض الباردة بوضع سترة أو بطانية تحته.'
+          ],
+          warning: 'تعكس البطانية أكثر من 90% من حرارة جسم الإنسان داخلياً، وتمنع الصدمة النزفية القاتلة.',
+          shelfLife: 'خفيفة ومطوية بحجم الجيب؛ صالحة لسنوات حتى يتم فتحها واستخدامها.'
+        },
+        {
+          id: 'cold_pack',
+          category: 'emergency',
+          categoryName: 'طوارئ وإنقاذ حرج',
+          nameAr: 'كمادة التبريد الكيميائية الفورية',
+          nameEn: 'Instant Cold Pack',
+          icon: 'fa-solid fa-snowflake',
+          color: 'emergency-color',
+          purpose: 'تطبيق برودة فورية لتخفيف الألم وتقليص الأوعية الدموية لتقليل التورم في حالات الكدمات والتواء الأربطة والرضوض دون الحاجة لثلاجة.',
+          steps: [
+            'اضغط بكلتا يديك بقوة على منتصف الكيس لتفجير كيس الماء الداخلي وتفعيل التفاعل الكيميائي البارد.',
+            'رج الكيس جيداً لمدة 5 ثوانٍ لخلط المواد الكيميائية الآمنة.',
+            'ضع الكيس فوق قطعة قماش على موضع الإصابة (لا تضعه مباشرة على الجلد العاري).'
+          ],
+          warning: 'تجنب وضع البرودة لأكثر من 20 دقيقة متواصلة؛ ارفع الكمادة 10 دقائق ثم كرر لراحة الأنسجة.',
+          shelfLife: 'تستخدم لمرة واحدة فقط؛ احفظها بعيداً عن الثقب أو الضغط المفرط.'
+        },
+        {
+          id: 'tourniquet',
+          category: 'emergency',
+          categoryName: 'طوارئ وإنقاذ حرج',
+          nameAr: 'حزام التورنيكيت الشرياني لوقف النزيف',
+          nameEn: 'Combat Application Tourniquet (CAT)',
+          icon: 'fa-solid fa-handcuffs',
+          color: 'emergency-color',
+          purpose: 'الخيار الأخير لإنقاذ الحياة عند حدوث نزيف شرياني كارثي متدفق أو بتر في الأطراف يعجز الضغط المباشر عن وقفه.',
+          steps: [
+            'ضع الحزام على مسافة 5 إلى 7 سم أعلى الجرح باتجاه القلب (فوق المفصل وليس عليه).',
+            'شد الحزام العريض بإحكام شديد ثم أدر القضيب الدوار (Windlass) حتى يتوقف تدفق الدم تماماً ويختفي النبض البعيد.',
+            'ثبت القضيب في مشبك الأمان وسجل وقت التركيب كتابةً فوراً على الحزام بالقلم.'
+          ],
+          warning: 'تحذير حرج: لا تقم بفك التورنيكيت بعد شده بمفردك إطلاقاً؛ فكه يتم حصراً داخل غرفة عمليات المستشفى من قِبل الجراح.',
+          shelfLife: 'أداة إنقاذ حياة تدوم لسنوات؛ احرص على بقاء حزام الفيلكرو نظيفاً وجافاً.'
+        }
+      ],
+
+      currentIndex: 0,
+      activeCategory: 'all',
+      searchQuery: '',
+
+      init() {
+        this.bindEvents();
+        this.renderTray();
+        this.renderInspector(0);
+      },
+
+      bindEvents() {
+        const searchInput = document.getElementById('kitSearchInput');
+        const clearBtn = document.getElementById('kitClearSearch');
+        const pills = document.querySelectorAll('.kit-cat-pill');
+
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            this.searchQuery = e.target.value;
+            if (clearBtn) clearBtn.style.display = this.searchQuery ? 'block' : 'none';
+            this.renderTray();
+          });
+        }
+
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            this.searchQuery = '';
+            clearBtn.style.display = 'none';
+            searchInput.focus();
+            this.renderTray();
+          });
+        }
+
+        pills.forEach(pill => {
+          pill.addEventListener('click', () => {
+            pills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            this.activeCategory = pill.dataset.category;
+            this.renderTray();
+          });
+        });
+      },
+
+      getFilteredItems() {
+        const q = this.searchQuery.trim().toLowerCase();
+        return this.items.filter(item => {
+          const matchCat = (this.activeCategory === 'all' || item.category === this.activeCategory);
+          const matchQuery = !q || 
+            item.nameAr.toLowerCase().includes(q) || 
+            item.nameEn.toLowerCase().includes(q) || 
+            item.purpose.toLowerCase().includes(q);
+          return matchCat && matchQuery;
+        });
+      },
+
+      renderTray() {
+        const trayList = document.getElementById('kitTrayList');
+        const countEl = document.getElementById('kitItemsCount');
+        if (!trayList) return;
+
+        const filtered = this.getFilteredItems();
+        if (countEl) countEl.innerText = filtered.length;
+
+        if (filtered.length === 0) {
+          trayList.innerHTML = `
+            <div class="tray-empty-state">
+              <i class="fa-solid fa-box-open"></i>
+              <span>لا توجد أدوات مطابقة للبحث</span>
+            </div>
+          `;
+          return;
+        }
+
+        trayList.innerHTML = filtered.map((item, idx) => {
+          const originalIndex = this.items.findIndex(it => it.id === item.id);
+          const isActive = originalIndex === this.currentIndex;
+          return `
+            <div class="tray-item ${isActive ? 'active' : ''}" data-index="${originalIndex}" role="button" tabindex="0">
+              <span class="tray-icon ${item.color}"><i class="${item.icon}"></i></span>
+              <div class="tray-text-group">
+                <div class="tray-title-row">
+                  <span class="tray-name-ar">${item.nameAr}</span>
+                  <span class="tray-cat-tag ${item.color}">${item.categoryName.split(' ')[0]}</span>
+                </div>
+                <span class="tray-name-en">${item.nameEn}</span>
+              </div>
+              <i class="fa-solid fa-chevron-left tray-arrow"></i>
+            </div>
+          `;
+        }).join('');
+
+        // Bind clicks on tray items
+        trayList.querySelectorAll('.tray-item').forEach(el => {
+          el.addEventListener('click', () => {
+            const idx = parseInt(el.dataset.index, 10);
+            this.selectItem(idx);
+          });
+        });
+      },
+
+      selectItem(index) {
+        if (index < 0 || index >= this.items.length) return;
+        this.currentIndex = index;
+
+        // Update active class in tray
+        document.querySelectorAll('.tray-item').forEach(el => {
+          const idx = parseInt(el.dataset.index, 10);
+          el.classList.toggle('active', idx === index);
+        });
+
+        this.renderInspector(index);
+
+        // Smooth scroll to inspector on mobile
+        if (window.innerWidth < 768) {
+          const inspector = document.getElementById('kitInspectorColumn');
+          if (inspector) inspector.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      },
+
+      renderInspector(index) {
+        const inspector = document.getElementById('kitInspectorColumn');
+        if (!inspector) return;
+
+        const item = this.items[index];
+        if (!item) return;
+
+        inspector.innerHTML = `
+          <div class="inspector-card animate-fade">
+            <!-- Header Banner -->
+            <div class="inspector-header">
+              <div class="inspector-badge-row">
+                <span class="inspector-cat-pill ${item.color}">${item.categoryName}</span>
+                <span class="inspector-counter-badge">الأداة ${index + 1} من ${this.items.length}</span>
+              </div>
+              <div class="inspector-title-row">
+                <span class="inspector-large-icon ${item.color}"><i class="${item.icon}"></i></span>
+                <div>
+                  <h3 class="inspector-item-title">${item.nameAr}</h3>
+                  <span class="inspector-item-subtitle">${item.nameEn}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Body Details -->
+            <div class="inspector-body">
+              <!-- Purpose -->
+              <div class="inspector-section">
+                <div class="inspector-section-label">
+                  <i class="fa-solid fa-bullseye"></i>
+                  <span>الاستخدام الطبي ودواعي الاستعمال</span>
+                </div>
+                <p class="inspector-purpose-text">${item.purpose}</p>
+              </div>
+
+              <!-- Steps Protocol -->
+              <div class="inspector-section">
+                <div class="inspector-section-label">
+                  <i class="fa-solid fa-list-check"></i>
+                  <span>خطوات الاستخدام الصحيحة بالترتيب</span>
+                </div>
+                <div class="inspector-steps-list">
+                  ${item.steps.map((st, i) => `
+                    <div class="inspector-step-item">
+                      <span class="inspector-step-num">${i + 1}</span>
+                      <span class="inspector-step-text">${st}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Warning Box -->
+              <div class="inspector-warning-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <div>
+                  <strong>تنبيه طبي وتحذير حرج:</strong>
+                  <p>${item.warning}</p>
+                </div>
+              </div>
+
+              <!-- Shelf Life Tip -->
+              <div class="inspector-storage-tip">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span><strong>إرشادات الحفظ والصلاحية:</strong> ${item.shelfLife}</span>
+              </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="inspector-footer-nav">
+              <button type="button" class="inspector-nav-btn prev-btn" id="kitPrevBtn" ${index === 0 ? 'disabled' : ''}>
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>الأداة السابقة</span>
+              </button>
+              <button type="button" class="inspector-nav-btn next-btn" id="kitNextBtn" ${index === this.items.length - 1 ? 'disabled' : ''}>
+                <span>الأداة التالية</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+        // Bind next/prev buttons
+        const prevBtn = document.getElementById('kitPrevBtn');
+        const nextBtn = document.getElementById('kitNextBtn');
+        if (prevBtn) prevBtn.addEventListener('click', () => this.selectItem(index - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => this.selectItem(index + 1));
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      KitGuide.init();
+      Metronome.init();
+      Quiz.init();
+    });
+  </script>
+<aside class="emergency-banner" role="alert">
+    <div class="emergency-banner-content">
+      <div class="emergency-beacon-wrapper">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="emergency-beacon-ring"></span>
+      </div>
+      <span data-i18n="emergencyWarning">
+        هذا النظام للتوعية والإسعاف الأولي السريع — في حالات الطوارئ القصوى اتصل بـ 123 فوراً
+      </span>
+    </div>
+    <a href="tel:123" class="emergency-call-btn">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span data-i18n="callNow">اتصل الآن (123)</span>
+    </a>
+  </aside>
+</body>
+</html>

@@ -1,0 +1,768 @@
+﻿text,condition,severity,symptoms,language
+اتحرقت,burn,unknown,"minor_burn,burn_injury",arabic
+اتحرقت بمية سخنة,burn,orange,"hot_water,scalds",arabic
+إيدي اتحرقت من الفرن,burn,red,"oven_burn,hand_burn",arabic
+في فقاقيع بعد الحرق,burn,green,"blisters,blister_care",arabic
+حرق في دراعي,burn,unknown,"arm_burn,burn_injury",arabic
+burn on my hand,burn,orange,"hand_burn,minor_burn",english
+I touched a hot pan,burn,red,"hot_pan,contact_burn",english
+my skin is red after hot water,burn,green,"hot_water,redness",english
+حرق بسيط في صباعي,burn,unknown,"minor_burn,finger",arabic
+حرق شديد والجلد لونه أبيض,burn,orange,"white_skin,third_degree",arabic
+burning my hand,burn,red,"hand_burn,burning_pain",english
+اتلسعت من حاجة سخنة,burn,green,"contact_burn,scalds",arabic
+في ألم واحمرار بعد الحرق,burn,unknown,"redness,severe_pain",arabic
+حرق نار في الرجل,burn,orange,"flame_burn,leg_burn",arabic
+hot water burn,burn,red,"hot_water,scalds",english
+حرق,burn,green,"burn_injury,first_aid",arabic
+جلدي اتلسع من الشمس,burn,unknown,"sunburn,redness",arabic
+chemical burn on skin,burn,orange,"chemical_burn,acid",english
+طفل اتعرض لحرق,burn,red,"child_burn,pediatric_burn",arabic
+الحرق كبير ومؤلم,burn,green,"severe_pain,extensive_burn",arabic
+اتجرحت وصباعي بينزف,cut,unknown,"finger_cut,bleeding",arabic
+جرح صغير في إيدي,cut,orange,"small_cut,hand",arabic
+نزيف مش بيقف,cut,red,"persistent_bleeding,heavy_bleeding",arabic
+جرح عميق,cut,green,"deep_wound,severe_cut",arabic
+في دم كتير من رجلي,cut,unknown,"heavy_bleeding,leg_wound",arabic
+my finger is bleeding,cut,orange,"finger_cut,bleeding",english
+small cut on my hand,cut,red,"small_cut,hand",english
+deep wound with heavy bleeding,cut,green,"deep_wound,heavy_bleeding",english
+اتعورت بسكينة,cut,unknown,"knife_cut,laceration",arabic
+جرح من إزاز,cut,orange,"glass_cut,laceration",arabic
+bleeding cut,cut,red,"bleeding_wound,cut",english
+جرح,cut,green,"cut,wound",arabic
+الجرح متسخ,cut,unknown,"dirty_wound,infection_risk",arabic
+الدم بينزل بغزارة,cut,orange,"heavy_bleeding,arterial_bleeding",arabic
+خربوش بسيط,cut,red,"minor_scrape,superficial_cut",arabic
+I cut my palm,cut,green,"palm_cut,bleeding",english
+جرح مفتوح,cut,unknown,"open_wound,laceration",arabic
+نزيف بعد الوقوع,cut,orange,"fall_injury,bleeding",arabic
+اتجرحت ومش عارف أوقف الدم,cut,red,"uncontrolled_bleeding,direct_pressure",arabic
+minor bleeding,cut,green,"minor_bleeding,scrape",english
+مش قادر أتنفس والأكل واقف,choking,unknown,"airway_obstruction,cannot_breathe",arabic
+صاحبي ماسك رقبته,choking,orange,"universal_choking_sign,airway_obstruction",arabic
+حد بيشرق ومش بيتكلم,choking,red,"silent_choking,cannot_speak",arabic
+اختناق,choking,green,"choking,airway_obstruction",arabic
+مش قادر أكح ولا أتكلم,choking,unknown,"complete_obstruction,cannot_speak,cannot_cough",arabic
+someone is choking,choking,orange,"choking,foreign_body",english
+food stuck in my throat,choking,red,"food_choking,throat_obstruction",english
+can't breathe and turning blue,choking,green,"cyanosis,cannot_breathe,airway_obstruction",english
+بيكح بعد ما بلع حاجة,choking,unknown,"coughing,foreign_body",arabic
+طفل بيشرق,choking,orange,"child_choking,airway_obstruction",arabic
+choking,choking,red,"choking,first_aid",english
+الشخص مش قادر ياخد نفسه,choking,green,"dyspnea,cannot_breathe",arabic
+بيتنفس وبيكح بعد الشرقة,choking,unknown,"partial_obstruction,coughing",arabic
+my friend is choking,choking,orange,"choking,airway_obstruction",english
+الحقني مش قادر أتنفس,choking,red,"severe_dyspnea,cannot_breathe",arabic
+اختناق أثناء الأكل,choking,green,"food_choking,meal_choking",arabic
+شخص فقد الوعي بعد الاختناق,choking,unknown,"unconscious,hypoxia,choking",arabic
+something stuck in throat,choking,orange,"foreign_body,throat_foreign_body",english
+بيشرق بس قادر يتكلم,choking,red,"partial_obstruction,can_speak",arabic
+can't speak due to choking,choking,green,"complete_obstruction,cannot_speak",english
+شخص وقع ومش بيتنفس طبيعي,cpr,unknown,"abnormal_breathing,collapsed,cardiac_arrest",arabic
+حد فاقد الوعي ومش بيرد,cpr,orange,"unresponsive,unconscious",arabic
+محتاج إنعاش قلبي رئوي,cpr,red,"cpr,cardiac_arrest",arabic
+CPR please,cpr,green,"cpr,emergency",english
+شخص مش بيتنفس,cpr,unknown,"apnea,not_breathing,no_pulse",arabic
+collapsed and unresponsive,cpr,orange,"collapsed,unresponsive,cardiac_arrest",english
+مش لاقيين استجابة,cpr,red,"unresponsive,no_reaction",arabic
+القلب وقف,cpr,green,"heart_stopped,cardiac_arrest",arabic
+شخص فقد الوعي ومش بيتنفس,cpr,unknown,"unconscious,apnea,cardiac_arrest",arabic
+cardiac arrest,cpr,orange,"cardiac_arrest,no_pulse",english
+cpr,cpr,red,"cpr,chest_compressions",english
+حد وقع فجأة ومش بيرد,cpr,green,"sudden_collapse,unresponsive",arabic
+no normal breathing,cpr,unknown,"agonal_breathing,apnea",english
+الحقوا الشخص مش بيتنفس,cpr,orange,"apnea,not_breathing,cardiac_arrest",arabic
+someone is unresponsive,cpr,red,"unresponsive,unconscious",english
+محتاجين إسعاف وإنعاش,cpr,green,"cpr,ambulance,cardiac_arrest",arabic
+فاقد الوعي وبيشهق بس,cpr,unknown,"agonal_breathing,unconscious,gasping",arabic
+person not breathing normally,cpr,orange,"agonal_breathing,not_breathing",english
+شخص مش واعي,cpr,red,"unconscious,unresponsive",arabic
+emergency CPR,cpr,green,"cpr,cardiac_arrest,emergency",english
+حسيت بدوخة ووقعت,fainting,unknown,"dizziness,fall,syncope",arabic
+أغمى عليا,fainting,orange,"syncope,loss_of_consciousness",arabic
+شخص فقد الوعي للحظات,fainting,red,"transient_syncope,loss_of_consciousness",arabic
+حاسس إني هقع,fainting,green,"presyncope,lightheadedness",arabic
+dizzy and faint,fainting,unknown,"dizziness,presyncope",english
+someone fainted,fainting,orange,"syncope,fainting",english
+دوخة بعد الوقوف,fainting,red,"orthostatic_hypotension,postural_dizziness",arabic
+إغماء,fainting,green,"syncope,fainting",arabic
+وقعت وبعدها فوقت,fainting,unknown,"syncope,spontaneous_recovery",arabic
+lightheaded suddenly,fainting,orange,"sudden_lightheadedness,presyncope",english
+حاسس بسواد في عيني,fainting,red,"visual_dimming,presyncope",arabic
+fainted at school,fainting,green,"syncope,vasovagal",english
+دوخة مع عرق,fainting,unknown,"dizziness,sweating,presyncope",arabic
+شخص مش بيرد بعد الإغماء,fainting,orange,"unresponsive,prolonged_syncope",arabic
+I feel like passing out,fainting,red,"presyncope,feeling_faint",english
+دوخة شديدة,fainting,green,"severe_dizziness,vertigo",arabic
+أغمى عليها في الحر,fainting,unknown,"heat_syncope,heat_exhaustion",arabic
+weak and dizzy,fainting,orange,"weakness,dizziness",english
+فقدان وعي,fainting,red,"loss_of_consciousness,syncope",arabic
+حاسس بدوخة بسيطة,fainting,green,"mild_dizziness,lightheadedness",arabic
+رجلي اتلوت وورمت,fracture,unknown,"ankle_sprain,swelling,twisted_ankle",arabic
+شكلي كسرت إيدي,fracture,orange,"broken_arm,bone_fracture",arabic
+ألم شديد بعد الوقوع,fracture,red,"severe_pain,fall_injury",arabic
+العظمة باينة من الجرح,fracture,green,"open_fracture,bone_protrusion",arabic
+possible broken arm,fracture,unknown,"broken_arm,fracture",english
+ankle sprain and swelling,fracture,orange,"ankle_sprain,joint_swelling",english
+مش قادر أحرك رجلي بعد الإصابة,fracture,red,"loss_of_function,inability_to_move,fracture",arabic
+كسر,fracture,green,"fracture,bone_injury",arabic
+وقعت وإيدي بتوجعني,fracture,unknown,"fall_injury,wrist_pain",arabic
+bone visible after injury,fracture,orange,"open_fracture,visible_bone",english
+تورم وألم في الكاحل,fracture,red,"ankle_swelling,severe_pain",arabic
+my wrist may be broken,fracture,green,"wrist_fracture,broken_wrist",english
+إصابة ووجع شديد,fracture,unknown,"severe_pain,trauma",arabic
+مش قادر أحمل وزن على رجلي,fracture,orange,"inability_to_bear_weight,fracture",arabic
+fracture,fracture,red,"fracture,bone_trauma",english
+التواء في الكاحل,fracture,green,"ankle_sprain,ligament_injury",arabic
+العظمة شكلها مش طبيعي,fracture,unknown,"gross_deformity,bone_misalignment",arabic
+pain after a fall,fracture,orange,"fall_injury,pain",english
+كسر مفتوح,fracture,red,"open_fracture,compound_fracture",arabic
+إيدي ورمت بعد الخبطة,fracture,green,"arm_swelling,contusion",arabic
+مناخيري بتنزل دم,nosebleed,unknown,"epistaxis,nasal_bleeding",arabic
+نزيف من الأنف,nosebleed,orange,"epistaxis,nosebleed",arabic
+nosebleed,nosebleed,red,"nosebleed,epistaxis",english
+دم من مناخيري بعد خبطة,nosebleed,green,"nasal_trauma,epistaxis",arabic
+الرعاف مش بيقف,nosebleed,unknown,"persistent_bleed,refractory_epistaxis",arabic
+my nose is bleeding,nosebleed,orange,"epistaxis,nasal_bleeding",english
+رعاف,nosebleed,red,"epistaxis,nosebleed_keyword",arabic
+في دم نازل من الأنف,nosebleed,green,"nasal_bleeding,epistaxis",arabic
+نزيف أنف بسيط,nosebleed,unknown,"minor_epistaxis,mild_nosebleed",arabic
+الدم كتير بعد إصابة الأنف,nosebleed,orange,"severe_epistaxis,nasal_trauma",arabic
+nose bleed,nosebleed,red,"nosebleed,epistaxis",english
+مناخيري نزفت فجأة,nosebleed,green,"sudden_epistaxis,nasal_bleeding",arabic
+دم من الأنف بعد العطس,nosebleed,unknown,"sneezing_epistaxis,mucosal_tear",arabic
+نزيف مستمر من الأنف,nosebleed,orange,"persistent_bleed,prolonged_epistaxis",arabic
+bleeding nose,nosebleed,red,"bleeding_nose,epistaxis",english
+طفل عنده رعاف,nosebleed,green,"pediatric_epistaxis,child_nosebleed",arabic
+أنفي بينزف,nosebleed,unknown,"epistaxis,nasal_bleeding",arabic
+دم من مناخيري,nosebleed,orange,"epistaxis,nosebleed",arabic
+نزيف الأنف بعد الوقوع,nosebleed,red,"fall_trauma,nasal_bleeding",arabic
+nosebleed won't stop,nosebleed,green,"refractory_epistaxis,persistent_bleed",english
+دوخة من الحر,heatstroke,unknown,"heat_dizziness,heat_exhaustion",arabic
+حد وقع في الشمس وجسمه سخن,heatstroke,orange,"hyperthermia,collapsed,sun_exposure",arabic
+ضربة شمس,heatstroke,red,"heatstroke,sunstroke",arabic
+حاسس بتعب شديد بعد الحر,heatstroke,green,"heat_fatigue,heat_exhaustion",arabic
+heat exhaustion,heatstroke,unknown,"heat_exhaustion,sweating",english
+confused after being in the sun,heatstroke,orange,"confusion,sun_exposure,heatstroke",english
+صداع ودوخة بعد الوقوف في الشمس,heatstroke,red,"headache,dizziness,sun_exposure",arabic
+حرارتي عالية بعد الحر,heatstroke,green,"hyperthermia,high_temp",arabic
+someone is overheating,heatstroke,unknown,"hyperthermia,overheating",english
+جلدي سخن ومش مركز,heatstroke,orange,"hot_dry_skin,confusion",arabic
+heatstroke,heatstroke,red,"heatstroke,hyperthermia",english
+تعب بعد مجهود في الجو الحر,heatstroke,green,"exertional_heatstroke,fatigue",arabic
+غثيان في الحر,heatstroke,unknown,"nausea,heat_exhaustion",arabic
+فقدان وعي في الشمس,heatstroke,orange,"sun_syncope,loss_of_consciousness",arabic
+overheated and dizzy,heatstroke,red,"overheating,dizziness",english
+الشمس تعبتني,heatstroke,green,"heat_fatigue,sun_exposure",arabic
+صداع شديد بعد التعرض للحر,heatstroke,unknown,"severe_headache,heat_exposure",arabic
+حرارة عالية وتشوش,heatstroke,orange,"high_temp,confusion,heatstroke",arabic
+دوخة وعرق في الحر,heatstroke,red,"dizziness,sweating,heat_exhaustion",arabic
+ضربة حر,heatstroke,green,"heatstroke,hyperthermia",arabic
+طفل بلع منظف,poisoning,unknown,"child_poisoning,detergent_ingestion,bleach",arabic
+شربت مادة بالغلط,poisoning,orange,"accidental_ingestion,chemical_ingestion",arabic
+محتاج مساعدة في تسمم,poisoning,red,"poisoning,toxic_exposure",arabic
+someone swallowed chemicals,poisoning,green,"chemical_ingestion,toxic_substance",english
+poisoning,poisoning,unknown,"poisoning,intoxication",english
+بلعت حبوب زيادة,poisoning,orange,"drug_overdose,pill_ingestion",arabic
+استنشقت مادة كيميائية,poisoning,red,"toxic_inhalation,chemical_fumes",arabic
+شرب بنزين بالغلط,poisoning,green,"hydrocarbon_ingestion,gasoline,emesis_prohibited",arabic
+ابتلعت منظف,poisoning,unknown,"detergent_ingestion,corrosive",arabic
+سم,poisoning,orange,"poison_ingestion,toxic_substance",arabic
+I swallowed a chemical,poisoning,red,"chemical_ingestion,corrosive",english
+حد أكل حاجة سامة,poisoning,green,"toxic_ingestion,poisoning",arabic
+تسمم دوائي محتمل,poisoning,unknown,"drug_overdose,medication_poisoning",arabic
+بلعت حاجة مش للأكل,poisoning,orange,"nonfood_ingestion,foreign_substance",arabic
+chemical ingestion,poisoning,red,"chemical_ingestion,toxic_exposure",english
+طفل شرب سائل تنظيف,poisoning,green,"child_poisoning,cleaning_solution,bleach",arabic
+ريحة غاز قوية ودوخة,poisoning,unknown,"gas_inhalation,dizziness,toxic_fumes",arabic
+أخدت جرعة دواء زيادة,poisoning,orange,"drug_overdose,toxicity",arabic
+suspected poisoning,poisoning,red,"suspected_poisoning,toxic_substance",english
+مادة سامة دخلت الفم,poisoning,green,"toxic_ingestion,poisoning",arabic
+وشي ورم ومش قادر أتنفس بعد أكل,allergy_anaphylaxis,unknown,"facial_edema,dyspnea,food_allergy",arabic
+حساسية شديدة فجأة,allergy_anaphylaxis,orange,"acute_anaphylaxis,severe_allergy",arabic
+لساني وارم,allergy_anaphylaxis,red,"tongue_edema,angioedema",arabic
+severe allergic reaction,allergy_anaphylaxis,green,"severe_allergy,anaphylaxis",english
+my throat is swelling,allergy_anaphylaxis,unknown,"throat_swelling,angioedema",english
+طفح جلدي مع صعوبة تنفس,allergy_anaphylaxis,orange,"urticaria,hives,dyspnea",arabic
+حساسية بعد لسعة نحلة,allergy_anaphylaxis,red,"bee_sting,insect_allergy",arabic
+anaphylaxis,allergy_anaphylaxis,green,"anaphylaxis,anaphylactic_shock",english
+دوخة وتورم بعد دواء,allergy_anaphylaxis,unknown,"dizziness,angioedema,drug_allergy",arabic
+مش قادر أتنفس بعد أكل مكسرات,allergy_anaphylaxis,orange,"peanut_allergy,severe_dyspnea",arabic
+حساسية,allergy_anaphylaxis,red,"allergic_reaction,allergy",arabic
+شفايفي ورمت فجأة,allergy_anaphylaxis,green,"lip_edema,angioedema",arabic
+صفير وصعوبة تنفس بعد أكل,allergy_anaphylaxis,unknown,"wheezing,dyspnea,food_allergy",arabic
+throat tight after peanuts,allergy_anaphylaxis,orange,"throat_tightness,peanut_allergy",english
+تورم اللسان,allergy_anaphylaxis,red,"tongue_edema,airway_risk",arabic
+طفح وحكة فقط,allergy_anaphylaxis,green,"skin_rash,pruritus,urticaria",arabic
+حساسية شديدة,allergy_anaphylaxis,unknown,"severe_allergy,anaphylaxis",arabic
+allergic reaction with breathing trouble,allergy_anaphylaxis,orange,"dyspnea,allergic_reaction",english
+هبوط بعد لسعة,allergy_anaphylaxis,red,"hypotension,insect_sting,anaphylactic_shock",arabic
+حكة وتورم وصعوبة تنفس,allergy_anaphylaxis,green,"pruritus,angioedema,dyspnea",arabic
+عندي نوبة ربو,asthma,unknown,"asthma_attack,bronchospasm",arabic
+مش قادر أتنفس والصفير عالي,asthma,orange,"dyspnea,severe_wheezing",arabic
+asthma attack,asthma,red,"asthma_attack,acute_asthma",english
+بستخدم بخاخ الربو ومش نافع,asthma,green,"refractory_asthma,inhaler_failure",arabic
+صفير في الصدر,asthma,unknown,"chest_wheezing,stridor",arabic
+wheezing and shortness of breath,asthma,orange,"wheezing,dyspnea",english
+ضيق نفس بسبب الربو,asthma,red,"dyspnea,asthma",arabic
+نوبة ربو,asthma,green,"asthma_attack,acute_asthma",arabic
+صدري مكتوم وبنهج,asthma,unknown,"chest_tightness,tachypnea",arabic
+asthma inhaler not helping,asthma,orange,"inhaler_unresponsive,asthma_severe",english
+كحة وصعوبة تنفس,asthma,red,"cough,dyspnea,bronchospasm",arabic
+نفسي قصير,asthma,green,"shortness_of_breath,tachypnea",arabic
+مش قادر أكمل جملة من ضيق النفس,asthma,unknown,"cannot_speak,severe_dyspnea,asthma_severe",arabic
+الربو زاد فجأة,asthma,orange,"acute_exacerbation,asthma",arabic
+breathing is getting worse,asthma,red,"worsening_dyspnea,respiratory_distress",english
+صفير بسيط,asthma,green,"mild_wheezing,bronchospasm",arabic
+أزمة ربو شديدة,asthma,unknown,"severe_asthma_attack,status_asthmaticus",arabic
+tight chest and wheezing,asthma,orange,"chest_tightness,wheezing",english
+بخاخ الإسعاف,asthma,red,"rescue_inhaler,bronchodilator",arabic
+صعوبة تنفس شديدة,asthma,green,"severe_dyspnea,respiratory_distress",arabic
+صاحبتي بتتشنج ومش واعية,seizures,unknown,"convulsions,unconscious",arabic
+تشنجات,seizures,orange,"convulsions,muscle_stiffness",arabic
+someone is having a seizure,seizures,red,"tonic_clonic,convulsions",english
+وقع وبدأ جسمه يهتز,seizures,green,"sudden_fall,convulsions,violent_jerking",arabic
+صرع ونوبة تشنج,seizures,unknown,"epilepsy_fit,convulsions",arabic
+seizure,seizures,orange,"epilepsy_fit,tonic_clonic",english
+شخص بيتشنج لأول مرة,seizures,red,"first_time_seizure,convulsions",arabic
+التشنج مستمر,seizures,green,"status_epilepticus,prolonged_seizure",arabic
+my friend is convulsing,seizures,unknown,"convulsions,violent_jerking",english
+تشنج وفقدان وعي,seizures,orange,"convulsions,unconscious",arabic
+حد بيرتعش ومش بيرد,seizures,red,"violent_jerking,unresponsive,unconscious",arabic
+نوبة صرع,seizures,green,"epilepsy_fit,tonic_clonic",arabic
+seizure lasting several minutes,seizures,unknown,"status_epilepticus,prolonged_seizure",english
+اتشنج وبعدها مش واعي,seizures,orange,"postictal,unconscious,confusion",arabic
+تشنجات في طفل,seizures,red,"child,convulsions,pediatric_seizure",arabic
+بيتحرك بعنف ومش واعي,seizures,green,"violent_jerking,clonic_phase,unconscious",arabic
+أول نوبة تشنج,seizures,unknown,"first_time_seizure,convulsions",arabic
+convulsions,seizures,orange,"convulsions,muscle_stiffness",english
+شخص بيتشنج في الشارع,seizures,red,"sudden_fall,convulsions,public_seizure",arabic
+التشنج وقف لكنه مش فايق,seizures,green,"postictal,confusion,drowsiness",arabic
+كلب عضني,bites_stings,unknown,"dog_bite,rabies_pep",arabic
+نحلة لسعتني,bites_stings,orange,"bee_sting,swelling",arabic
+dog bite,bites_stings,red,"dog_bite,animal_trauma",english
+bee sting,bites_stings,green,"bee_sting,wasp_sting",english
+عضة قطة,bites_stings,unknown,"cat_bite,wound_infection",arabic
+قرصة حشرة وورم,bites_stings,orange,"insect_bite,local_swelling",arabic
+لسعة مع صعوبة تنفس,bites_stings,red,"sting,dyspnea,anaphylaxis_risk",arabic
+عضة حيوان,bites_stings,green,"animal_bite,rabies_risk",arabic
+اتعضيت من كلب شارع,bites_stings,unknown,"stray_dog_bite,rabies_pep",arabic
+insect bite,bites_stings,orange,"insect_bite,pruritus",english
+لسعة نحلة في إيدي,bites_stings,red,"bee_sting,hand_swelling",arabic
+عضة وجرح,bites_stings,green,"bite_laceration,wound",arabic
+حكة بعد قرصة,bites_stings,unknown,"pruritus,insect_bite",arabic
+snake bite,bites_stings,orange,"snakebite,snake_venom",english
+لدغة ثعبان,bites_stings,red,"snakebite,venomous",arabic
+مكان اللسعة ورم,bites_stings,green,"local_swelling,erythema,sting",arabic
+عضة قطة في الصباع,bites_stings,unknown,"cat_bite,finger_bite",arabic
+حشرة قرصتني,bites_stings,orange,"insect_sting,bug_bite",arabic
+sting and swelling,bites_stings,red,"sting,swelling",english
+عضة مع نزيف,bites_stings,green,"bite_wound,bleeding",arabic
+دخل تراب في عيني,eye_injury,unknown,"foreign_body,dust,eye_irritation",arabic
+عيني اتخبطت,eye_injury,orange,"eye_trauma,blunt_trauma",arabic
+eye injury,eye_injury,red,"eye_injury,ocular_trauma",english
+مادة كيميائية دخلت عيني,eye_injury,green,"chemical_splash,irrigation,chemical_burn",arabic
+ألم شديد في العين بعد خبطة,eye_injury,unknown,"severe_pain,ocular_trauma,blunt_injury",arabic
+something in my eye,eye_injury,orange,"foreign_body,cornea",english
+عيني حمرا وبتوجعني,eye_injury,red,"red_eye,ocular_pain",arabic
+إصابة عين,eye_injury,green,"eye_injury,trauma",arabic
+مش شايف كويس بعد الإصابة,eye_injury,unknown,"blurred_vision,visual_impairment",arabic
+chemical in eye,eye_injury,orange,"chemical_burn,eye_wash_protocol",english
+دخل جسم غريب في العين,eye_injury,red,"foreign_body,cornea,no_rubbing",arabic
+خدش في العين,eye_injury,green,"corneal_abrasion,eye_scratch",arabic
+ضربة في العين,eye_injury,unknown,"ocular_contusion,black_eye",arabic
+عينى بتدمع بعد التراب,eye_injury,orange,"lacrimation,eye_watering,dust",arabic
+vision blurred after injury,eye_injury,red,"blurred_vision,visual_deficit",english
+ألم عين مفاجئ,eye_injury,green,"sudden_ocular_pain,eye_injury",arabic
+جسم حاد قرب من العين,eye_injury,unknown,"sharp_object,penetrating_risk",arabic
+اترش منظف في عيني,eye_injury,orange,"chemical_splash,detergent,irrigation",arabic
+عين بتنزف بعد إصابة,eye_injury,red,"hyphema,eye_bleeding,corneal_laceration",arabic
+foreign object in eye,eye_injury,green,"foreign_body,ocular_foreign_body",english
+اتكهربت من سلك,electric_shock,unknown,"electric_shock,live_wire",arabic
+شخص لمس كهرباء ووقع,electric_shock,orange,"electrocution,collapsed,electric_shock",arabic
+electric shock,electric_shock,red,"electric_shock,electrocution",english
+صعقة كهربائية,electric_shock,green,"electric_shock,electrical_trauma",arabic
+في حد لسه ماسك سلك كهربا,electric_shock,unknown,"live_wire,power_off,ongoing_contact",arabic
+got shocked by an outlet,electric_shock,orange,"electrical_outlet,minor_shock",english
+اتعرضت لصعق كهربائي,electric_shock,red,"electric_shock,electrical_injury",arabic
+شخص مش بيرد بعد الكهرباء,electric_shock,green,"unresponsive,unconscious,electric_shock",arabic
+كهرباء ضربت إيدي,electric_shock,unknown,"hand_burn,entry_exit_burn,shock",arabic
+electricity injury,electric_shock,orange,"electrical_injury,electric_trauma",english
+لسه مصدر الكهرباء شغال,electric_shock,red,"live_wire,ongoing_current,power_off",arabic
+حرق بعد صعق كهربائي,electric_shock,green,"electrical_burn,entry_exit_burn",arabic
+صدمة كهربائية,electric_shock,unknown,"electric_shock,electrical_trauma",arabic
+حد اتكهرب ومش بيتنفس,electric_shock,orange,"apnea,cardiac_arrest,electric_shock",arabic
+electric shock and collapse,electric_shock,red,"electrocution,collapse,unconscious",english
+لمست جهاز كهربائي مبلول,electric_shock,green,"water_electrocution,appliance_shock",arabic
+كهربا,electric_shock,unknown,"electric_shock,trauma",arabic
+صعق مع ألم في الصدر,electric_shock,orange,"chest_pain,cardiac_arrhythmia,shock",arabic
+طفل اتكهرب,electric_shock,red,"pediatric_shock,child_electrocution",arabic
+someone touched a live wire,electric_shock,green,"live_wire,high_voltage,danger",english
+حاسس برعشة وعرق وممكن السكر واطي,low_blood_sugar,unknown,"tremor,sweating,hypoglycemia",arabic
+هبوط سكر,low_blood_sugar,orange,"hypoglycemia,low_blood_sugar",arabic
+low blood sugar,low_blood_sugar,red,"low_blood_sugar,hypoglycemia",english
+عندي سكر وحاسس بدوخة,low_blood_sugar,green,"diabetes,dizziness,hypoglycemia",arabic
+shaky and sweating,low_blood_sugar,unknown,"tremor,sweating,diaphoresis",english
+سكر الدم منخفض,low_blood_sugar,orange,"low_blood_sugar,hypoglycemia_reading",arabic
+مش مركز وعرقان,low_blood_sugar,red,"confusion,sweating,hypoglycemia",arabic
+hypoglycemia,low_blood_sugar,green,"hypoglycemia,low_glucose",english
+رعشة وجوع مفاجئ,low_blood_sugar,unknown,"tremor,sudden_hunger,hypoglycemia",arabic
+قياس السكر قليل,low_blood_sugar,orange,"low_glucose,hypoglycemia_reading",arabic
+هبوط السكر,low_blood_sugar,red,"hypoglycemia,low_blood_sugar",arabic
+دوخة مع تعرق عند مريض سكر,low_blood_sugar,green,"dizziness,sweating,diabetic_hypoglycemia",arabic
+blood sugar is low,low_blood_sugar,unknown,"low_blood_sugar,hypoglycemia",english
+حاسس بضعف ورعشة,low_blood_sugar,orange,"weakness,tremor,hypoglycemia",arabic
+سكر واطي,low_blood_sugar,red,"low_blood_sugar,hypoglycemia",arabic
+مش واعي ومريض سكر,low_blood_sugar,green,"unconscious,hypoglycemia_coma,diabetic_emergency",arabic
+confused with low glucose,low_blood_sugar,unknown,"confusion,low_glucose,hypoglycemia",english
+عرق ورعشة,low_blood_sugar,orange,"sweating,tremor,hypoglycemia",arabic
+قياس الجلوكوز منخفض,low_blood_sugar,red,"low_glucose,hypoglycemia_reading",arabic
+هبوط شديد في السكر,low_blood_sugar,green,"severe_hypoglycemia,hypoglycemic_coma",arabic
+اتحرقت بمية سخنة مغلية وطلعلي فقاعات كبيرة في دراعي,burn,red,"large_blisters,hot_water",arabic
+اتلسعت من الفرن وعندي علامة حمراء صغيرة وبتوجع,burn,orange,"redness,oven_burn",arabic
+الزيت طرطش في وشي والجلد مسود ومحروق جامد,burn,red,"charred_skin,face_burn,hot_oil",arabic
+النار مسكت في هدومي وجلدي لونه ابيض ومبقتش حاسس بيه,burn,red,"white_skin,flame_burn,numbness",arabic
+اتحرقت حرق بسيط من الحله في صباعي اعمل ايه,burn,green,"minor_burn,finger",arabic
+مية مغلية ادلقت على رجل ابني الصغير وجلده اتسلخ,burn,red,"child_burn,hot_water,skin_peeling",arabic
+اتحرقت بمادة كيماوية مية نار في الشغل والجلد بياكلني,burn,red,"chemical_burn,acid",arabic
+حطيت ايدي على المكواة وهي سخنة واحمرت وورمت,burn,orange,"iron_burn,swelling,redness",arabic
+عندي فقاعة حرق كبيرة هل افرقعها ولا اسيبها,burn,orange,"blisters,blister_care",arabic
+الجلد متفحم والريحة شياط في ايدي,burn,red,"charred_skin,deep_burn",arabic
+تعرضت لحرق شديد من الدرجة الثالثة في منطقة الصدر,burn,red,"third_degree_burn,chest",arabic
+ما هي الإسعافات الأولية لحروق السمط بالماء المغلي؟,burn,orange,"scalds,first_aid",arabic
+احمرار وتقشر في الجلد ناتج عن التعرض المفرط للنار,burn,orange,"redness,flame",arabic
+هل يجوز وضع الثلج أو معجون الأسنان على الحرق؟,burn,green,"burn_inquiry,home_remedies",arabic
+إصابة بحروق كيميائية ناتجة عن انسكاب حمض الكبريتيك,burn,red,"chemical_burn,sulfuric_acid",arabic
+my hand is severely burned from boiling hot water with large blisters,burn,red,"large_blisters,hot_water",english
+"I touched a hot stove, minor red spot on my palm",burn,green,"minor_burn,redness",english
+"third degree burn on leg, skin looks white and charred",burn,red,"third_degree,charred_skin",english
+"hot oil splashed on my face, urgent first aid needed",burn,red,"hot_oil,face_burn",english
+"chemical acid burn on arm, burning sensation continues",burn,red,"chemical_burn,acid",english
+should I pop the blister on my burned finger?,burn,green,"blister,finger",english
+severe scald injury on toddler chest from soup,burn,red,"toddler,scald,chest",english
+minor first degree burn from curling iron,burn,green,"first_degree,curling_iron",english
+"charred skin, loss of feeling on fingers after fire",burn,red,"charred_skin,numbness,fire",english
+ana et7ara2t b zit fe edy w 3amla foqa3at,burn,orange,"hot_oil,blisters",mixed
+har2 kbeer fe regly mn mya so5na,burn,red,"hot_water,large_burn",mixed
+حرق!,burn,unknown,burn_keyword,arabic
+burn on arm,burn,orange,arm_burn,english
+harg,burn,unknown,burn_keyword,mixed
+كنت بصلح البوتاجاز وحصل هباب ونار مسكت في دراعي وبقى لونه اسود خالص وبقى بيوجع جدا,burn,red,"flame_burn,charred_skin,severe_pain",arabic
+My coworker spilled caustic soda on his forearms and the skin is turning red and sloughing off,burn,red,"chemical_burn,skin_peeling",english
+اتحرقت بمية سخنة,burn,orange,"typo,hot_water",arabic
+burning sensation on my hand from oven,burn,orange,"typo,oven_burn",english
+فقاعات حرق من النار,burn,orange,"typo,blisters",arabic
+صاحبي اتجرح بسكينة والدم بينفر جامد ومش راضي يقف,cut,red,"spurting_blood,heavy_bleeding,arterial",arabic
+صباعي اتعور تعويرة بسيطة بالورقة وطلع نقطتين دم,cut,green,"minor_cut,paper_cut",arabic
+ازازة اتكسرت في رجلي والجرح غويط ومفتوح ومبين الدهن,cut,red,"deep_wound,glass_cut,fat_visible",arabic
+نزيف جامد في الدراع بعد حادثة موتوسيكل والشاش كله دم,cut,red,"heavy_bleeding,soaked_gauze,motorcycle_accident",arabic
+اتعورت بمسمار مصدي في الشارع وخايف من التيتانوس,cut,orange,"puncture_wound,rusty_nail,tetanus_risk",arabic
+جرح قطعي في الراس وبينزف دم كتير جدا ومغمى عليه,cut,red,"head_laceration,heavy_bleeding,unconscious",arabic
+عندي نزيف شرياني الدم بيخرج مع نبضات القلب,cut,red,"arterial_bleeding,spurting_blood",arabic
+اتقطعت في ايدي بماكينة الخياطة والجرح بيوجعني,cut,orange,"laceration,hand_injury",arabic
+جرح سطحي في الركبة بعد ما وقعت في حوش الكلية,cut,green,"abrasion,scrape,knee",arabic
+عضة كلب في الشارع وجرح غويط في الساق,cut,red,"dog_bite,deep_wound,rabies_risk",arabic
+نزيف حاد مستمر لأكثر من عشر دقائق بعد ضغط مباشر,cut,red,"persistent_bleeding,direct_pressure",arabic
+كيفية تضميد جرح عميق مفتوح بالأطراف السفلية,cut,orange,"deep_wound,bandaging",arabic
+"my friend has arterial bleeding, blood is spurting out fast",cut,red,"arterial_bleeding,spurting_blood",english
+"minor cut on my thumb from kitchen knife, bleeding stopped",cut,green,"minor_cut,knife",english
+"deep laceration from broken glass, fat and muscle visible",cut,red,"deep_laceration,broken_glass,muscle_exposed",english
+"stepped on a rusty nail, deep puncture wound in foot",cut,orange,"puncture_wound,rusty_nail",english
+"heavy bleeding after car crash, gauze completely soaked",cut,red,"heavy_bleeding,trauma,soaked_gauze",english
+"scraped my knee on pavement, dirt inside wound",cut,green,"abrasion,dirty_wound",english
+"clean knife slice on forearm, won't stop bleeding after 10 mins",cut,red,"deep_cut,persistent_bleeding",english
+dog bite bleeding on calf with skin tear,cut,red,"animal_bite,skin_tear",english
+"gasping wound on wrist, pulsatile bleeding",cut,red,"wrist_wound,pulsatile_bleed",english
+edee btenzef gamed mn ezaz maksour,cut,red,"glass_cut,heavy_bleeding",mixed
+gar7 baset fe sob3y,cut,green,minor_cut,mixed
+نزيف!,cut,unknown,cut_keyword,arabic
+دم كتير,cut,red,heavy_bleeding,arabic
+bleeding,cut,unknown,bleeding_keyword,english
+severe bleeding,cut,red,severe_bleeding,english
+كنت بقطع لحمة بالسكينة وطارت عقلة صباعي وبينزف جدا,cut,red,"amputation,severe_bleeding,knife",arabic
+Patient has a 7 cm deep laceration across the neck with profuse hemorrhage,cut,red,"neck_laceration,hemorrhage",english
+نزيف من الجرح,cut,orange,bleeding_wound,arabic
+اتعورت بالسكينة ودم,cut,orange,"typo,knife,blood",arabic
+blod spurting from arm cut,cut,red,"typo,arterial_bleed",english
+جرح نازف مش بيقف,cut,red,persistent_bleed,arabic
+cut finger,cut,green,finger_cut,english
+ضربة سكين في البطن ونزيف,cut,red,"stab_wound,abdomen,heavy_bleed",arabic
+صاحبي شرق في الأكل ومش قادر يتنفس خالص وماسك رقبته بايديه,choking,red,"cannot_breathe,holding_throat,food_choking",arabic
+طفل رضيع 6 شهور بلع عملة معدنية ووشه ازرق ومش بيعيط,choking,red,"infant_choking,foreign_object,turning_blue",arabic
+شخص بيشرق وبيكح جامد وبياخد نفسه بالعافية,choking,orange,"coughing,partial_obstruction",arabic
+واحدة حامل بتشرق في الأكل إزاي أعملها هيمليك في بطنها؟,choking,red,"pregnant_choking,chest_thrusts",arabic
+الراجل شرق ووقع على الأرض وفقد الوعي تماماً,choking,red,"unconscious,choking,collapsed",arabic
+أنا لوحدي في البيت وبشرق ومش عارف أتنفس ساعدوني,choking,red,"alone_choking,self_heimlich",arabic
+طفل شرق في عنبة ومش قادر يطلع صوت خالص,choking,red,"child_choking,cannot_speak,silent",arabic
+طريقة ضربات الظهر والضغطات الصدرية لرضيع يختنق,choking,orange,"infant_back_blows,chest_thrusts",arabic
+حاسس بلقمة واقفة في زوري ومش راضية تنزل,choking,orange,throat_foreign_body,arabic
+زوري مسدود تماماً ومفيش أي هوا داخل لرئتي,choking,red,"complete_obstruction,no_air",arabic
+علامات الاختناق والانسداد الكلي لمجرى التنفس,choking,orange,"choking_signs,airway_obstruction",arabic
+ما هي مناورة هيمليك للبالغين المصابين بالغصة؟,choking,green,heimlich_inquiry,arabic
+"my friend is choking on steak, can't breathe or speak, clutching throat",choking,red,"clutching_throat,cannot_breathe,food_choking",english
+"8 month old baby swallowed a marble, turning blue and silent",choking,red,"infant,foreign_object,cyanosis",english
+person is coughing loudly after water swallowed wrong,choking,green,"partial_choking,coughing",english
+"pregnant woman choking on food, how to do chest thrusts?",choking,red,"pregnant,choking,chest_thrusts",english
+choking victim just collapsed and is now unresponsive,choking,red,"unconscious_choking,cardiac_arrest_risk",english
+"I am home alone and choking on an apple, help me",choking,red,"alone_choking,chair_thrusts",english
+toddler put a toy in mouth and is making high pitched wheezing,choking,red,"toddler,stridor,toy_swallowed",english
+"complete airway blockage, face turning dark purple",choking,red,"complete_blockage,purple_face",english
+"elderly man choking on pill, unable to cough",choking,red,"elderly,pill_choking,cannot_cough",english
+sa7by byshra2 w mesh 3aref yetnafs 5ales,choking,red,"cannot_breathe,holding_throat",mixed
+choking f el akl,choking,red,food_choking,mixed
+شرقان,choking,unknown,choking_keyword,arabic
+choking,choking,unknown,choking_keyword,english
+cannot breathe choking,choking,red,cannot_breathe,english
+طفلي شرق في قطعة بلاستيك صغيرة ونفسه اتقطع وشفايفه زرقت فورا,choking,red,"cyanosis,no_breathing,plastic_swallowed",arabic
+"Adult choking at restaurant, universal sign shown, silent struggle",choking,red,"universal_sign,silent_struggle",english
+واحد شرق في بونبوني ومش قادر يتكلم,choking,red,"candy_choking,cannot_speak",arabic
+اختناك في الاكل ساعدوني,choking,red,"typo,food_choking",arabic
+chokin on food can't breath,choking,red,"typo,cannot_breathe",english
+شرقان ومش بيتنفس,choking,red,choking_no_breath,arabic
+baby choking toy,choking,red,"typo,baby,toy",english
+مناورة هيمليك للاختناق,choking,green,heimlich_query,arabic
+واحد وقع فجأة في الشارع ومفيش نبض ومش بيتنفس خالص,cpr,red,"no_pulse,not_breathing,collapsed",arabic
+والدي أغمى عليه ونبضه واقف وشفايفه مزرقة إزاي أعمل إنعاش؟,cpr,red,"cardiac_arrest,cyanosis,cpr_needed",arabic
+شخص غرقان طلعناه من البحر ومش بيتنفس وقلبه واقف,cpr,red,"drowning,asphyxial_arrest,cpr",arabic
+خطوات استخدام جهاز الصدمات الكهربائية الخارجي AED,cpr,orange,"aed_steps,defibrillator",arabic
+معدل وعمق الضغطات الصدرية في الإنعاش القلبي للبالغين,cpr,green,"compression_rate,depth,cpr",arabic
+المريض بيشهق شهقات موت متقطعة ومش واعي,cpr,red,"agonal_breathing,cardiac_arrest",arabic
+الإنعاش القلبي بالأيدي فقط بدون تنفس صناعي Hands-Only CPR,cpr,orange,hands_only_cpr,arabic
+طفل قلبه وقف بعد صعق كهربائي شديد ومفيش نفس,cpr,red,"electric_shock,pediatric_cpr,arrest",arabic
+صدمة قلبية مفاجئة والراجل ميت بين ايدينا الحقونا,cpr,red,"sudden_cardiac_arrest,unresponsive",arabic
+هل استمر في التدليك القلبي لحد ما الإسعاف تيجي؟,cpr,orange,"cpr_continuation,ambulance",arabic
+"person collapsed suddenly, no pulse, not breathing, unresponsive",cpr,red,"no_pulse,not_breathing,unresponsive",english
+how to perform chest compressions on cardiac arrest victim,cpr,green,"cpr_technique,chest_compressions",english
+"drowning victim pulled out of pool, unconscious and no breath",cpr,red,"drowning,no_breathing,cpr",english
+"AED device arrived, what are the first steps to apply pads?",cpr,orange,"aed_pads,voice_prompts",english
+"gasping sounds after collapse, is this normal breathing?",cpr,red,"agonal_gasps,cardiac_arrest",english
+Hands-only CPR compression rate per minute guidelines,cpr,green,"hands_only,compression_rate",english
+infant cardiac arrest CPR technique two fingers,cpr,red,"infant_cpr,two_fingers",english
+unconscious person with no pulse after severe electric shock,cpr,red,"electric_shock,pulseless",english
+"elderly woman collapsed in market, unresponsive and cold",cpr,red,"unresponsive,collapsed,arrest",english
+how deep should adult chest compressions be?,cpr,green,"compression_depth,adult",english
+wa7ed wa2e3 f el share3 w el alb wa2ef,cpr,red,"collapsed,heart_stopped",mixed
+cpr steps ezay,cpr,orange,cpr_query,mixed
+انعاش قلبي,cpr,unknown,cpr_keyword,arabic
+القلب واقف,cpr,red,heart_stopped,arabic
+CPR needed,cpr,red,cpr_keyword,english
+المريض مش بيرد على النداء والنبض منعدم من الشريان السباتي,cpr,red,"carotid_pulse_absent,unresponsive",arabic
+Bystander CPR initiation while emergency medical services are en route,cpr,orange,"bystander_cpr,ems",english
+واحد مات قلبه ومفيش نفس الحقونا,cpr,red,"cardiac_arrest,urgent",arabic
+تدليك القلب والصدر للغرقان,cpr,red,drowning_cpr,arabic
+انعاش قلبي رئوي,cpr,orange,"typo,cpr",arabic
+cardicac arrest cpr help,cpr,red,"typo,cardiac_arrest",english
+قلب وقف ونفس,cpr,red,"heart_stopped,no_breath",arabic
+no pulse unconscious cpr,cpr,red,"no_pulse,unconscious",english
+طريقة cpr الصحيحة,cpr,green,cpr_method,arabic
+صاحبتي أغمى عليها في مدرج الكلية فجأة ووقعت في الأرض,fainting,orange,"syncope,sudden_fall,lecture",arabic
+حاسس بدوخة وسواد في عيني وهقع أغمى عليا من قلة الأكل,fainting,green,"dizziness,lightheaded,fasting",arabic
+شخص فقد الوعي بعد وقوف طويل في الشمس ومغمض عينه,fainting,orange,"heat_syncope,loss_of_consciousness",arabic
+ازاي افوق واحد مغمى عليه هل ارفع رجله لفوق؟,fainting,green,"elevate_legs,syncope_first_aid",arabic
+فقدان وعي مفاجئ واستعاد وعيه بعد نص دقيقة وبيسأل ايه اللي حصل,fainting,green,"transient_syncope,rapid_recovery",arabic
+مغمى عليه ومش راضي يفوق بقاله 5 دقائق ومش بيرد,fainting,red,"prolonged_unconsciousness,coma_risk",arabic
+هل ارش مية على وش المغمى عليه ولا ده غلط؟,fainting,green,"fainting_myth,water_splash",arabic
+طالبة في الامتحان داخت وأغمى عليها ونبضها ضعيف ووشها اصفر,fainting,orange,"stress_syncope,pale_skin,weak_pulse",arabic
+دوخة شديدة مع زغللة في العين وهبوط حاد,fainting,green,"hypotension,dizziness",arabic
+إغماء مصحوب بتبول لا إرادي أو عض اللسان,fainting,red,"incontinence,tongue_bite,seizure_risk",arabic
+student fainted during morning assembly and fell backwards,fainting,orange,"syncope,assembly,fall",english
+"I feel lightheaded, vision turning black, about to pass out",fainting,green,"presyncope,dizziness",english
+"person lost consciousness, should I elevate their legs?",fainting,green,"elevate_legs,first_aid",english
+"unconscious for over 3 minutes, not waking up after fainting",fainting,red,"prolonged_syncope,unresponsive",english
+"pale, sweaty, and clammy skin before collapsing in hallway",fainting,orange,"vasovagal_syncope,clammy_skin",english
+"fainting while lying down in bed, chest palpitations noticed",fainting,red,"cardiac_syncope,palpitations",english
+how to place a fainted person in recovery position,fainting,green,"recovery_position,syncope",english
+young girl passed out after blood sample collection,fainting,green,"vasovagal,blood_phobia",english
+dizziness and blacking out when standing up quickly,fainting,green,orthostatic_hypotension,english
+elderly man fainted and hit his head on the floor,fainting,red,"head_trauma,syncope,elderly",english
+sa7bty 2o3'ma 3leha f el kolya,fainting,orange,"fainted,college",mixed
+daye5 w ha2a3 mn tooly,fainting,green,"dizzy,presyncope",mixed
+إغماء,fainting,unknown,fainting_keyword,arabic
+مغمى عليه,fainting,orange,fainted_keyword,arabic
+passed out,fainting,orange,syncope_keyword,english
+fainting help,fainting,orange,fainting_query,english
+واحد داغ ووقع على الأرض وفاق بعد شوية بس وشه شاحب جدا,fainting,orange,"transient_loss,pale_face",arabic
+Loss of consciousness lasting 45 seconds after sudden emotional distress,fainting,green,emotional_syncope,english
+اغماء ومش بيفوق,fainting,red,unresponsive_fainting,arabic
+دوخة وهبوط في الدورة الدموية,fainting,green,hypotension_dizziness,arabic
+مغما عليه فجاءة,fainting,orange,"typo,syncope",arabic
+fanted in class room,fainting,orange,"typo,classroom",english
+رفع الرجل للمغمى عليه,fainting,green,elevate_legs,arabic
+fainting recovery position,fainting,green,recovery_pos,english
+دوخة واغماء قلة اكل,fainting,green,fasting_syncope,arabic
+صاحبي وقع ورجله اتكسرت والعضم طالع برة الجلد وبينزف,fracture,red,"open_fracture,bone_protruding,bleeding",arabic
+اتلوت رجلي في الماتش وورمت جدا وزرقت ومش قادر ادوس عليها,fracture,orange,"sprain,ankle_swelling,bruising",arabic
+دراع ابني معووج وشكله مكسور وبيبكي من الوجع الشديد,fracture,orange,"deformity,arm_fracture,pediatric",arabic
+وقعت من على السلم وحاسس بفرقعة في فخذي ومش قادر اتحرك,fracture,red,"femur_fracture,fall,cannot_move",arabic
+ازاي اعمل جبيرة مؤقتة لتثبيت كسر في الساعد؟,fracture,green,"splinting_technique,forearm",arabic
+صوابع رجلي اتسحقت تحت حاجة تقيلة وبتنمل وازرقت,fracture,orange,"crush_injury,cyanotic_toes,numbness",arabic
+اشتباه كسر في فقرات الرقبة بعد حادث عربية اوعى تحركه,fracture,red,"cervical_spine_fracture,car_accident",arabic
+صوت طقطقة في مفصل الركبة وتورم مفاجئ بعد التواء شديد,fracture,orange,"ligament_tear,joint_swelling",arabic
+وجع شديد في القفص الصدري وصعوبة في النفس بعد خبطة,fracture,orange,"rib_fracture,chest_pain,breathing_difficulty",arabic
+كسر مضاعف في الساق مع تشوه واضح في اتجاه القدم,fracture,red,"compound_fracture,deformity",arabic
+"open fracture on lower leg, tibia bone is piercing the skin",fracture,red,"open_fracture,tibia_protrusion",english
+"twisted my ankle during soccer, severe swelling and bruising",fracture,orange,"ankle_sprain,swelling,hematoma",english
+suspected wrist fracture after falling on outstretched hand,fracture,orange,"colles_fracture,wrist_pain",english
+how to apply a temporary splint to an injured arm,fracture,green,"splinting,first_aid",english
+femur deformity and unable to walk after motorcycle crash,fracture,red,"femur_fracture,deformity",english
+"possible spinal neck injury, casualty must not be moved",fracture,red,"spinal_injury,cervical_spine",english
+"painful swollen knee with clicking sound, cannot put weight",fracture,orange,"knee_sprain,ligament_injury",english
+"toes are pale, cold and numb below fractured ankle",fracture,red,"compromised_circulation,ischemia",english
+"cracked rib from blunt trauma, sharp pain when inhaling",fracture,orange,"rib_fracture,pleuritic_pain",english
+first aid for closed forearm fracture using sling,fracture,green,"closed_fracture,arm_sling",english
+regly maksoora w warma gamed mn el koora,fracture,orange,"ankle_fracture,soccer",mixed
+3adm tala3 bara ,fracture,red,open_fracture,mixed
+كسر,fracture,unknown,fracture_keyword,arabic
+عضم مكسور,fracture,orange,broken_bone,arabic
+broken bone,fracture,orange,broken_bone,english
+sprained ankle,fracture,orange,sprain,english
+الطرف السفلي مشوه تماماً والقدم مقلوبة بزاوية غريبة بعد السقوط,fracture,red,"gross_deformity,fall",arabic
+Compound fracture of right humerus with arterial compromise signs,fracture,red,"compound_fracture,arterial",english
+التواء مفصل القدم,fracture,green,sprain_ankle,arabic
+تثبيت الكسر بجبيرة,fracture,green,splint_guideline,arabic
+كسر ف الدراع ومش قادر احركه,fracture,orange,"typo,arm_fracture",arabic
+brokn arm cant move,fracture,orange,"typo,broken_arm",english
+وجع وتورم في المفصل,fracture,orange,joint_swelling,arabic
+open fracture bone visible,fracture,red,bone_visible,english
+رجلي التوت في السلم,fracture,green,sprain_stairs,arabic
+مناخيري بتنزل دم كتير ومش عارف أوقف النزيف,nosebleed,orange,"epistaxis,heavy_nosebleed",arabic
+ابني بينزف دم من انفه إزاي أوقفه هل يرجع راسه لورا؟,nosebleed,green,"child_nosebleed,head_position",arabic
+نزيف الأنف بقاله اكتر من ربع ساعة ومش بيقف مع الضغط,nosebleed,orange,"persistent_epistaxis,15_mins",arabic
+دم نازل في حلقي من مناخيري وحاسس اني هرجع دم,nosebleed,orange,"posterior_bleed,swallowing_blood",arabic
+مناخيري اتخبطت في الماتش ونزفت دم وفيه اعوجاج في عظمة الانف,nosebleed,orange,"nasal_trauma,fracture,bleeding",arabic
+نزيف انف شديد مع دوخة وهبوط بعد ما قست الضغط ولقيته عالي,nosebleed,red,"hypertension,severe_epistaxis,dizziness",arabic
+أفضل طريقة للضغط على الأنف لإيقاف الرعاف,nosebleed,green,"pinching_technique,first_aid",arabic
+نزيف انفي متكرر كل يوم في الصيف بسبب حرارة الجو,nosebleed,green,"recurrent_epistaxis,dry_air",arabic
+حادثة سيارة وخروج دم وسائل شفاف من الأنف,nosebleed,red,"head_trauma,csf_leak,basilar_skull",arabic
+حطيت قطن في مناخيري عشان الدم يقف ده صح ولا غلط؟,nosebleed,green,nasal_packing_myth,arabic
+"my nose is bleeding heavily, how should I position my head?",nosebleed,green,"epistaxis,head_tilt",english
+nosebleed won't stop after 20 minutes of firm direct pinching,nosebleed,orange,"persistent_nosebleed,20_mins",english
+blood dripping down back of throat from posterior nosebleed,nosebleed,orange,"posterior_epistaxis,throat",english
+"blunt hit to the nose during basketball, severe bleeding and crooked",nosebleed,orange,"nasal_trauma,fracture",english
+high blood pressure patient having massive uncontrollable nosebleed,nosebleed,red,"hypertension,severe_epistaxis",english
+recurrent nosebleeds in children due to dry winter air,nosebleed,green,"pediatric_nosebleed,dryness",english
+clear fluid and blood leaking from nostrils after head injury,nosebleed,red,"skull_fracture,csf_rhinorrhea",english
+should I use an ice pack on the bridge of the nose?,nosebleed,green,"ice_pack,nasal_bridge",english
+feeling dizzy and lightheaded from severe epistaxis blood loss,nosebleed,red,"blood_loss,hypovolemia,epistaxis",english
+child picked nose and now bleeding from one nostril,nosebleed,green,"digital_trauma,unilateral",english
+man5eery btenzel dam gamed mesh wa2ef,nosebleed,orange,nosebleed_heavy,mixed
+Nazef mn el 7ar,nosebleed,green,heat_epistaxis,mixed
+رعاف,nosebleed,unknown,nosebleed_keyword,arabic
+دم من الانف,nosebleed,orange,nasal_bleeding,arabic
+نزيف أنفي حاد ومستمر منذ نصف ساعة مع شحوب الوجه وتسارع النبض,nosebleed,red,"severe_epistaxis,tachycardia",arabic
+Uncontrolled anterior epistaxis refractory to direct digital compression,nosebleed,orange,refractory_epistaxis,english
+مناخيري بتجيب دم,nosebleed,orange,nose_blood,arabic
+ضغط الانف لوقف الدم,nosebleed,green,pinching_method,arabic
+رعاف ف الانف ودم,nosebleed,orange,"typo,epistaxis",arabic
+nosebleed won't stop,nosebleed,orange,"typo,persistent",english
+دم من مناخير طفل,nosebleed,green,child_nosebleed,arabic
+stop nose bleeding,nosebleed,green,stop_epistaxis,english
+خروج دم من الانف,nosebleed,orange,nasal_hemorrhage,arabic
+حرارتي فوق 40 وجلدي ناشف ومفيش عرق ومش مركز,heatstroke,red,"high_temp,dry_skin,confusion",arabic
+حالة طارئة: حرارتي فوق 40 وجلدي ناشف ومفيش عرق ومش مركز,heatstroke,red,"high_temp,dry_skin,confusion",arabic
+دوخة وعرق غزير وتقلصات عضلية بعد الشغل في الشمس,heatstroke,orange,"heat_exhaustion,sweating,cramps",arabic
+حالة طارئة: دوخة وعرق غزير وتقلصات عضلية بعد الشغل في الشمس,heatstroke,orange,"heat_exhaustion,sweating,cramps",arabic
+"person collapsed from extreme heat, hot dry skin and confused",heatstroke,red,"heatstroke,hyperthermia,confusion",english
+"حالة طارئة: person collapsed from extreme heat, hot dry skin and confused",heatstroke,red,"heatstroke,hyperthermia,confusion",english
+heat exhaustion treatment: cool water and shaded resting,heatstroke,green,"cooling,shade,hydration",english
+حالة طارئة: heat exhaustion treatment: cool water and shaded resting,heatstroke,green,"cooling,shade,hydration",english
+darbet shams w 7arara 3alya gamed,heatstroke,red,heatstroke_fever,mixed
+حالة طارئة: darbet shams w 7arara 3alya gamed,heatstroke,red,heatstroke_fever,mixed
+ضربة شمس واغماء,heatstroke,red,heatstroke_syncope,arabic
+حالة طارئة: ضربة شمس واغماء,heatstroke,red,heatstroke_syncope,arabic
+طريقة تبريد المصاب بضربة الشمس بالكمادات,heatstroke,green,evaporative_cooling,arabic
+حالة طارئة: طريقة تبريد المصاب بضربة الشمس بالكمادات,heatstroke,green,evaporative_cooling,arabic
+heat cramps in legs after football match in heat,heatstroke,green,"muscle_cramps,electrolytes",english
+حالة طارئة: heat cramps in legs after football match in heat,heatstroke,green,"muscle_cramps,electrolytes",english
+ابني بلع كلور ومنظفات بطنه بتولع نار وبيرجع,poisoning,red,"corrosive,bleach,emesis_prohibited",arabic
+حالة طارئة: ابني بلع كلور ومنظفات بطنه بتولع نار وبيرجع,poisoning,red,"corrosive,bleach,emesis_prohibited",arabic
+حالة تسمم بحبة الغلة القاتلة الحقونا بسرعة,poisoning,red,"wheat_pill,aluminum_phosphide,urgent",arabic
+حالة طارئة: حالة تسمم بحبة الغلة القاتلة الحقونا بسرعة,poisoning,red,"wheat_pill,aluminum_phosphide,urgent",arabic
+"swallowed drain cleaner acid, burning throat, do not induce vomit",poisoning,red,"corrosive_poison,acid",english
+"حالة طارئة: swallowed drain cleaner acid, burning throat, do not induce vomit",poisoning,red,"corrosive_poison,acid",english
+"pesticide organophosphate exposure, pinpoint pupils, excessive salivation",poisoning,red,"organophosphates,toxic",english
+"حالة طارئة: pesticide organophosphate exposure, pinpoint pupils, excessive salivation",poisoning,red,"organophosphates,toxic",english
+tasamom mn 7abet el 3'ala,poisoning,red,wheat_pill_poisoning,mixed
+حالة طارئة: tasamom mn 7abet el 3'ala,poisoning,red,wheat_pill_poisoning,mixed
+تسمم مبيدات حشرية,poisoning,red,pesticides,arabic
+حالة طارئة: تسمم مبيدات حشرية,poisoning,red,pesticides,arabic
+حظر إحداث القيء في التسمم بالمواد الكاوية ومية النار,poisoning,orange,contraindicated_emesis,arabic
+حالة طارئة: حظر إحداث القيء في التسمم بالمواد الكاوية ومية النار,poisoning,orange,contraindicated_emesis,arabic
+poison center hotline for accidental drug overdose,poisoning,orange,"drug_overdose,poison_hotline",english
+حالة طارئة: poison center hotline for accidental drug overdose,poisoning,orange,"drug_overdose,poison_hotline",english
+قرصة نحلة في رقبتي وزوري ورم ومش عارف اخد نفسي,allergy_anaphylaxis,red,"bee_sting,airway_swelling,stridor",arabic
+حالة طارئة: قرصة نحلة في رقبتي وزوري ورم ومش عارف اخد نفسي,allergy_anaphylaxis,red,"bee_sting,airway_swelling,stridor",arabic
+حساسية شديدة من الفول السوداني وطفح جلدي وهبوط في الضغط,allergy_anaphylaxis,red,"peanut_allergy,hives,hypotension",arabic
+حالة طارئة: حساسية شديدة من الفول السوداني وطفح جلدي وهبوط في الضغط,allergy_anaphylaxis,red,"peanut_allergy,hives,hypotension",arabic
+"anaphylactic shock symptoms: throat closing, wheezing, hives",allergy_anaphylaxis,red,"anaphylaxis,epipen_needed",english
+"حالة طارئة: anaphylactic shock symptoms: throat closing, wheezing, hives",allergy_anaphylaxis,red,"anaphylaxis,epipen_needed",english
+how to use an EpiPen auto-injector in the outer thigh,allergy_anaphylaxis,orange,"epipen_technique,thigh",english
+حالة طارئة: how to use an EpiPen auto-injector in the outer thigh,allergy_anaphylaxis,orange,"epipen_technique,thigh",english
+7asaseya gamedah mn el samak w deeq tanaffos,allergy_anaphylaxis,red,"food_allergy,dyspnea",mixed
+7asaseya gamedah mn el samak w deeq tanaffos?,allergy_anaphylaxis,red,"food_allergy,dyspnea",mixed
+حالة طارئة: 7asaseya gamedah mn el samak w deeq tanaffos,allergy_anaphylaxis,red,"food_allergy,dyspnea",mixed
+صدمة حساسية مفرطة,allergy_anaphylaxis,red,anaphylactic_shock,arabic
+صدمة حساسية مفرطة؟,allergy_anaphylaxis,red,anaphylactic_shock,arabic
+حالة طارئة: صدمة حساسية مفرطة,allergy_anaphylaxis,red,anaphylactic_shock,arabic
+تورم الشفتين واللسان وصعوبة البلع بعد دواء البنسلين,allergy_anaphylaxis,red,"angioedema,penicillin_allergy",arabic
+تورم الشفتين واللسان وصعوبة البلع بعد دواء البنسلين؟,allergy_anaphylaxis,red,"angioedema,penicillin_allergy",arabic
+حالة طارئة: تورم الشفتين واللسان وصعوبة البلع بعد دواء البنسلين,allergy_anaphylaxis,red,"angioedema,penicillin_allergy",arabic
+allergic reaction with widespread red itchy bumps,allergy_anaphylaxis,orange,"urticaria,hives,antihistamine",english
+allergic reaction with widespread red itchy bumps?,allergy_anaphylaxis,orange,"urticaria,hives,antihistamine",english
+حالة طارئة: allergic reaction with widespread red itchy bumps,allergy_anaphylaxis,orange,"urticaria,hives,antihistamine",english
+أزمة ربو حادة والبخاخة الزرقاء خلصت ومش قادر اتكلم,asthma,red,"acute_asthma,inhaler_empty,cannot_speak",arabic
+أزمة ربو حادة والبخاخة الزرقاء خلصت ومش قادر اتكلم؟,asthma,red,"acute_asthma,inhaler_empty,cannot_speak",arabic
+حالة طارئة: أزمة ربو حادة والبخاخة الزرقاء خلصت ومش قادر اتكلم,asthma,red,"acute_asthma,inhaler_empty,cannot_speak",arabic
+تزييق في الصدر وكحة ناشفة شديدة وصعوبة في الزفير,asthma,orange,"wheezing,dry_cough,dyspnea",arabic
+تزييق في الصدر وكحة ناشفة شديدة وصعوبة في الزفير؟,asthma,orange,"wheezing,dry_cough,dyspnea",arabic
+حالة طارئة: تزييق في الصدر وكحة ناشفة شديدة وصعوبة في الزفير,asthma,orange,"wheezing,dry_cough,dyspnea",arabic
+"severe asthma attack, blue lips, silent chest emergency",asthma,red,"silent_chest,cyanosis,life_threatening",english
+"severe asthma attack, blue lips, silent chest emergency?",asthma,red,"silent_chest,cyanosis,life_threatening",english
+"حالة طارئة: severe asthma attack, blue lips, silent chest emergency",asthma,red,"silent_chest,cyanosis,life_threatening",english
+how many puffs of Ventolin reliever inhaler during attack?,asthma,green,"ventolin_puffs,spacer",english
+how many puffs of Ventolin reliever inhaler during attack?,asthma,green,"ventolin_puffs,spacer",english
+حالة طارئة: how many puffs of Ventolin reliever inhaler during attack?,asthma,green,"ventolin_puffs,spacer",english
+azmet rabw w nefas dayaq,asthma,orange,asthma_attack,english
+azmet rabw w nefas dayaq?,asthma,orange,asthma_attack,english
+حالة طارئة: azmet rabw w nefas dayaq,asthma,orange,asthma_attack,english
+نوبة ربو ومش بياخد نفسه,asthma,red,asthma_severe,arabic
+نوبة ربو ومش بياخد نفسه؟,asthma,red,asthma_severe,arabic
+حالة طارئة: نوبة ربو ومش بياخد نفسه,asthma,red,asthma_severe,arabic
+الجلوس في وضع قائم واستنشاق موسع الشعب الهوائية,asthma,green,"upright_position,bronchodilator",arabic
+الجلوس في وضع قائم واستنشاق موسع الشعب الهوائية؟,asthma,green,"upright_position,bronchodilator",arabic
+حالة طارئة: الجلوس في وضع قائم واستنشاق موسع الشعب الهوائية,asthma,green,"upright_position,bronchodilator",arabic
+child coughing continuously at night with wheeze,asthma,orange,"pediatric_asthma,nocturnal_wheeze",english
+child coughing continuously at night with wheeze?,asthma,orange,"pediatric_asthma,nocturnal_wheeze",english
+حالة طارئة: child coughing continuously at night with wheeze,asthma,orange,"pediatric_asthma,nocturnal_wheeze",english
+صاحبي بيترعش على الأرض وبيطلع رغاوي من بقه ومش واعي,seizures,red,"tonic_clonic,frothing,unconscious",arabic
+صاحبي بيترعش على الأرض وبيطلع رغاوي من بقه ومش واعي؟,seizures,red,"tonic_clonic,frothing,unconscious",arabic
+حالة طارئة: صاحبي بيترعش على الأرض وبيطلع رغاوي من بقه ومش واعي,seizures,red,"tonic_clonic,frothing,unconscious",arabic
+تشنج حراري لطفل صغير سخن جدا وبيفضفض بايديه ورجليه,seizures,orange,"febrile_convulsion,child,fever",arabic
+تشنج حراري لطفل صغير سخن جدا وبيفضفض بايديه ورجليه؟,seizures,orange,"febrile_convulsion,child,fever",arabic
+حالة طارئة: تشنج حراري لطفل صغير سخن جدا وبيفضفض بايديه ورجليه,seizures,orange,"febrile_convulsion,child,fever",arabic
+"person having epileptic fit, protect head and clear objects",seizures,orange,"seizure_protection,head_cushion",english
+"person having epileptic fit, protect head and clear objects?",seizures,orange,"seizure_protection,head_cushion",english
+"حالة طارئة: person having epileptic fit, protect head and clear objects",seizures,orange,"seizure_protection,head_cushion",english
+do NOT put anything in the mouth of a seizing patient,seizures,green,"no_mouth_objects,myth_busting",english
+do NOT put anything in the mouth of a seizing patient?,seizures,green,"no_mouth_objects,myth_busting",english
+حالة طارئة: do NOT put anything in the mouth of a seizing patient,seizures,green,"no_mouth_objects,myth_busting",english
+tashanogat w sara3,seizures,orange,epilepsy_fit,mixed
+tashanogat w sara3?,seizures,orange,epilepsy_fit,mixed
+حالة طارئة: tashanogat w sara3,seizures,orange,epilepsy_fit,mixed
+تشنجات مستمرة أكتر من 5 دقائق,seizures,red,status_epilepticus,arabic
+تشنجات مستمرة أكتر من 5 دقائق؟,seizures,red,status_epilepticus,arabic
+حالة طارئة: تشنجات مستمرة أكتر من 5 دقائق,seizures,red,status_epilepticus,arabic
+وضع المصاب في وضع الإفاقة بعد انتهاء نوبة الصرع,seizures,green,"recovery_position,postictal",arabic
+وضع المصاب في وضع الإفاقة بعد انتهاء نوبة الصرع؟,seizures,green,"recovery_position,postictal",arabic
+حالة طارئة: وضع المصاب في وضع الإفاقة بعد انتهاء نوبة الصرع,seizures,green,"recovery_position,postictal",arabic
+seizure lasting longer than 5 minutes requires emergency EMS,seizures,red,"status_epilepticus,ems",english
+seizure lasting longer than 5 minutes requires emergency EMS?,seizures,red,"status_epilepticus,ems",english
+حالة طارئة: seizure lasting longer than 5 minutes requires emergency EMS,seizures,red,"status_epilepticus,ems",english
+عضة ثعبان سام في الغيط ورجلي ورمت واسودت بسرعة,bites_stings,red,"snakebite,venomous,swelling",arabic
+عضة ثعبان سام في الغيط ورجلي ورمت واسودت بسرعة؟,bites_stings,red,"snakebite,venomous,swelling",arabic
+حالة طارئة: عضة ثعبان سام في الغيط ورجلي ورمت واسودت بسرعة,bites_stings,red,"snakebite,venomous,swelling",arabic
+لدغة عقرب في صباعي وألم فظيع وتنميل في لساني,bites_stings,red,"scorpion_sting,severe_pain,numbness",arabic
+لدغة عقرب في صباعي وألم فظيع وتنميل في لساني؟,bites_stings,red,"scorpion_sting,severe_pain,numbness",arabic
+حالة طارئة: لدغة عقرب في صباعي وألم فظيع وتنميل في لساني,bites_stings,red,"scorpion_sting,severe_pain,numbness",arabic
+"stray dog bite on leg, need rabies vaccine protocol immediately",bites_stings,red,"dog_bite,rabies_pep,wound_wash",english
+"stray dog bite on leg, need rabies vaccine protocol immediately?",bites_stings,red,"dog_bite,rabies_pep,wound_wash",english
+"حالة طارئة: stray dog bite on leg, need rabies vaccine protocol immediately",bites_stings,red,"dog_bite,rabies_pep,wound_wash",english
+"jellyfish sting on beach, rinse with vinegar not fresh water",bites_stings,green,"jellyfish,vinegar_rinse",english
+"jellyfish sting on beach, rinse with vinegar not fresh water?",bites_stings,green,"jellyfish,vinegar_rinse",english
+"حالة طارئة: jellyfish sting on beach, rinse with vinegar not fresh water",bites_stings,green,"jellyfish,vinegar_rinse",english
+3adet te3ban w waram,bites_stings,red,snake_venom,mixed
+3adet te3ban w waram?,bites_stings,red,snake_venom,mixed
+حالة طارئة: 3adet te3ban w waram,bites_stings,red,snake_venom,mixed
+عضة كلب مسعور,bites_stings,red,rabies_bite,arabic
+عضة كلب مسعور؟,bites_stings,red,rabies_bite,arabic
+حالة طارئة: عضة كلب مسعور,bites_stings,red,rabies_bite,arabic
+غسيل جرح عضة الحيوان بالماء والصابون 15 دقيقة,bites_stings,orange,"wound_irrigation,soap_water",arabic
+غسيل جرح عضة الحيوان بالماء والصابون 15 دقيقة؟,bites_stings,orange,"wound_irrigation,soap_water",arabic
+حالة طارئة: غسيل جرح عضة الحيوان بالماء والصابون 15 دقيقة,bites_stings,orange,"wound_irrigation,soap_water",arabic
+wasp sting with mild localized swelling and redness,bites_stings,green,"wasp_sting,ice_pack",english
+wasp sting with mild localized swelling and redness?,bites_stings,green,"wasp_sting,ice_pack",english
+حالة طارئة: wasp sting with mild localized swelling and redness,bites_stings,green,"wasp_sting,ice_pack",english
+كلور طار في عيني وعيني بتحرقني ومش قادر افتحها,eye_injury,red,"chemical_splash,chlorine,irrigation",arabic
+كلور طار في عيني وعيني بتحرقني ومش قادر افتحها؟,eye_injury,red,"chemical_splash,chlorine,irrigation",arabic
+حالة طارئة: كلور طار في عيني وعيني بتحرقني ومش قادر افتحها,eye_injury,red,"chemical_splash,chlorine,irrigation",arabic
+رايش حديد دخل في عيني وثابت في القرنية,eye_injury,red,"foreign_body,cornea,penetrating",arabic
+رايش حديد دخل في عيني وثابت في القرنية؟,eye_injury,red,"foreign_body,cornea,penetrating",arabic
+حالة طارئة: رايش حديد دخل في عيني وثابت في القرنية,eye_injury,red,"foreign_body,cornea,penetrating",arabic
+"chemical splashed in eye, rinse continuously with water 20 mins",eye_injury,red,"eye_irrigation,chemical_burn",english
+"chemical splashed in eye, rinse continuously with water 20 mins?",eye_injury,red,"eye_irrigation,chemical_burn",english
+"حالة طارئة: chemical splashed in eye, rinse continuously with water 20 mins",eye_injury,red,"eye_irrigation,chemical_burn",english
+do not rub eye when foreign particle enters,eye_injury,green,"no_rubbing,protective_shield",english
+do not rub eye when foreign particle enters?,eye_injury,green,"no_rubbing,protective_shield",english
+حالة طارئة: do not rub eye when foreign particle enters,eye_injury,green,"no_rubbing,protective_shield",english
+kloor d5al fe 3eny,eye_injury,red,chemical_eye,mixed
+kloor d5al fe 3eny?,eye_injury,red,chemical_eye,mixed
+حالة طارئة: kloor d5al fe 3eny,eye_injury,red,chemical_eye,mixed
+اصابة في العين وجرح بالقرنية,eye_injury,red,corneal_laceration,arabic
+اصابة في العين وجرح بالقرنية؟,eye_injury,red,corneal_laceration,arabic
+حالة طارئة: اصابة في العين وجرح بالقرنية,eye_injury,red,corneal_laceration,arabic
+غسيل العين بماء جاري لمدة 15 دقيقة بعد المواد الكيماوية,eye_injury,orange,eye_wash_protocol,arabic
+غسيل العين بماء جاري لمدة 15 دقيقة بعد المواد الكيماوية؟,eye_injury,orange,eye_wash_protocol,arabic
+حالة طارئة: غسيل العين بماء جاري لمدة 15 دقيقة بعد المواد الكيماوية,eye_injury,orange,eye_wash_protocol,arabic
+blunt blow to eye with black eye hematoma and blurry vision,eye_injury,orange,"hyphema,black_eye,vision_loss",english
+blunt blow to eye with black eye hematoma and blurry vision?,eye_injury,orange,"hyphema,black_eye,vision_loss",english
+حالة طارئة: blunt blow to eye with black eye hematoma and blurry vision,eye_injury,orange,"hyphema,black_eye,vision_loss",english
+صاحبي مسك سلك كهربا عريان ومشتبك فيه ومش راضي يسيبه,electric_shock,red,"live_wire,electrocution,cannot_let_go",arabic
+صاحبي مسك سلك كهربا عريان ومشتبك فيه ومش راضي يسيبه؟,electric_shock,red,"live_wire,electrocution,cannot_let_go",arabic
+حالة طارئة: صاحبي مسك سلك كهربا عريان ومشتبك فيه ومش راضي يسيبه,electric_shock,red,"live_wire,electrocution,cannot_let_go",arabic
+صعق كهربائي من غسالة ومغمى عليه ومفيش نفس,electric_shock,red,"electric_shock,unconscious,apnea",arabic
+صعق كهربائي من غسالة ومغمى عليه ومفيش نفس؟,electric_shock,red,"electric_shock,unconscious,apnea",arabic
+حالة طارئة: صعق كهربائي من غسالة ومغمى عليه ومفيش نفس,electric_shock,red,"electric_shock,unconscious,apnea",arabic
+turn off main power breaker before touching electrocuted victim,electric_shock,red,"safety_first,power_off",english
+turn off main power breaker before touching electrocuted victim?,electric_shock,red,"safety_first,power_off",english
+حالة طارئة: turn off main power breaker before touching electrocuted victim,electric_shock,red,"safety_first,power_off",english
+entry and exit electrical burn wounds on hands and feet,electric_shock,red,"entry_exit_burn,cardiac_arrhythmia",mixed
+entry and exit electrical burn wounds on hands and feet?,electric_shock,red,"entry_exit_burn,cardiac_arrhythmia",mixed
+حالة طارئة: entry and exit electrical burn wounds on hands and feet,electric_shock,red,"entry_exit_burn,cardiac_arrhythmia",mixed
+sa32 kahraba mn seka,electric_shock,red,electric_shock_trauma,mixed
+sa32 kahraba mn seka?,electric_shock,red,electric_shock_trauma,mixed
+حالة طارئة: sa32 kahraba mn seka,electric_shock,red,electric_shock_trauma,mixed
+صعق كهربائي خطير,electric_shock,red,severe_electrocution,arabic
+صعق كهربائي خطير؟,electric_shock,red,severe_electrocution,arabic
+حالة طارئة: صعق كهربائي خطير,electric_shock,red,severe_electrocution,arabic
+فصل التيار الكهربائي بقطعة خشب جافة دون لمس المصاب,electric_shock,orange,non_conductive_rescue,arabic
+فصل التيار الكهربائي بقطعة خشب جافة دون لمس المصاب؟,electric_shock,orange,non_conductive_rescue,arabic
+حالة طارئة: فصل التيار الكهربائي بقطعة خشب جافة دون لمس المصاب,electric_shock,orange,non_conductive_rescue,arabic
+lightning strike victim needs immediate CPR and AED,electric_shock,red,"lightning_strike,cardiac_arrest",english
+lightning strike victim needs immediate CPR and AED?,electric_shock,red,"lightning_strike,cardiac_arrest",english
+حالة طارئة: lightning strike victim needs immediate CPR and AED,electric_shock,red,"lightning_strike,cardiac_arrest",english
+مريض سكر بيترعش وعرقان جدا وبيتلعثم ومش مركز خالص,low_blood_sugar,orange,"hypoglycemia,tremor,sweating,confusion",arabic
+مريض سكر بيترعش وعرقان جدا وبيتلعثم ومش مركز خالص؟,low_blood_sugar,orange,"hypoglycemia,tremor,sweating,confusion",arabic
+حالة طارئة: مريض سكر بيترعش وعرقان جدا وبيتلعثم ومش مركز خالص,low_blood_sugar,orange,"hypoglycemia,tremor,sweating,confusion",arabic
+غيبوبة سكر منخفض وفاقد الوعي هل اديله عصير في بقه؟,low_blood_sugar,red,"hypoglycemic_coma,choking_risk,unconscious",arabic
+حالة طارئة: غيبوبة سكر منخفض وفاقد الوعي هل اديله عصير في بقه؟,low_blood_sugar,red,"hypoglycemic_coma,choking_risk,unconscious",arabic
+"diabetic patient confused and sweating profusely, low blood sugar",low_blood_sugar,orange,"hypoglycemia,fast_acting_sugar",english
+"diabetic patient confused and sweating profusely, low blood sugar?",low_blood_sugar,orange,"hypoglycemia,fast_acting_sugar",english
+"حالة طارئة: diabetic patient confused and sweating profusely, low blood sugar",low_blood_sugar,orange,"hypoglycemia,fast_acting_sugar",english
+"rule of 15 for hypoglycemia: 15g carbs, wait 15 minutes",low_blood_sugar,green,"rule_of_15,glucose_tabs",english
+"rule of 15 for hypoglycemia: 15g carbs, wait 15 minutes?",low_blood_sugar,green,"rule_of_15,glucose_tabs",english
+"حالة طارئة: rule of 15 for hypoglycemia: 15g carbs, wait 15 minutes",low_blood_sugar,green,"rule_of_15,glucose_tabs",english
+sokar wate w 3ara2 gamed,low_blood_sugar,orange,low_blood_sugar,mixed
+sokar wate w 3ara2 gamed?,low_blood_sugar,orange,low_blood_sugar,mixed
+حالة طارئة: sokar wate w 3ara2 gamed,low_blood_sugar,orange,low_blood_sugar,mixed
+غيبوبة نقص السكر,low_blood_sugar,red,hypoglycemia_coma,arabic
+غيبوبة نقص السكر؟,low_blood_sugar,red,hypoglycemia_coma,arabic
+حالة طارئة: غيبوبة نقص السكر,low_blood_sugar,red,hypoglycemia_coma,arabic
+حظر إعطاء أي سوائل أو سكريات لمريض غائب عن الوعي,low_blood_sugar,red,unconscious_choking_prohibition,arabic
+حظر إعطاء أي سوائل أو سكريات لمريض غائب عن الوعي؟,low_blood_sugar,red,unconscious_choking_prohibition,arabic
+حالة طارئة: حظر إعطاء أي سوائل أو سكريات لمريض غائب عن الوعي,low_blood_sugar,red,unconscious_choking_prohibition,arabic
+"blood glucose meter shows 45 mg/dL, patient is conscious",low_blood_sugar,orange,"hypoglycemia_reading,fruit_juice",english
+"blood glucose meter shows 45 mg/dL, patient is conscious?",low_blood_sugar,orange,"hypoglycemia_reading,fruit_juice",english
+"حالة طارئة: blood glucose meter shows 45 mg/dL, patient is conscious",low_blood_sugar,orange,"hypoglycemia_reading,fruit_juice",english
+"My temperature is over 40, my skin is dry with no sweat, and I feel confused?",heatstroke,red,"hyperthermia,hot_dry_skin,confusion,heatstroke",english
+"Dizziness, heavy sweating, and muscle cramps after working in the sun?",heatstroke,orange,"dizziness,sweating,muscle_cramps,heat_exhaustion",english
+Severe heatstroke with very high fever?,heatstroke,red,"severe_heatstroke,high_temp,hyperthermia",english
+Heatstroke and loss of consciousness?,heatstroke,red,"heatstroke,loss_of_consciousness,unconscious",english
+How to cool down a heatstroke patient using compresses?,heatstroke,green,"evaporative_cooling,cold_compresses,first_aid",english
+"My child swallowed bleach and cleaning detergents, his stomach is burning and he is vomiting?",poisoning,red,"child_poisoning,bleach_ingestion,vomiting,stomach_burn",english
+"Case of fatal wheat pill (aluminum phosphide) poisoning, please help us urgently?",poisoning,red,"wheat_pill_poisoning,aluminum_phosphide,fatal_toxicity",english
+Wheat pill poisoning?,poisoning,red,"wheat_pill_poisoning,toxic_ingestion",english
+Pesticide poisoning?,poisoning,red,"pesticide_poisoning,organophosphates,toxicity",english
+Is inducing vomiting prohibited in caustic substance and acid poisoning?,poisoning,orange,"corrosive,acid_poisoning,emesis_prohibited",english
+"A bee sting on my neck, my throat is swollen and I can't catch my breath?",allergy_anaphylaxis,red,"bee_sting,angioedema,throat_swelling,dyspnea",english
+"Severe peanut allergy, skin rash, and a drop in blood pressure?",allergy_anaphylaxis,red,"peanut_allergy,urticaria,hypotension,anaphylactic_shock",english

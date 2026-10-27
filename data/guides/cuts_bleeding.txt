@@ -1,0 +1,32 @@
+TITLE: Cuts and Severe Bleeding Management
+SOURCE: Red Cross
+DATE_REVIEWED: 2024-01-15
+URL: https://www.redcross.org/take-a-class/first-aid/first-aid-training/first-aid-classes/cuts-bleeding
+LANGUAGE: EN
+CONDITION_TAG: cut
+SEVERITY_TAGS: green, orange, red
+---
+Bleeding occurs when blood vessels are damaged. Controlling severe external bleeding is one of the highest priorities in first aid to prevent hypovolemic shock.
+
+## What to do immediately
+1. Put on disposable nitrile gloves if available to protect against bloodborne infections.
+2. Apply firm, direct pressure onto the wound using a sterile gauze pad, clean cloth, or clean hands.
+3. Keep direct pressure steady and uninterrupted for at least 5 to 10 minutes.
+4. Elevate the injured limb above heart level if no bone fracture is suspected.
+5. If blood soaks through the dressing, do NOT remove it. Add more dressings on top and press firmly.
+6. Once bleeding is controlled, secure the pad with a snug bandage.
+
+## Do NOT
+- Do NOT remove embedded objects (knife, glass) from the wound; pack dressings firmly around it.
+- Do NOT remove the original blood-soaked gauze, as this disrupts the clotting process.
+- Do NOT apply a tourniquet unless you are trained and direct pressure has failed in a catastrophic limb bleed.
+
+## When to go to hospital
+- The bleeding does not stop after 10-15 minutes of continuous firm pressure.
+- The wound is deep, gaping, or exposes fat, tendon, or bone.
+- The cut was caused by a dirty, rusty object or animal/human bite (tetanus and rabies risk).
+
+## Signs of serious bleeding (RED FLAGS)
+- Spurting, pulsatile bright red blood (arterial bleeding).
+- Casualty becomes pale, confused, dizzy, or loses consciousness.
+- Rapid weak pulse and cold clammy skin indicating shock.

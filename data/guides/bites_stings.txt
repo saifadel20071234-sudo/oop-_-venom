@@ -1,0 +1,36 @@
+TITLE: Animal Bites and Venomous Stings Management
+SOURCE: WHO
+DATE_REVIEWED: 2024-01-21
+URL: https://www.who.int/news-room/fact-sheets/detail/snakebite-envenoming
+LANGUAGE: EN
+CONDITION_TAG: bites_stings
+SEVERITY_TAGS: green, orange, red
+---
+Animal bites carry high risks of severe bacterial infection and rabies. Venomous snake and scorpion stings can inject neurotoxic or hemotoxic venom.
+
+## What to do immediately
+For animal bites (Dogs, Cats):
+1. Immediately wash the wound thoroughly with soap and warm running water for at least 15 minutes.
+2. Apply an antiseptic solution (povidone-iodine).
+3. Cover with a sterile dressing.
+4. Seek medical care immediately for Rabies Post-Exposure Prophylaxis (PEP) vaccine and tetanus booster.
+
+For snake and scorpion stings:
+1. Keep the casualty calm and completely still; physical activity accelerates venom circulation.
+2. Immobilize the bitten limb using a splint and keep it at or slightly below heart level.
+3. Remove rings, bracelets, and restrictive shoes before swelling occurs.
+4. Transport immediately to the nearest hospital stocked with polyvalent antivenom.
+
+## Do NOT
+- Do NOT apply a tight arterial tourniquet.
+- Do NOT cut the wound, suck out venom with mouth, or apply ice or electric shocks.
+- Do NOT attempt to catch or kill the snake.
+
+## When to go to hospital
+- All animal bites require professional evaluation for rabies vaccination.
+- All snake and scorpion envenomations require immediate hospital admission.
+
+## Signs of venomous envenomation (RED FLAGS)
+- Rapid swelling and severe bruising spreading up the limb.
+- Drooping eyelids (ptosis), difficulty speaking, or swallowing (neurotoxicity).
+- Spontaneous bleeding from gums or puncture sites.

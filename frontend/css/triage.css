@@ -1,0 +1,460 @@
+/* ==========================================================================
+   Triage Wizard Stylesheet - First Aid System
+   Multi-step Medical Evaluation Interface
+   ========================================================================== */
+
+.triage-wrapper {
+  max-width: 960px;
+  margin: 30px auto 50px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.triage-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stepper Progress Bar */
+.triage-progress-bar-container {
+  margin-bottom: 36px;
+}
+
+.triage-steps-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.triage-steps-tracker::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  right: 30px;
+  height: 4px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.triage-progress-fill {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  height: 4px;
+  background: var(--primary-gradient);
+  z-index: 2;
+  transition: width var(--transition-normal);
+  width: 0%;
+}
+
+body[dir="rtl"] .triage-progress-fill {
+  left: auto;
+  right: 30px;
+}
+
+.step-tracker-node {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-color);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  transition: all var(--transition-fast);
+}
+
+.step-tracker-node.active .node-circle {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.step-tracker-node.completed .node-circle {
+  border-color: var(--severity-green);
+  background-color: var(--severity-green);
+  color: #ffffff;
+}
+
+.node-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.step-tracker-node.active .node-label {
+  color: var(--primary);
+}
+
+/* Step Panes */
+.triage-step-pane {
+  display: none;
+  animation: fadeInStep 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.triage-step-pane.active {
+  display: block;
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-title-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.step-title-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.step-title-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Step 1: Big Category Cards Grid */
+.categories-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.category-choice-card {
+  background-color: var(--bg-body);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.category-choice-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  background-color: var(--primary-light);
+}
+
+.category-choice-card.selected {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.3);
+}
+
+.cat-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: transform var(--transition-normal);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.category-choice-card:hover .cat-icon-wrap {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.cat-emoji {
+  display: none;
+}
+
+.cat-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.cat-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Step 2: Symptoms Selection Checklist */
+.symptoms-selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.symptom-check-card {
+  background-color: var(--bg-body);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.symptom-check-card:hover {
+  border-color: var(--primary);
+}
+
+.symptom-check-card.checked {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.symptom-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.symptom-check-card.checked .symptom-checkbox {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.symptom-info {
+  flex-grow: 1;
+}
+
+.symptom-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.symptom-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.symptom-critical-badge {
+  background-color: var(--severity-red-bg);
+  color: var(--severity-red);
+  border: 1px solid var(--severity-red-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 800;
+}
+
+/* Step 3: Final Triage Evaluation Result */
+.result-header-card {
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  text-align: center;
+  margin-bottom: 28px;
+  border: 2px solid;
+}
+
+.result-header-card.red {
+  background-color: var(--severity-red-bg);
+  border-color: var(--severity-red-border);
+  box-shadow: 0 0 25px var(--severity-red-glow);
+}
+
+.result-header-card.orange {
+  background-color: var(--severity-orange-bg);
+  border-color: var(--severity-orange-border);
+  box-shadow: 0 0 20px var(--severity-orange-glow);
+}
+
+.result-header-card.green {
+  background-color: var(--severity-green-bg);
+  border-color: var(--severity-green-border);
+  box-shadow: 0 0 20px var(--severity-green-glow);
+}
+
+.result-severity-pill {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.result-header-card.red .result-severity-pill { background-color: var(--severity-red); }
+.result-header-card.orange .result-severity-pill { background-color: var(--severity-orange); }
+.result-header-card.green .result-severity-pill { background-color: var(--severity-green); }
+
+.result-diagnosis-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.result-summary-text {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Triage Buttons Navigation */
+.triage-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+/* Mobile Responsive Adjustments for Triage */
+@media (max-width: 640px) {
+  .triage-wrapper {
+    padding: 0 10px;
+    /* زيادة المسافة من الأسفل عشان الزرار ميتغطيش بالـ bottom nav (60px ارتفاع + هامش آمن) */
+    margin: 10px auto 90px;
+  }
+
+  .triage-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+    /* تأكيد إن محتوى الكارت مش بيتقص */
+    overflow: visible;
+  }
+
+  .step-title-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .step-title-header p {
+    font-size: 0.85rem;
+  }
+
+  .categories-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .category-choice-card {
+    padding: 14px 10px;
+  }
+
+  .cat-icon-wrap {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .cat-title {
+    font-size: 0.925rem;
+  }
+
+  .cat-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .triage-nav-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+    /* padding إضافي فوق الأزرار للتمييز الواضح */
+    padding-bottom: 8px;
+  }
+
+  .triage-nav-actions .btn-primary,
+  .triage-nav-actions .btn-secondary,
+  .triage-nav-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* للشاشات الصغيرة جداً (iPhone SE وما شابه) */
+@media (max-width: 390px) {
+  .triage-wrapper {
+    margin-bottom: 100px;
+  }
+}

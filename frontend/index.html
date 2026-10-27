@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ziad Asaad">
+  <title>VENOM مسعف الذكي | دليلك السريع للإسعافات الأولية</title>
+  <!-- Favicon / Team Medical Emblem -->
+  <link rel="icon" type="image/png" href="assets/images/medical-favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <!-- PWA Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0284c7">
+  <!-- Font Awesome 6 (Local 100% Offline) -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <!-- Google Fonts for Ultra-Crisp Tajawal Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Inter (Crystal-clear English UI) + Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@500;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN Fallback for Brands Icons (LinkedIn, GitHub, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Main CSS & Themes -->
+  <link rel="stylesheet" href="css/main.css?v=60">
+  <link rel="stylesheet" href="css/dark-mode.css?v=60">
+</head>
+<body>
+
+  <!-- ========================================================================
+       0. ULTRA-SMOOTH MEDICAL SPLASH SCREEN (NATIVE PWA APP OPENING EXPERIENCE)
+       ======================================================================== -->
+  <div id="app-splash-screen" class="app-splash-screen" role="dialog" aria-modal="true" aria-label="شاشة التحميل">
+    <div class="splash-container">
+      <div class="splash-logo-wrapper">
+        <div class="splash-pulse-glow"></div>
+        <img src="assets/images/venom-official-logo.png" alt="VENOM مسعف الذكي" class="splash-logo-img">
+      </div>
+      <div class="splash-brand-info">
+        <div class="splash-title">
+          <span class="splash-venom">VENOM</span>
+          <span class="splash-ar">مُسعف الذكي</span>
+        </div>
+        <p class="splash-subtitle">دليلك السريع للإسعافات الأولية</p>
+      </div>
+
+      <!-- Animated ECG Heartbeat Pulse Line -->
+      <div class="splash-ecg-line">
+        <svg viewBox="0 0 300 40" class="splash-ecg-svg">
+          <path d="M 0 20 L 110 20 L 125 20 L 133 12 L 142 32 L 150 4 L 160 36 L 168 14 L 176 26 L 185 20 L 300 20" class="ecg-path"></path>
+        </svg>
+      </div>
+
+      <!-- Elegant Progress Indicator -->
+      <div class="splash-progress-track">
+        <div id="splash-progress-bar" class="splash-progress-bar"></div>
+      </div>
+      <div class="splash-status-wrapper">
+        <span id="splash-status-text" class="splash-status-text">جاري تجهيز بروتوكولات الإسعاف...</span>
+      </div>
+
+      <div class="splash-footer-badge">
+        <i class="fa-solid fa-shield-heart"></i>
+        <span>منظومة الإسعاف والتوجيه الطبي الفوري</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       1. FIXED EMERGENCY DISCLAIMER BANNER (MANDATORY & UNCLOSABLE)
+       ======================================================================== -->
+  
+
+  <!-- ========================================================================
+       2. HEADER & NAVIGATION BAR
+       ======================================================================== -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" title="VENOM — منظومة الإسعاف والتوجيه الطبي الفوري">
+        <div class="logo-badge">
+          <img src="assets/images/venom-official-logo.png?v=60" alt="VENOM Logo" class="brand-badge-img">
+        </div>
+        <div class="logo-text">
+          <h1 class="brand-heading">
+            <span class="venom-text-gradient">VENOM</span>
+          </h1>
+          <span class="brand-tagline">منظومة الإسعاف والتوجيه الطبي الفوري</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link active">
+              <i class="fa-solid fa-house"></i>
+              <span data-i18n="navHome">الرئيسية</span>
+            </a>
+          </li>
+          <li>
+            <a href="pages/chat.html" class="nav-link">
+              <i class="fa-solid fa-briefcase-medical"></i>
+              <span data-i18n="navChat">المساعد الإسعافي</span>
+            </a>
+          </li>
+          <li>
+            <a href="pages/triage.html" class="nav-link">
+              <i class="fa-solid fa-stethoscope"></i>
+              <span data-i18n="navTriage">الفرز الطبي</span>
+            </a>
+          </li>
+          <li>
+            <a href="pages/contacts.html" class="nav-link">
+              <i class="fa-solid fa-hospital"></i>
+              <span data-i18n="navContacts">أرقام الطوارئ</span>
+            </a>
+          </li>
+          <li>
+            <a href="pages/learn.html" class="nav-link">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span data-i18n="navLearn">تعلم الإسعافات</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin" class="nav-link admin-nav-link" title="لوحة التحكم الإدارية (Admin)">
+              <i class="fa-solid fa-gear"></i>
+              <span>لوحة الإدارة</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Admin Shortcut Button (Unified Single Server) -->
+        <a href="/admin" class="admin-quick-btn" title="لوحة تحكم المشرف (Admin Dashboard)">
+          <i class="fa-solid fa-user-shield"></i>
+          <span class="admin-btn-text">لوحة الإدارة</span>
+        </a>
+
+        <!-- Language Switcher (Globe icon on right in RTL) -->
+        <button id="lang-switch-btn" class="lang-switch-btn" title="تبديل اللغة / Switch Language">
+          <span id="lang-btn-text">English</span>
+          <i class="fa-solid fa-globe"></i>
+        </button>
+
+        <!-- Dark / Light Mode Toggle -->
+        <button id="theme-toggle-btn" class="icon-btn" title="الوضع الليلي / Dark Mode">
+          <span id="theme-icon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       3. HERO SECTION (Split Layout with Clinical Live Simulator)
+       ======================================================================== -->
+  <main>
+    <!-- 1. CENTERED HERO SECTION (Medical First-Aid Dispatch Interface) -->
+    <section class="hero-clean-section">
+      <!-- Ambient Background Medical Floating Particles & Icons (شغل عالي وفخم) -->
+      <div class="hero-ambient-particles" aria-hidden="true">
+        <span class="particle particle-1"><i class="fa-solid fa-plus"></i></span>
+        <span class="particle particle-2"><i class="fa-solid fa-heart-pulse"></i></span>
+        <span class="particle particle-3"><i class="fa-solid fa-shield-heart"></i></span>
+        <span class="particle particle-4"><i class="fa-solid fa-stethoscope"></i></span>
+        <span class="particle particle-5"><i class="fa-solid fa-kit-medical"></i></span>
+        <span class="particle particle-6"><i class="fa-solid fa-dna"></i></span>
+      </div>
+
+      <!-- 3D Floating Illustrations (Centered vertically at flanks with soft glowing auras) -->
+      <aside class="hero-flank-decor flank-left" aria-hidden="true">
+        <div class="flank-glow-blob"></div>
+        <img src="assets/images/hero-kit-3d.png?v=63" alt="حقيبة إسعاف" class="flank-img">
+      </aside>
+      <aside class="hero-flank-decor flank-right" aria-hidden="true">
+        <div class="flank-glow-blob"></div>
+        <img src="assets/images/hero-phone-3d.png?v=63" alt="اتصال طوارئ 123" class="flank-img">
+      </aside>
+
+      <div class="hero-clean-container">
+        <!-- Hero Pill Badge (Shield icon on right) -->
+        <div class="hero-clean-badge">
+          <span>بروتوكولات الإسعاف الأولي السريع</span>
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <!-- Headline (Matching reference exactly on 2 clean lines) -->
+        <h2 class="hero-title">
+          <span class="hero-title-top">كل ثانية تصنع فارقاً...</span>
+          <span class="hero-title-main">
+            <span class="hero-title-venom">VENOM</span>
+            <span class="hero-title-dash">-</span>
+            <span class="hero-title-slogan">
+              <span class="slogan-text">دليلك الإسعافي في لحظات الخطر</span>
+              <svg class="slogan-swoosh-svg" viewBox="0 0 450 16" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="swooshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2563EB"/>
+                    <stop offset="50%" stop-color="#00D4FF"/>
+                    <stop offset="100%" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 5 11 C 120 4 320 4 445 10" stroke="url(#swooshGrad)" stroke-width="4.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </span>
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          إرشادات طبية عاجلة وخطوات عملية واضحة للتعامل مع الحوادث والإصابات خطوة بخطوة، معتمدة وموثوقة بتوصيات جمعية القلب وهيئة الإسعاف.
+        </p>
+
+        <!-- Search Box (Icon on Right, Input Middle, Button on Left in RTL) -->
+        <form id="hero-search-form" class="quick-search-box">
+          <i class="fa-solid fa-magnifying-glass quick-search-icon"></i>
+          <input 
+            type="text" 
+            id="hero-search-input" 
+            class="quick-search-input" 
+            placeholder="صف الإصابة أو الحالة الإسعافية (نزيف، حروق، بلع لسان، غصة)..."
+            data-i18n-placeholder="quickSearchPlaceholder"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="quick-search-submit" data-i18n="startAssessment">
+            <i class="fa-solid fa-bolt" style="margin-inline-end: 6px;"></i>
+            <span>عرض بروتوكول الإسعاف</span>
+          </button>
+        </form>
+
+        <!-- Quick Emergency Chips (Vivid Colored Pills in Strictly 2 Rows) -->
+        <div class="hero-quick-chips">
+          <div class="chips-row chips-row-1">
+            <span class="hero-chip chip-blue-main">
+              <i class="fa-solid fa-truck-medical"></i>
+              <span>طوارئ الإسعافات الأولية</span>
+            </span>
+            <a href="pages/chat.html?q=نزيف+شرياني+حاد" class="hero-chip chip-red">
+              <i class="fa-solid fa-droplet"></i>
+              <span>نزيف شرياني حاد</span>
+            </a>
+            <a href="pages/chat.html?q=إنعاش+قلبي+CPR" class="hero-chip chip-rose">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>إنعاش قلبي (CPR)</span>
+            </a>
+            <a href="pages/chat.html?q=اختناق+وغصة+هواء" class="hero-chip chip-orange">
+              <i class="fa-solid fa-lungs"></i>
+              <span>اختناق وغصة (هايمليخ)</span>
+            </a>
+          </div>
+          <div class="chips-row chips-row-2">
+            <a href="pages/chat.html?q=حروق+حرارية+وسوائل" class="hero-chip chip-amber">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+              <span>حروق وسوائل ساخنة</span>
+            </a>
+            <a href="pages/chat.html?q=كسور+وتثبيت+الأطراف" class="hero-chip chip-teal">
+              <i class="fa-solid fa-bone"></i>
+              <span>كسور وتثبيت أطراف</span>
+            </a>
+            <a href="pages/chat.html?q=ضربة+شمس+وإغماء" class="hero-chip chip-yellow">
+              <i class="fa-solid fa-sun"></i>
+              <span>إغماء وضربة شمس</span>
+            </a>
+            <a href="pages/chat.html?q=تسمم+ولدغات" class="hero-chip chip-purple">
+              <i class="fa-solid fa-biohazard"></i>
+              <span>تسمم ولدغات سامة</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative 3-Layer Bottom Waves (Matching Project Specification) -->
+      <div class="hero-wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 95" fill="none" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="heroWavePurpleBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.35"/>
+              <stop offset="60%" stop-color="#2563EB" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.55"/>
+            </linearGradient>
+          </defs>
+          <!-- Layer 1: Light Blue -->
+          <path d="M0,26 C360,70 720,12 1080,44 C1260,60 1380,48 1440,36 L1440,95 L0,95 Z" fill="#E0F2FE"></path>
+          <!-- Layer 2: Royal Blue -->
+          <path d="M0,42 C320,82 680,26 1040,58 C1240,74 1360,60 1440,50 L1440,95 L0,95 Z" fill="rgba(37, 99, 235, 0.28)"></path>
+          <!-- Layer 3: Purple-to-Blue Gradient -->
+          <path d="M0,58 C300,92 640,38 980,68 C1180,82 1340,70 1440,62 L1440,95 L0,95 Z" fill="url(#heroWavePurpleBlue)"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 1.5 GOLDEN FIRST AID PROTOCOL BANNER (Check - Call - Care) -->
+    <section class="first-aid-golden-rules">
+      <div class="golden-rules-container">
+        <div class="golden-rule-header">
+          <i class="fa-solid fa-shield-heart"></i>
+          <span>المثلث الذهبي للإنقاذ والإسعاف الأولي السريع</span>
+        </div>
+        <div class="golden-rules-steps">
+          <div class="golden-step-card golden-check">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>افحص المكان والمصاب (Check)</h4>
+              <p>تأكد من أمان الموقع أولاً، ثم افحص درجة الوعي واستجابة المصاب وتنفسه قبل أي تدخل.</p>
+            </div>
+          </div>
+          <div class="golden-step-card golden-call">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>اتصل فوراً بـ 123 الإسعاف (Call)</h4>
+              <p>أبلغ هيئة الإسعاف برقم 123، وحدد الموقع بدقة وعدد المصابين وطبيعة الإصابة بهدوء.</p>
+            </div>
+          </div>
+          <div class="golden-step-card golden-care">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>قدّم الرعاية الإسعافية (Care)</h4>
+              <p>أوقف النزيف بالضغط المباشر، ابدأ الإنعاش القلبي، أو ثبّت الكسور دون تحريك الرقبة.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CORE SERVICES (4 Horizontal Cards) -->
+    <section class="clean-services-section">
+      <div class="clean-services-grid">
+        <!-- Card 1: المساعد الإسعافي الفوري -->
+        <a href="pages/chat.html" class="service-clean-card">
+          <div class="bento-header">
+            <div class="service-clean-icon icon-chat">
+              <i class="fa-solid fa-comment-medical"></i>
+            </div>
+            <span class="bento-pill">AI إسعافي 24/7</span>
+          </div>
+          <h3 class="service-clean-title">المساعد الإسعافي الفوري</h3>
+          <p class="service-clean-desc">
+            توجيه سريري لحظي بالذكاء الاصطناعي الطبي خطوة بخطوة للتعامل مع النزيف، الاختناق، الحروق، والإغماء لتفادي المضاعفات.
+          </p>
+          <div class="service-clean-footer">
+            <span>ابدأ التوجيه الإسعافي</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+        </a>
+
+        <!-- Card 2: الفرز الطبي السريع -->
+        <a href="pages/triage.html" class="service-clean-card">
+          <div class="bento-header">
+            <div class="service-clean-icon icon-triage">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <span class="bento-pill">START بروتوكول</span>
+          </div>
+          <h3 class="service-clean-title">الفرز الطبي السريع (Triage)</h3>
+          <p class="service-clean-desc">
+            تقييم فوري للعلامات الحيوية وتصنيف الإصابات لثلاث مستويات (أحمر / برتقالي / أخضر) لتحديد أولوية التدخل الطبي العاجل.
+          </p>
+          <div class="service-clean-footer">
+            <span>دخول نظام الفرز الطبي</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+        </a>
+
+        <!-- Card 3: أرقام الطوارئ والمستشفيات -->
+        <a href="pages/contacts.html" class="service-clean-card">
+          <div class="bento-header">
+            <div class="service-clean-icon icon-contacts">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <span class="bento-pill">اتصال مباشر + GPS</span>
+          </div>
+          <h3 class="service-clean-title">أرقام الطوارئ والمستشفيات</h3>
+          <p class="service-clean-desc">
+            دليل خطوط النجدة والإسعاف (123) ومراكز الحروق والسموم وخريطة تفاعلية لحساب أقرب عيادة وطوارئ بنقرة واحدة بدون نت.
+          </p>
+          <div class="service-clean-footer">
+            <span>عرض المستشفيات والأرقام</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+        </a>
+
+        <!-- Card 4: تعلم الإسعافات وإنعاش القلب -->
+        <a href="pages/learn.html" class="service-clean-card">
+          <div class="bento-header">
+            <div class="service-clean-icon icon-learn">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="bento-pill">BPM 100-120</span>
+          </div>
+          <h3 class="service-clean-title">إنعاش القلب CPR والتدريب</h3>
+          <p class="service-clean-desc">
+            مؤقت إيقاع صوتي وبصري معتمد لضغطات الصدر (CPR Metronome) مع كويز تدريب المسعفين وبنك أسئلة لإتقان المهارات الحيوية.
+          </p>
+          <div class="service-clean-footer">
+            <span>ابدأ تدريب إنعاش القلب</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2.5 INTERACTIVE HUMAN BODY MAP (خريطة الجسم التفاعلية لتحديد موضع الإصابة) -->
+    <section class="interactive-bodymap-section" id="bodyMapSection">
+      <div class="bodymap-container">
+        <div class="bodymap-header">
+          <span class="bodymap-badge">
+            <i class="fa-solid fa-child-reaching"></i>
+            <span>الفحص البصري التفاعلي للأعراض</span>
+          </span>
+          <h3 class="bodymap-title">خريطة موضع الإصابة التفاعلية (Interactive Symptom Map)</h3>
+          <p class="bodymap-desc">
+            حدد العضو أو المنطقة المصابة في الجسم لعرض بروتوكول الإسعاف الأولي المعتمد وخطوات التدخل العاجل فوراً.
+          </p>
+
+          <!-- Zone Quick Selector Pills (Detailed Anatomical Regions) -->
+          <div class="bodymap-pills">
+            <button type="button" class="bodymap-zone-pill active" data-zone="head">
+              <i class="fa-solid fa-brain"></i>
+              <span>الرأس والدماغ</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="face">
+              <i class="fa-solid fa-eye"></i>
+              <span>الوجه والعينان والفك</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="neck">
+              <i class="fa-solid fa-lungs"></i>
+              <span>الرقبة ومجرى الهواء</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="chest">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>الصدر والقلب</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="abdomen">
+              <i class="fa-solid fa-circle-radiation"></i>
+              <span>البطن والمعدة</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="arms">
+              <i class="fa-solid fa-hand-fist"></i>
+              <span>الكتفان والذراعان</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="hands">
+              <i class="fa-solid fa-hand-holding-medical"></i>
+              <span>اليدان والمعصمان</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="legs">
+              <i class="fa-solid fa-bone"></i>
+              <span>الفخذان والركبتان</span>
+            </button>
+            <button type="button" class="bodymap-zone-pill" data-zone="feet">
+              <i class="fa-solid fa-person-walking"></i>
+              <span>الساقان والقدمان</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="bodymap-grid">
+          <!-- Left: High-Precision Anatomical Silhouette Visualizer -->
+          <div class="bodymap-visual-col">
+            <div class="bodymap-silhouette-card">
+              <!-- Medical Scanner Top HUD -->
+              <div class="scanner-status-hud">
+                <span class="scanner-live-dot"></span>
+                <span>الماسح التشريحي المباشر (ANATOMICAL SCANNER)</span>
+                <span class="scanner-zone-count">9 مناطق مفصلة</span>
+              </div>
+
+              <div class="silhouette-canvas-wrap">
+                <svg viewBox="0 0 700 700" class="human-silhouette-svg" id="humanSilhouetteSvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Zone Active Glowing Aura Filters -->
+    <filter id="hudBlueGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="hudRedGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="activeHighlightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.25"/>
+    </linearGradient>
+    <radialGradient id="heartGlowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#dc2626" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#dc2626" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Medical Scanner Radar Rings & Axis Grid -->
+  <g class="scanner-grid" opacity="0.3">
+    <circle cx="350" cy="350" r="330" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="6,8"/>
+    <circle cx="350" cy="350" r="230" fill="none" stroke="#0ea5e9" stroke-width="0.8" stroke-dasharray="4,6"/>
+    <circle cx="350" cy="350" r="130" fill="none" stroke="#0ea5e9" stroke-width="0.8" stroke-dasharray="2,4"/>
+    <line x1="350" y1="10" x2="350" y2="690" stroke="#0ea5e9" stroke-width="0.8" stroke-dasharray="4,4"/>
+    <line x1="20" y1="120" x2="680" y2="120" stroke="#94a3b8" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <line x1="20" y1="230" x2="680" y2="230" stroke="#94a3b8" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <line x1="20" y1="360" x2="680" y2="360" stroke="#94a3b8" stroke-width="0.6" stroke-dasharray="2,2"/>
+    <line x1="20" y1="500" x2="680" y2="500" stroke="#94a3b8" stroke-width="0.6" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- 3D ANATOMICAL MUSCULAR HUMAN MODEL (PHOTOREALISTIC TEXTURE) -->
+  <image href="assets/images/anatomical-mannequin-3d.png" x="0" y="0" width="700" height="700" class="mannequin-3d-img"/>
+
+  <!-- ================= INTERACTIVE BODY ZONES ================= -->
+
+  <!-- 1. HEAD & BRAIN (head) -->
+  <g class="body-zone-group active" id="zone-head" data-zone="head" cursor="pointer">
+    <!-- Anatomical Highlight Mask -->
+    <path class="zone-highlight-mask" d="M 320,30 C 320,18 380,18 380,30 C 385,45 385,60 375,68 C 365,72 335,72 325,68 C 315,60 315,45 320,30 Z"/>
+    <!-- Radar Target -->
+    <circle cx="350" cy="48" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="350" cy="48" r="8" class="body-indicator-dot"/>
+    <!-- Leader Line & Side Badge -->
+    <path d="M 350,48 L 440,32 L 565,32" class="hud-leader-line"/>
+    <circle cx="565" cy="32" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(570, 18)" class="hud-badge-item active" data-zone="head">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الرأس والدماغ</text>
+    </g>
+  </g>
+
+  <!-- 2. FACE, EYES & JAW (face) -->
+  <g class="body-zone-group" id="zone-face" data-zone="face" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 325,65 C 340,63 360,63 375,65 C 380,80 375,98 350,105 C 325,98 320,80 325,65 Z"/>
+    <circle cx="350" cy="84" r="18" class="hotspot-pulse-ring"/>
+    <circle cx="350" cy="84" r="7" class="body-indicator-dot"/>
+    <path d="M 350,84 L 440,84 L 565,84" class="hud-leader-line"/>
+    <circle cx="565" cy="84" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(570, 70)" class="hud-badge-item" data-zone="face">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الوجه والفك</text>
+    </g>
+  </g>
+
+  <!-- 3. NECK & AIRWAY (neck) -->
+  <g class="body-zone-group" id="zone-neck" data-zone="neck" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 330,105 L 370,105 L 388,140 L 312,140 Z"/>
+    <circle cx="350" cy="120" r="19" class="hotspot-pulse-ring"/>
+    <circle cx="350" cy="120" r="7.5" class="body-indicator-dot"/>
+    <path d="M 350,120 L 260,120 L 135,120" class="hud-leader-line"/>
+    <circle cx="135" cy="120" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(15, 106)" class="hud-badge-item" data-zone="neck">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الرقبة والمجرى</text>
+    </g>
+  </g>
+
+  <!-- 4. THORAX, CHEST & HEART (chest) -->
+  <g class="body-zone-group" id="zone-chest" data-zone="chest" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 270,135 C 310,132 390,132 430,135 C 445,170 435,230 350,235 C 265,230 255,170 270,135 Z"/>
+    <!-- Cardiac Anatomical Center Glow -->
+    <circle cx="372" cy="195" r="26" fill="url(#heartGlowGrad)"/>
+    <circle cx="372" cy="195" r="24" class="hotspot-pulse-ring red-ring"/>
+    <circle cx="372" cy="195" r="8" class="body-indicator-dot red-dot"/>
+    <!-- Sternum Anchor -->
+    <circle cx="340" cy="180" r="16" class="hotspot-pulse-ring"/>
+    <circle cx="340" cy="180" r="6" class="body-indicator-dot"/>
+    <path d="M 372,195 L 470,195 L 565,195" class="hud-leader-line red-line"/>
+    <circle cx="565" cy="195" r="3.5" class="hud-leader-point red-point"/>
+    <g transform="translate(570, 181)" class="hud-badge-item" data-zone="chest">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg red-badge"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text red-text">الصدر والقلب</text>
+    </g>
+  </g>
+
+  <!-- 5. ABDOMEN & CORE (abdomen) -->
+  <g class="body-zone-group" id="zone-abdomen" data-zone="abdomen" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 295,235 C 330,235 370,235 405,235 C 412,280 405,330 395,355 C 365,365 335,365 305,355 C 295,330 288,280 295,235 Z"/>
+    <circle cx="350" cy="290" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="350" cy="290" r="8.5" class="body-indicator-dot"/>
+    <path d="M 350,290 L 260,290 L 135,290" class="hud-leader-line"/>
+    <circle cx="135" cy="290" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(15, 276)" class="hud-badge-item" data-zone="abdomen">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">البطن والمعدة</text>
+    </g>
+  </g>
+
+  <!-- 6. SHOULDERS & UPPER ARMS (arms) -->
+  <g class="body-zone-group" id="zone-arms" data-zone="arms" cursor="pointer">
+    <!-- Right & Left Deltoid Highlights -->
+    <path class="zone-highlight-mask" d="M 235,145 C 265,145 275,170 270,210 C 255,270 220,270 215,220 C 210,180 220,150 235,145 Z"/>
+    <path class="zone-highlight-mask" d="M 465,145 C 435,145 425,170 430,210 C 445,270 480,270 485,220 C 490,180 480,150 465,145 Z"/>
+    <circle cx="240" cy="185" r="20" class="hotspot-pulse-ring"/>
+    <circle cx="240" cy="185" r="7.5" class="body-indicator-dot"/>
+    <circle cx="460" cy="185" r="20" class="hotspot-pulse-ring"/>
+    <circle cx="460" cy="185" r="7.5" class="body-indicator-dot"/>
+    <path d="M 240,185 L 180,200 L 135,200" class="hud-leader-line"/>
+    <circle cx="135" cy="200" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(15, 186)" class="hud-badge-item" data-zone="arms">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الكتف والذراع</text>
+    </g>
+  </g>
+
+  <!-- 7. FOREARMS, WRISTS & HANDS (hands) -->
+  <g class="body-zone-group" id="zone-hands" data-zone="hands" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 215,220 C 220,260 210,330 190,360 C 160,370 145,410 155,415 C 175,415 195,370 210,340 C 230,300 240,250 235,220 Z"/>
+    <path class="zone-highlight-mask" d="M 485,220 C 480,260 490,330 510,360 C 540,370 555,410 545,415 C 525,415 505,370 490,340 C 470,300 460,250 465,220 Z"/>
+    <circle cx="175" cy="375" r="20" class="hotspot-pulse-ring"/>
+    <circle cx="175" cy="375" r="7" class="body-indicator-dot"/>
+    <circle cx="525" cy="375" r="20" class="hotspot-pulse-ring"/>
+    <circle cx="525" cy="375" r="7" class="body-indicator-dot"/>
+    <path d="M 525,375 L 545,375 L 565,375" class="hud-leader-line"/>
+    <circle cx="565" cy="375" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(570, 361)" class="hud-badge-item" data-zone="hands">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">اليد والمعصم</text>
+    </g>
+  </g>
+
+  <!-- 8. HIPS, THIGHS & KNEES (legs) -->
+  <g class="body-zone-group" id="zone-legs" data-zone="legs" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 285,360 C 265,400 270,480 290,520 C 320,520 335,460 345,390 C 320,370 295,360 285,360 Z"/>
+    <path class="zone-highlight-mask" d="M 415,360 C 435,400 430,480 410,520 C 380,520 365,460 355,390 C 380,370 405,360 415,360 Z"/>
+    <circle cx="305" cy="460" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="305" cy="460" r="8" class="body-indicator-dot"/>
+    <circle cx="395" cy="460" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="395" cy="460" r="8" class="body-indicator-dot"/>
+    <path d="M 395,460 L 480,460 L 565,460" class="hud-leader-line"/>
+    <circle cx="565" cy="460" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(570, 446)" class="hud-badge-item" data-zone="legs">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الفخذ والركبة</text>
+    </g>
+  </g>
+
+  <!-- 9. LOWER LEGS, ANKLES & FEET (feet) -->
+  <g class="body-zone-group" id="zone-feet" data-zone="feet" cursor="pointer">
+    <path class="zone-highlight-mask" d="M 290,520 C 280,560 285,640 280,685 C 310,685 315,640 315,560 C 315,530 300,520 290,520 Z"/>
+    <path class="zone-highlight-mask" d="M 410,520 C 420,560 415,640 420,685 C 390,685 385,640 385,560 C 385,530 400,520 410,520 Z"/>
+    <circle cx="295" cy="610" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="295" cy="610" r="8" class="body-indicator-dot"/>
+    <circle cx="405" cy="610" r="22" class="hotspot-pulse-ring"/>
+    <circle cx="405" cy="610" r="8" class="body-indicator-dot"/>
+    <path d="M 295,610 L 210,610 L 135,610" class="hud-leader-line"/>
+    <circle cx="135" cy="610" r="3.5" class="hud-leader-point"/>
+    <g transform="translate(15, 596)" class="hud-badge-item" data-zone="feet">
+      <rect x="0" y="0" width="115" height="28" rx="14" class="hud-badge-bg"/>
+      <text x="57" y="19" text-anchor="middle" class="hud-badge-text">الساق والقدم</text>
+    </g>
+  </g>
+</svg>
+              </div>
+
+              <div class="silhouette-hint">
+                <i class="fa-solid fa-hand-pointer"></i>
+                <span>انقر على أي نقطة تفاعلية في المجسم لعرض خطوات الإنقاذ فوراً</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Dynamic Clinical Protocol Card -->
+          <div class="bodymap-protocol-col">
+            <div class="bodymap-protocol-panel" id="bodymapProtocolPanel">
+              <div class="protocol-panel-header">
+                <div class="protocol-title-wrap">
+                  <span class="protocol-zone-icon" id="bmZoneIcon"><i class="fa-solid fa-head-side-cough"></i></span>
+                  <div>
+                    <h4 id="bmZoneTitle">إصابات وطوارئ الرأس والرقبة</h4>
+                    <span class="protocol-subtitle" id="bmZoneSubtitle">نزيف الأنف، فقدان الوعي، الارتجاج، بلع اللسان</span>
+                  </div>
+                </div>
+                <span class="protocol-severity-pill" id="bmSeverityPill">كود أصفر / برتقالي</span>
+              </div>
+
+              <div class="protocol-body">
+                <div class="protocol-alert-banner" id="bmAlertBanner">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span id="bmAlertText">إذا كان المصاب فاقداً للوعي ولا يتنفس، ابدأ الإنعاش القلبي (CPR) فوراً واتصل بـ 123.</span>
+                </div>
+
+                <div class="protocol-steps-list">
+                  <h5 style="font-weight: 800; font-size: 0.95rem; margin-bottom: 12px; color: var(--text-main);">خطوات الإسعاف السريع المعتمدة:</h5>
+                  <ul class="bm-steps" id="bmStepsList">
+                    <li><span class="bm-step-num">1</span><span><strong>نزيف الأنف (الرعاف):</strong> اجلس مع إمالة الرأس قليلاً للأمام واضغط على أرنبة الأنف لمدة 10 دقائق (لا ترجع الرأس للخلف أبداً).</span></li>
+                    <li><span class="bm-step-num">2</span><span><strong>بلع اللسان أو الغيبوبة:</strong> افتح مجرى الهواء بإمالة الرأس للخلف ورفع الذقن (Head-tilt chin-lift)، وضع المصاب في وضع الإفاقة.</span></li>
+                    <li><span class="bm-step-num">3</span><span><strong>اشتباه كسر الرقبة:</strong> ثبت الرأس والرقبة في مكانهما دون أي حركة وانتظر وصول المسعفين.</span></li>
+                  </ul>
+                </div>
+
+                <div class="protocol-footer-actions">
+                  <a href="pages/chat.html?q=إصابات+الرأس+والرقبة" id="bmChatLink" class="btn-primary" style="text-decoration: none;">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>استشر المساعد الذكي عن هذه الحالة</span>
+                  </a>
+                  <a href="tel:123" class="btn-secondary" style="text-decoration: none; border-color: rgba(220, 38, 38, 0.4); color: #dc2626 !important;">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>اتصال إسعاف 123</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRIAGE GUIDE OVERVIEW -->
+    <section class="clean-triage-guide-section">
+      <div class="clean-triage-card">
+        <div class="triage-guide-header">
+          <i class="fa-solid fa-notes-medical" style="color: var(--primary);"></i>
+          <h3>مستويات تصنيف الخطورة الإسعافية (START Triage Matrix)</h3>
+        </div>
+        <div class="triage-levels-grid">
+          <div class="triage-level-item red">
+            <div class="level-top">
+              <span class="level-badge red"><i class="fa-solid fa-circle-exclamation"></i> حالات حرجة جداً (كود أحمر)</span>
+              <span class="level-action">تدخل فوري خلال ثوانٍ</span>
+            </div>
+            <p>توقف النبض أو التنفس، انسداد مجرى الهواء الكامل، نزيف شرياني متدفق، غيبوبة تامة، أو صدمة تحسسية حادة.</p>
+          </div>
+
+          <div class="triage-level-item yellow">
+            <div class="level-top">
+              <span class="level-badge yellow"><i class="fa-solid fa-triangle-exclamation"></i> حالات طارئة متوسطة (كود برتقالي)</span>
+              <span class="level-action">رعاية طبية خلال دقائق</span>
+            </div>
+            <p>الكسور المضاعفة، حروق الدرجة الثانية والثالثة، صعوبة التنفس الحادة، أو جروح عميقة نازفة.</p>
+          </div>
+
+          <div class="triage-level-item green">
+            <div class="level-top">
+              <span class="level-badge green"><i class="fa-solid fa-circle-check"></i> حالات مستقرة وبسيطة (كود أخضر)</span>
+              <span class="level-action">إسعاف أولي ذاتي منزلي</span>
+            </div>
+            <p>الجروح السطحية والخدوش، كدمات طفيفة، رعاف الأنف البسيط، الإجهاد الحراري، وحروق شمس خفيفة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       5. INSTITUTIONAL FOOTER WITH VENOM TEAM BRANDING
+       ======================================================================== -->
+  <aside class="emergency-banner" role="alert" aria-label="Emergency Notice">
+    <div class="emergency-banner-content">
+      <div class="emergency-beacon-wrapper">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="emergency-beacon-ring"></span>
+      </div>
+      <span data-i18n="emergencyWarning">
+        هذا النظام للتوعية والإسعاف الأولي السريع — في حالات الطوارئ القصوى اتصل بـ 123 فوراً
+      </span>
+      <div id="offline-status-badge" class="offline-status-pill" title="جاهز للعمل بدون إنترنت 100%">
+        <span class="status-pulse-dot"></span>
+        <span class="status-text">يعمل بدون إنترنت (PWA Offline Active)</span>
+      </div>
+    </div>
+    <a href="tel:123" class="emergency-call-btn">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span data-i18n="callNow">اتصل الآن (123)</span>
+    </a>
+  </aside>
+
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-brand-team">
+        <img src="assets/images/venom-official-logo.png" alt="VENOM Team Logo" class="team-logo-img team-modal-trigger" role="button" tabindex="0" title="اضغط لعرض بطاقات تيم VENOM التقني" onclick="window.TeamModal && window.TeamModal.open()" loading="lazy" style="cursor: pointer;">
+        <div>
+          <strong>VENOM — مسعف الذكي (منظومة الإسعافات والطوارئ)</strong>
+          <p style="font-size: 0.85rem; margin-top: 4px; color: var(--text-muted);">
+            <span data-i18n="footerSupervisor">منظومة الطوارئ الذكية — تطوير وإشراف:</span> 
+            <button type="button" class="team-credit-name-btn" id="teamCreditTrigger" onclick="window.TeamModal && window.TeamModal.open()" title="عرض بطاقات تيم VENOM التقني">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span data-i18n="teamBtnCredit">تيم VENOM التقني (6 أعضاء)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-badge-list">
+        <button type="button" class="footer-badge team-launch-badge" id="openTeamModalBtn" onclick="window.TeamModal && window.TeamModal.open()" title="عرض بطاقات تيم VENOM التقني">
+          <i class="fa-solid fa-users-gear" style="color: var(--primary); margin-inline-end: 6px;"></i>
+          <strong data-i18n="teamBtnBadge">تيم VENOM التقني</strong>
+          <span class="team-pulse-indicator"></span>
+        </button>
+        <span class="footer-badge">
+          <i class="fa-solid fa-shield-halved" style="color: #16a34a; margin-inline-end: 4px;"></i>
+          <span data-i18n="footerTrusted">إرشادات طبية موثوقة</span>
+        </span>
+        <span class="footer-badge">
+          <i class="fa-solid fa-bolt" style="color: #eab308; margin-inline-end: 4px;"></i>
+          <span data-i18n="footerOffline">يعمل أوفلاين وسحابياً</span>
+        </span>
+        <span class="footer-badge">
+          <i class="fa-solid fa-mobile-screen" style="color: var(--primary); margin-inline-end: 4px;"></i>
+          <span data-i18n="footerResponsive">متوافق مع الهواتف</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       6. MOBILE BOTTOM APP BAR (Native App Navigation on Phones)
+       ======================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="pages/chat.html" class="mobile-nav-item">
+      <i class="fa-solid fa-robot"></i>
+      <span>المساعد</span>
+    </a>
+    <a href="pages/triage.html" class="mobile-nav-item">
+      <i class="fa-solid fa-stethoscope"></i>
+      <span>الفرز</span>
+    </a>
+    <a href="pages/contacts.html" class="mobile-nav-item">
+      <i class="fa-solid fa-hospital"></i>
+      <span>الطوارئ</span>
+    </a>
+    <a href="pages/learn.html" class="mobile-nav-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>تعلّم</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================================
+       7. FLOATING SMART EMERGENCY SOS DOCK (Offline-Ready Native Action)
+       ======================================================================== -->
+  <aside class="floating-sos-dock" id="floatingSosDock">
+    <!-- Expandable Menu -->
+    <div class="sos-expand-menu" id="sosExpandMenu" aria-hidden="true">
+      <div class="sos-menu-header">
+        <span class="sos-menu-title"><i class="fa-solid fa-triangle-exclamation" style="color: #dc2626;"></i> طوارئ مصر السريعة</span>
+        <button type="button" class="sos-menu-close" id="sosMenuClose" aria-label="إغلاق">&times;</button>
+      </div>
+      <div class="sos-menu-items">
+        <a href="tel:123" class="sos-menu-item red">
+          <div class="sos-item-icon"><i class="fa-solid fa-truck-medical"></i></div>
+          <div class="sos-item-details">
+            <span class="sos-item-name">إسعاف مصر</span>
+            <span class="sos-item-sub">حالات الخطر والإنقاذ</span>
+          </div>
+          <span class="sos-item-num">123</span>
+        </a>
+        <a href="tel:122" class="sos-menu-item blue">
+          <div class="sos-item-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="sos-item-details">
+            <span class="sos-item-name">شرطة النجدة</span>
+            <span class="sos-item-sub">البلاغات والحوادث</span>
+          </div>
+          <span class="sos-item-num">122</span>
+        </a>
+        <a href="tel:180" class="sos-menu-item orange">
+          <div class="sos-item-icon"><i class="fa-solid fa-fire-extinguisher"></i></div>
+          <div class="sos-item-details">
+            <span class="sos-item-name">الحماية المدنية</span>
+            <span class="sos-item-sub">المطافئ والإنقاذ</span>
+          </div>
+          <span class="sos-item-num">180</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Trigger Button -->
+    <button type="button" class="sos-trigger-btn" id="sosTriggerBtn" aria-label="أرقام الطوارئ السريعة">
+      <span class="sos-pulse-ring"></span>
+      <span class="sos-pulse-ring-2"></span>
+      <i class="fa-solid fa-phone-volume"></i>
+      <span class="sos-trigger-text">طوارئ SOS</span>
+    </button>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="components/severity-badge.js"></script>
+  <script src="components/step-card.js"></script>
+  <script src="components/team-modal.js?v=60"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js?v=60"></script>
+</body>
+</html>
