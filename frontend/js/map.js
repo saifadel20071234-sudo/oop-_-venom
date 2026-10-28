@@ -35,6 +35,13 @@ const MapLocator = {
     // Load clinics data from ApiClient
     this.clinicsData = await ApiClient.getContacts();
 
+    // Default reference coordinates: Kafr El Sheikh Medical Campus
+    const defaultCenter = [31.1005, 30.9515];
+    this.clinicsData.forEach(c => {
+      c.distance_km = this.calculateHaversineDistance(defaultCenter[0], defaultCenter[1], c.lat, c.lon);
+    });
+    this.clinicsData.sort((a, b) => a.distance_km - b.distance_km);
+
     // Render list immediately
     this.renderClinicsList(listContainerId);
 
@@ -44,7 +51,7 @@ const MapLocator = {
       this.initLeafletMap(mapContainerId);
     }
 
-    // Try locating user position
+    // Try locating user position with high accuracy
     this.requestUserLocation(listContainerId);
   },
 
@@ -52,8 +59,8 @@ const MapLocator = {
    * Initialize Leaflet interactive map
    */
   initLeafletMap(containerId) {
-    // Default university center coordinates
-    const defaultCenter = [30.0275, 31.2105];
+    // Default university center coordinates (Kafr El Sheikh Medical Campus)
+    const defaultCenter = [31.1005, 30.9515];
 
     try {
       this.map = L.map(containerId).setView(defaultCenter, 14);
@@ -104,6 +111,12 @@ const MapLocator = {
    */
   requestUserLocation(listContainerId) {
     if ('geolocation' in navigator) {
+      const geoOptions = {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 30000
+      };
+
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           this.userLocation = {
@@ -111,7 +124,7 @@ const MapLocator = {
             lon: pos.coords.longitude
           };
 
-          // Re-calculate distances for each clinic
+          // Re-calculate distances for each clinic accurately
           this.clinicsData.forEach(c => {
             c.distance_km = this.calculateHaversineDistance(
               this.userLocation.lat,
@@ -129,22 +142,24 @@ const MapLocator = {
 
           // Add user pin on map
           if (this.map) {
+            this.plotClinicMarkers();
+
             const userIcon = L.divIcon({
               className: 'user-pin',
-              html: `<div style="background-color: #16a34a; width: 22px; height: 22px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 10px rgba(22,163,74,0.6);"></div>`,
-              iconSize: [22, 22],
-              iconAnchor: [11, 11]
+              html: `<div style="background-color: #16a34a; width: 24px; height: 24px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 12px rgba(22,163,74,0.8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px;"><i class="fa-solid fa-person-walking"></i></div>`,
+              iconSize: [24, 24],
+              iconAnchor: [12, 12]
             });
             L.marker([this.userLocation.lat, this.userLocation.lon], { icon: userIcon })
-              .bindPopup('<div style="font-family: inherit; font-size: 12px; font-weight: 800; direction: rtl; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-location-crosshairs" style="color: #16a34a;"></i><span>موقعك الحالي</span></div>')
+              .bindPopup('<div style="font-family: inherit; font-size: 12px; font-weight: 800; direction: rtl; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-location-crosshairs" style="color: #16a34a;"></i><span>موقعك الحالي بدقة GPS</span></div>')
               .addTo(this.map);
-            this.map.panTo([this.userLocation.lat, this.userLocation.lon]);
+            this.map.setView([this.userLocation.lat, this.userLocation.lon], 14);
           }
         },
         (err) => {
           console.log('[MapLocator] Geolocation not granted or unavailable:', err.message);
         },
-        { timeout: 7000 }
+        geoOptions
       );
     }
   },
@@ -159,15 +174,15 @@ const MapLocator = {
     const isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
 
     container.innerHTML = this.clinicsData.map(c => {
-      const isEmergency = c.phone === '123';
+      const isEmergency = c.phone === '123' || (c.name || '').includes('طوارئ') || (c.name || '').includes('مستشفى');
       const badgeText = isEmergency 
-        ? (isArabic ? 'طوارئ عاجلة' : 'Immediate Emergency') 
-        : (isArabic ? 'عيادة معتمدة' : 'Verified Clinic');
+        ? (isArabic ? 'طوارئ واستقبال 24h' : 'Emergency 24/7') 
+        : (isArabic ? 'مركز رعاية معتمد' : 'Verified Medical Center');
       
       const badgeClass = isEmergency ? 'red' : 'green';
-      const distanceLabel = c.distance_km 
+      const distanceLabel = (c.distance_km !== null && !isNaN(c.distance_km)) 
         ? (isArabic ? `يبعد ${c.distance_km} كم` : `${c.distance_km} km away`) 
-        : (isArabic ? 'في الحرم الجامعي' : 'On Campus');
+        : (isArabic ? 'داخل الحرم الجامعي' : 'On Campus');
 
       const servicesHtml = (c.services || []).map(s => `
         <span class="footer-badge">${s}</span>
