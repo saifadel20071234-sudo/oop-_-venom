@@ -75,6 +75,30 @@ class TestClinicalPipeline(unittest.TestCase):
         data = response.get_json()
         self.assertGreaterEqual(data.get("count", 0), 300)
 
+    def test_pipeline_english_burn(self):
+        res = process_clinical_query("I burned my hand with boiling water")
+        self.assertEqual(res["condition"], "burn")
+        self.assertEqual(res["language"], "english")
+        self.assertIn("Burn", res["title"])
+        self.assertGreater(len(res["steps"]), 0)
+        self.assertGreater(len(res["do_list"]), 0)
+        self.assertGreater(len(res["dont_list"]), 0)
+
+    def test_pipeline_english_hypertension_emergency(self):
+        res = process_clinical_query("my blood pressure is 180 and I feel chest pain")
+        self.assertEqual(res["language"], "english")
+        self.assertEqual(res["severity"], "red")
+        self.assertIn("Hypertensive", res["title"])
+
+    def test_api_chat_english_endpoint(self):
+        response = self.client.post("/api/chat", json={"message": "someone is choking on food"})
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data.get("status"), "success")
+        self.assertEqual(data.get("condition"), "choking")
+        self.assertEqual(data.get("language"), "english")
+        self.assertEqual(data.get("severity"), "red")
+
 
 if __name__ == "__main__":
     unittest.main()

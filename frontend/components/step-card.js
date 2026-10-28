@@ -39,8 +39,10 @@ const StepCardComponent = {
    * @param {Array<string>} dontList 
    * @returns {string} HTML string
    */
-  renderDoDont(doList = [], dontList = []) {
-    const isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
+  renderDoDont(doList = [], dontList = [], isArabic = null) {
+    if (isArabic === null) {
+      isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
+    }
     const doTitle = isArabic ? 'ما يجب فعله (إجراءات صحيحة)' : 'What to DO';
     const dontTitle = isArabic ? 'ما يُحظر فعله (أخطاء شائعة)' : 'What NOT to do';
 

@@ -600,113 +600,739 @@ CONDITION_CATALOG: Dict[str, Dict[str, Any]] = {
 }
 
 
+
+# Pre-compiled Medical Knowledge Catalog (English Edition)
+ENGLISH_CATALOG: Dict[str, Dict[str, Any]] = {
+    "high_blood_pressure": {
+        "english_title": "Hypertensive Crisis Emergency (High Blood Pressure)",
+        "category": "Cardiovascular & Blood Pressure Emergencies",
+        "default_severity": "orange",
+        "source": "European Society of Cardiology (ESC) & Egyptian Ministry of Health",
+        "default_steps": [
+            "Help the patient sit in a relaxed, upright position (at a 45-degree angle) in a quiet, well-ventilated room.",
+            "Loosen tight clothing and accessories around the neck, chest, and waist to facilitate airflow and reduce venous congestion.",
+            "Reassure the patient and encourage slow, calm, deep breathing; anxiety and panic can spike blood pressure further.",
+            "Re-check blood pressure calmly after 5 minutes of quiet, uninterrupted rest.",
+            "If the reading exceeds 180/120 mmHg, or is accompanied by chest pain, shortness of breath, slurred speech, or numbness: call emergency 123 immediately."
+        ],
+        "do_list": [
+            "Rest in a seated position for 5 minutes before re-checking blood pressure",
+            "Screen for red-flag emergency symptoms (chest tightness, severe headache, confusion)",
+            "Seek emergency hospital care immediately if accompanied by blurred vision or explosive headache"
+        ],
+        "dont_list": [
+            "Do NOT take unprescribed blood pressure medications or diuretics randomly",
+            "Do NOT consume coffee, energy drinks, or pain relievers that elevate blood pressure",
+            "Do NOT lie completely flat on the back to avoid increasing intracranial vascular pressure"
+        ],
+        "referral": "Cardiology / Internal Medicine Emergency at University Hospital or Ambulance 123 immediately"
+    },
+    "abdominal_pain": {
+        "english_title": "Acute Abdominal Pain & Severe Colic",
+        "category": "Gastrointestinal & Abdominal Emergencies",
+        "default_severity": "orange",
+        "source": "University Hospitals General Surgery & Emergency Guidelines",
+        "default_steps": [
+            "Have the patient lie down in a comfortable position, gently flexing their knees toward the abdomen to relieve muscle tension.",
+            "Apply a mild warm compress if appendicitis is not suspected, to help relax abdominal muscles.",
+            "Withhold all food, drinks, and oral medications in case urgent surgical evaluation or anesthesia is required.",
+            "Check pain location: is it focused in the lower right abdomen? Is the abdominal wall rigid and board-like?",
+            "Seek emergency surgical evaluation immediately if pain is sudden and severe, or accompanied by vomiting blood or high fever."
+        ],
+        "do_list": [
+            "Rest with knees bent to ease abdominal wall tension",
+            "Watch for red flags (rigid abdomen, persistent vomiting, fainting)",
+            "Go to general surgery ER for appendicitis and acute abdomen evaluation"
+        ],
+        "dont_list": [
+            "Do NOT take strong painkillers or laxatives as they mask acute appendicitis symptoms",
+            "Do NOT place scalding hot water bottles directly on the abdomen",
+            "Do NOT force the patient to eat or drink during acute colic"
+        ],
+        "referral": "General Surgery & Internal Medicine ER at University Hospital or Ambulance 123"
+    },
+    "chest_pain_cardiac": {
+        "english_title": "Critical Emergency: Severe Chest Pain / Suspected Heart Attack",
+        "category": "Coronary & Cardiac Emergencies",
+        "default_severity": "red",
+        "source": "American Heart Association (AHA) & Egyptian Resuscitation Council",
+        "default_steps": [
+            "Call Emergency Ambulance (123) immediately; acute chest pain requires intervention within minutes.",
+            "Help the patient rest in a half-sitting position (supported at 45 degrees with knees slightly bent).",
+            "Loosen tight clothing around the neck and chest to facilitate airflow.",
+            "If the patient is fully conscious with no aspirin allergy or stomach ulcer: help them chew one baby aspirin (160-325 mg).",
+            "Stay beside the patient, monitor breathing continuously, and be prepared to initiate CPR if they become unresponsive."
+        ],
+        "do_list": [
+            "Call 123 emergency immediately without hesitation",
+            "Rest in a semi-seated position to decrease heart workload",
+            "Chew aspirin if conscious and not allergic"
+        ],
+        "dont_list": [
+            "Do NOT allow the patient to walk, exert themselves, or drive to the hospital",
+            "Do NOT give food, heavy liquids, or stimulants",
+            "Do NOT ignore chest tightness hoping it will fade"
+        ],
+        "referral": "Coronary Care Unit (CCU) and Emergency Dept at University Hospital or Ambulance 123"
+    },
+    "headache_neurological": {
+        "english_title": "Acute Severe Headache & Stroke Assessment (F.A.S.T)",
+        "category": "Neurological & Stroke Emergencies",
+        "default_severity": "orange",
+        "source": "National Institute of Neurological Disorders (NINDS) & Egyptian Society of Neurology",
+        "default_steps": [
+            "Have the patient rest in a quiet, dark, and well-ventilated room away from bright lights and noise.",
+            "Perform the rapid F.A.S.T Stroke Screen immediately:",
+            "1. Face: Ask them to smile; is one side of the mouth drooping?",
+            "2. Arms: Ask them to raise both arms; does one arm drift downward?",
+            "3. Speech: Ask them to repeat a simple sentence; is their speech slurred or strange?",
+            "If any F.A.S.T sign is present or the headache is a 'thunderclap' (worst headache of life): call 123 immediately."
+        ],
+        "do_list": [
+            "Conduct the F.A.S.T test immediately to rule out acute stroke",
+            "Complete rest in a calm, dim room",
+            "Call 123 immediately if accompanied by weakness, slurred speech, or seizures"
+        ],
+        "dont_list": [
+            "Do NOT give aspirin for sudden severe headache (risk of cerebral hemorrhage)",
+            "Do NOT strain the eyes with phone screens or intense lighting",
+            "Do NOT ignore headache accompanied by projectile vomiting or stiff neck"
+        ],
+        "referral": "Neurology Emergency & Stroke Unit at University Hospital or Ambulance 123"
+    },
+    "burn": {
+        "english_title": "Burns & Thermal Injuries Protocol",
+        "category": "Thermal Injuries & Burns",
+        "default_severity": "orange",
+        "source": "World Health Organization (WHO) & Egyptian Ministry of Health Burn Guidelines",
+        "default_steps": [
+            "Immediately move the patient away from the heat source or extinguish flames (Stop, Drop, and Roll).",
+            "Cool the burn area under cool or lukewarm running tap water (12-18°C) for 20 continuous minutes.",
+            "Gently remove rings, watches, tight jewelry, and loose clothing before swelling begins.",
+            "Cover the burn loosely with sterile non-adherent petrolatum gauze or a clean plastic wrap.",
+            "Keep the patient warm with a clean blanket over uninjured areas to prevent hypothermia."
+        ],
+        "do_list": [
+            "Cool with running tap water for a full 20 minutes to reduce burn depth by up to 70%",
+            "Gently remove jewelry before swelling develops",
+            "Go to specialized burn emergency if burn involves face, hands, joints, or is extensive"
+        ],
+        "dont_list": [
+            "NEVER apply ice or ice-cold water directly; it causes tissue necrosis and frostbite",
+            "NEVER apply toothpaste, flour, coffee grounds, egg whites, or butter",
+            "NEVER pop or puncture burn blisters; they act as a sterile biological barrier",
+            "Do NOT peel off clothing adhered to burned skin; cut loose edges around it"
+        ],
+        "referral": "Specialized Burn Unit at General Hospital or Ambulance 123 immediately"
+    },
+    "choking": {
+        "english_title": "Critical Emergency: Severe Airway Obstruction (Choking)",
+        "category": "Airway Obstruction (Choking)",
+        "default_severity": "red",
+        "source": "European Resuscitation Council (ERC) & Red Cross First Aid",
+        "default_steps": [
+            "Ask: 'Are you choking?' If they can cough effectively, encourage them to keep coughing.",
+            "If the person cannot speak, cough, or breathe (silent choking): stand behind them immediately.",
+            "Deliver 5 firm back blows between the shoulder blades using the heel of your hand.",
+            "If not cleared, perform 5 abdominal thrusts (Heimlich Maneuver): place a fist above the navel and pull inward and upward sharply.",
+            "Alternate 5 back blows and 5 abdominal thrusts until the object is expelled or the person becomes unresponsive (if unresponsive, start CPR)."
+        ],
+        "do_list": [
+            "Deliver alternating 5 back blows and 5 abdominal thrusts (Heimlich)",
+            "Encourage coughing if the patient can still make sounds",
+            "Call 123 and begin CPR immediately if the patient loses consciousness"
+        ],
+        "dont_list": [
+            "Do NOT perform blind finger sweeps in the mouth; it may push the object deeper",
+            "Do NOT give water or fluids to someone who is actively choking",
+            "Do NOT slap the back while the person is standing upright without supporting their chest"
+        ],
+        "referral": "Call Ambulance 123 immediately and go to nearest Emergency Hospital"
+    },
+    "cpr": {
+        "english_title": "Critical Emergency: Cardiac Arrest & Cardiopulmonary Resuscitation (CPR)",
+        "category": "Cardiac Arrest & Resuscitation",
+        "default_severity": "red",
+        "source": "American Heart Association (AHA) Guidelines for CPR & ECC",
+        "default_steps": [
+            "Verify scene safety, tap the victim's shoulders firmly and shout: 'Are you OK?'",
+            "If no response and not breathing normally (or only gasping): shout for help and call 123 immediately.",
+            "Place the heel of one hand on the center of the chest (lower half of sternum) and the other hand on top, interlocking fingers.",
+            "Push hard and fast: compress at a rate of 100-120 beats per minute, at least 5-6 cm deep, allowing full chest recoil.",
+            "Continue continuous chest compressions (hands-only CPR) without interruption until emergency medical services arrive or an AED is ready."
+        ],
+        "do_list": [
+            "Compress chest hard and fast (100-120 bpm) at the rhythm of 'Stayin' Alive'",
+            "Allow full chest recoil between compressions",
+            "Use an Automated External Defibrillator (AED) as soon as available"
+        ],
+        "dont_list": [
+            "Do NOT pause compressions for more than 10 seconds",
+            "Do NOT lean on the chest between compressions; allow the heart to refill",
+            "Do NOT perform CPR on a conscious person who is breathing normally"
+        ],
+        "referral": "Emergency Ambulance 123 and nearest ICU / Emergency Resuscitation Center"
+    },
+    "fracture": {
+        "english_title": "Bone Fractures, Dislocations & Severe Sprains",
+        "category": "Musculoskeletal & Fracture Emergencies",
+        "default_severity": "orange",
+        "source": "American Academy of Orthopaedic Surgeons (AAOS) Guidelines",
+        "default_steps": [
+            "Keep the injured limb completely still; do not attempt to realign, straighten, or test the bone.",
+            "Control any external bleeding by applying gentle pressure around the wound with sterile gauze (avoid pressing directly on bone).",
+            "Immobilize the joint above and below the injury using a rigid splint (rolled magazines, wood) secured with bandages.",
+            "Apply a cold pack wrapped in a cloth for 15-20 minutes to reduce pain and swelling.",
+            "Transport the patient safely to the orthopedic emergency department or call 123."
+        ],
+        "do_list": [
+            "Immobilize the limb in the position found",
+            "Apply wrapped ice pack to decrease swelling",
+            "Check pulse, sensation, and capillary refill in fingers/toes past the fracture"
+        ],
+        "dont_list": [
+            "Do NOT attempt to push protruding bones back into the wound (open fracture)",
+            "Do NOT force the patient to walk or bear weight on an injured leg",
+            "Do NOT massage or vigorously rub a suspected fracture or sprain"
+        ],
+        "referral": "Orthopedic Emergency Department at University Hospital or Ambulance 123"
+    },
+    "cut": {
+        "english_title": "Severe Bleeding, Lacerations & Open Wounds",
+        "category": "Wounds & Hemorrhage Control",
+        "default_severity": "orange",
+        "source": "Stop the Bleed Campaign (American College of Surgeons) & WHO",
+        "default_steps": [
+            "Protect yourself with clean gloves if possible, and expose the wound to identify the exact source of bleeding.",
+            "Apply firm, continuous direct pressure over the bleeding site using sterile gauze or a clean cloth.",
+            "Maintain uninterrupted pressure for at least 10-15 minutes without lifting the dressing to peek.",
+            "If blood soaks through, add additional gauze layers on top; do not remove the original dressing.",
+            "If severe arterial spurting bleeding on a limb does not stop with direct pressure, apply an emergency tourniquet 5-7 cm above the wound."
+        ],
+        "do_list": [
+            "Maintain firm, uninterrupted direct pressure",
+            "Elevate the bleeding limb above heart level if no fracture is present",
+            "Seek emergency care for deep cuts, pulsing blood, or wounds needing sutures"
+        ],
+        "dont_list": [
+            "Do NOT remove embedded objects (knife, glass); stabilize them in place with dressings",
+            "Do NOT remove soaked gauze; add fresh layers over it to protect clots",
+            "Do NOT use a tourniquet over joints (knees or elbows)"
+        ],
+        "referral": "Emergency Department & Trauma Unit at University Hospital or Ambulance 123"
+    },
+    "poisoning": {
+        "english_title": "Toxic Ingestion & Chemical Poisoning Emergency",
+        "category": "Toxicology & Poison Emergencies",
+        "default_severity": "red",
+        "source": "Egyptian Poison Control Centers & WHO International Programme on Chemical Safety",
+        "default_steps": [
+            "Check responsiveness and verify breathing; move away from toxic fumes if inhaled.",
+            "Identify the substance, container, estimated amount ingested, and exact time of exposure.",
+            "Call Poison Control or Emergency 123 immediately for specific antidote instructions.",
+            "If chemical splashed on skin or eyes, irrigate with clean running water for 15-20 minutes.",
+            "Turn an unconscious breathing victim onto their side (recovery position) to prevent aspiration."
+        ],
+        "do_list": [
+            "Bring the original chemical/medication container to the hospital",
+            "Place patient in recovery position if drowsy",
+            "Call Poison Control immediately"
+        ],
+        "dont_list": [
+            "NEVER induce vomiting, especially with corrosive acids, bleach, or petroleum",
+            "Do NOT give milk, raw eggs, or salted water (dangerous myth that accelerates absorption)",
+            "Do NOT administer activated charcoal without medical orders"
+        ],
+        "referral": "Poison Control Center & Emergency Toxicology Unit at University Hospital or 123"
+    },
+    "allergy_anaphylaxis": {
+        "english_title": "Critical Emergency: Severe Allergic Reaction (Anaphylaxis)",
+        "category": "Allergy & Anaphylaxis Emergencies",
+        "default_severity": "red",
+        "source": "World Allergy Organization (WAO) & Resuscitation Council UK",
+        "default_steps": [
+            "Recognize warning signs: swelling of lips/tongue, wheezing, hives, or throat tightness.",
+            "Call Ambulance (123) immediately; anaphylaxis can close the airway rapidly.",
+            "If the patient has an Epinephrine Auto-Injector (EpiPen): inject into the outer mid-thigh immediately and hold for 3-5 seconds.",
+            "Help the person lie flat with legs elevated unless they have breathing distress (if breathing difficulty, let them sit upright).",
+            "If symptoms do not improve within 5-10 minutes, a second dose of epinephrine may be administered."
+        ],
+        "do_list": [
+            "Administer Epinephrine (EpiPen) immediately into the outer thigh",
+            "Call 123 immediately even if symptoms seem to improve after injection",
+            "Keep the patient calm and warm"
+        ],
+        "dont_list": [
+            "Do NOT allow the person to stand or walk abruptly; it may cause fatal blood pressure drop",
+            "Do NOT rely on oral antihistamines alone for severe anaphylaxis",
+            "Do NOT place a pillow under the head if lying down to keep airway open"
+        ],
+        "referral": "Emergency Department & Resuscitation Center at University Hospital or 123"
+    },
+    "anaphylaxis": {
+        "english_title": "Critical Emergency: Severe Allergic Reaction (Anaphylaxis)",
+        "category": "Allergy & Anaphylaxis Emergencies",
+        "default_severity": "red",
+        "source": "World Allergy Organization (WAO) & Resuscitation Council UK",
+        "default_steps": [
+            "Recognize warning signs: swelling of lips/tongue, wheezing, hives, or throat tightness.",
+            "Call Ambulance (123) immediately; anaphylaxis can close the airway rapidly.",
+            "If the patient has an Epinephrine Auto-Injector (EpiPen): inject into the outer mid-thigh immediately and hold for 3-5 seconds.",
+            "Help the person lie flat with legs elevated unless they have breathing distress (if breathing difficulty, let them sit upright).",
+            "If symptoms do not improve within 5-10 minutes, a second dose of epinephrine may be administered."
+        ],
+        "do_list": [
+            "Administer Epinephrine (EpiPen) immediately into the outer thigh",
+            "Call 123 immediately even if symptoms seem to improve after injection",
+            "Keep the patient calm and warm"
+        ],
+        "dont_list": [
+            "Do NOT allow the person to stand or walk abruptly; it may cause fatal blood pressure drop",
+            "Do NOT rely on oral antihistamines alone for severe anaphylaxis",
+            "Do NOT place a pillow under the head if lying down to keep airway open"
+        ],
+        "referral": "Emergency Department & Resuscitation Center at University Hospital or 123"
+    },
+    "asthma": {
+        "english_title": "Acute Asthma Attack & Severe Respiratory Distress",
+        "category": "Respiratory & Asthma Emergencies",
+        "default_severity": "red",
+        "source": "Global Initiative for Asthma (GINA) & British Thoracic Society",
+        "default_steps": [
+            "Help the person sit upright in a comfortable position; do not let them lie down.",
+            "Reassure them and encourage slow, calm breathing through pursed lips.",
+            "Help them use their quick-relief bronchodilator inhaler (Ventolin / Salbutamol): 2 to 4 puffs, ideally with a spacer.",
+            "Wait 4 minutes; if there is no significant improvement, give another 2 to 4 puffs (up to 10 puffs).",
+            "Call 123 immediately if the inhaler is unavailable, speech is broken, lips turn blue, or chest retractions occur."
+        ],
+        "do_list": [
+            "Sit upright and lean slightly forward",
+            "Administer rescue inhaler (Ventolin) with spacer",
+            "Call 123 if blue lips, inability to speak, or no relief after 10 puffs"
+        ],
+        "dont_list": [
+            "Do NOT have the patient lie flat on their back",
+            "Do NOT crowd around the patient; ensure fresh, clean airflow",
+            "Do NOT give sedatives or cold drinks during an acute asthma attack"
+        ],
+        "referral": "Pulmonology & Emergency Department at University Hospital or 123"
+    },
+    "seizures": {
+        "english_title": "Acute Epileptic Seizures & Convulsions",
+        "category": "Neurological & Seizure Emergencies",
+        "default_severity": "orange",
+        "source": "International League Against Epilepsy (ILAE) & CDC Guidelines",
+        "default_steps": [
+            "Protect the person's head by placing a soft jacket, towel, or pillow underneath it.",
+            "Clear away hard, sharp, or hazardous objects from the surrounding area.",
+            "Time the seizure with a watch or phone.",
+            "Loosen tight neckwear to aid breathing.",
+            "Once jerking stops, roll them gently onto their side into the recovery position and stay until fully awake."
+        ],
+        "do_list": [
+            "Protect the head from trauma",
+            "Place in recovery position once jerking ends",
+            "Call 123 if seizure lasts longer than 5 minutes or repeats"
+        ],
+        "dont_list": [
+            "NEVER put anything in the person's mouth (they will NOT swallow their tongue)",
+            "Do NOT physically restrain or pin down the person's limbs",
+            "Do NOT splash water on their face or offer food/drink while drowsy"
+        ],
+        "referral": "Neurology Emergency at University Hospital or Ambulance 123"
+    },
+    "seizure": {
+        "english_title": "Acute Epileptic Seizures & Convulsions",
+        "category": "Neurological & Seizure Emergencies",
+        "default_severity": "orange",
+        "source": "International League Against Epilepsy (ILAE) & CDC Guidelines",
+        "default_steps": [
+            "Protect the person's head by placing a soft jacket, towel, or pillow underneath it.",
+            "Clear away hard, sharp, or hazardous objects from the surrounding area.",
+            "Time the seizure with a watch or phone.",
+            "Loosen tight neckwear to aid breathing.",
+            "Once jerking stops, roll them gently onto their side into the recovery position and stay until fully awake."
+        ],
+        "do_list": [
+            "Protect the head from trauma",
+            "Place in recovery position once jerking ends",
+            "Call 123 if seizure lasts longer than 5 minutes or repeats"
+        ],
+        "dont_list": [
+            "NEVER put anything in the person's mouth (they will NOT swallow their tongue)",
+            "Do NOT physically restrain or pin down the person's limbs",
+            "Do NOT splash water on their face or offer food/drink while drowsy"
+        ],
+        "referral": "Neurology Emergency at University Hospital or Ambulance 123"
+    },
+    "fainting": {
+        "english_title": "Fainting & Temporary Circulatory Collapse (Syncope)",
+        "category": "Syncope & Temporary Loss of Consciousness",
+        "default_severity": "green",
+        "source": "Egyptian Ambulance Organization Field Guidelines & AHA",
+        "default_steps": [
+            "Lay the person flat on their back in a safe, well-ventilated area.",
+            "Elevate their legs 30 cm (about 12 inches) above heart level to restore blood flow to the brain.",
+            "Loosen restrictive clothing around the neck, chest, and waistline.",
+            "Check breathing and ensure airway is open (tilt head back, lift chin).",
+            "If they do not regain consciousness within 1 to 2 minutes, call 123 and roll into the recovery position."
+        ],
+        "do_list": [
+            "Elevate legs 30 cm to improve cerebral perfusion",
+            "Provide good ventilation and fresh air",
+            "Call 123 if unconsciousness exceeds 2 minutes or chest pain was reported"
+        ],
+        "dont_list": [
+            "Do NOT let the person stand up quickly upon waking to prevent second fall",
+            "Do NOT splash cold water or slap their face",
+            "Do NOT give anything to drink or eat while confused or drowsy"
+        ],
+        "referral": "Emergency Clinic or Primary Health Center"
+    },
+    "electric_shock": {
+        "english_title": "Critical Emergency: Electrical Shock & Current Injury",
+        "category": "Electrical Trauma & Shock",
+        "default_severity": "red",
+        "source": "Occupational Safety & Health Guidelines & Ministry of Health",
+        "default_steps": [
+            "Absolute Priority: Turn off the main electrical breaker or unplug the appliance before touching the victim.",
+            "If power cannot be cut, stand on dry non-conductive surface (wood/rubber) and use a dry wooden stick to separate the wire.",
+            "Call Emergency Ambulance (123) as soon as the victim is free from current.",
+            "Check breathing and pulse immediately; if absent, initiate CPR without delay.",
+            "If breathing, place in recovery position and inspect for electrical entry and exit burn marks."
+        ],
+        "do_list": [
+            "De-energize the power source first before touching the victim",
+            "Initiate CPR immediately if breathing or pulse is absent",
+            "Transport all electrical shock patients to hospital for an ECG"
+        ],
+        "dont_list": [
+            "NEVER touch the person with bare hands while still in contact with electrical current",
+            "Do NOT use wet or metal objects to move electrical wires",
+            "Do NOT apply ointments or ice to electrical burn wounds"
+        ],
+        "referral": "Ambulance 123, CCU, and Emergency Department"
+    },
+    "heatstroke": {
+        "english_title": "Critical Emergency: Heatstroke & Severe Hyperthermia",
+        "category": "Hyperthermia & Environmental Emergencies",
+        "default_severity": "red",
+        "source": "WHO & Egyptian Environmental Health Emergency Guidelines",
+        "default_steps": [
+            "Move the person immediately to a cool, shaded, air-conditioned or fanned space.",
+            "Call 123 immediately; core body temperature above 40°C causes brain and organ damage.",
+            "Remove excess outer clothing and sponge or spray body with cool/lukewarm water.",
+            "Apply ice packs wrapped in cloth to high-blood-flow areas: armpits, groin, and neck sides.",
+            "Fan the wet body actively to accelerate evaporative cooling."
+        ],
+        "do_list": [
+            "Rapid active cooling by all available means",
+            "Place wrapped ice packs on major artery zones (neck, groin, armpits)",
+            "Give cool water only if fully alert and able to swallow safely"
+        ],
+        "dont_list": [
+            "Do NOT give fever medications (paracetamol/aspirin); they are ineffective and harm the liver in heatstroke",
+            "Do NOT plunge suddenly into freezing ice bath without supervision (risk of vascular shock)",
+            "Do NOT give fluids if the patient is confused or delirious"
+        ],
+        "referral": "Emergency 123 and Intensive Care Unit at General Hospital"
+    },
+    "nosebleed": {
+        "english_title": "Acute Epistaxis (Nosebleed Management)",
+        "category": "Ear, Nose & Throat Emergencies (ENT)",
+        "default_severity": "green",
+        "source": "American Academy of Otolaryngology (AAO-HNS) & Egyptian Medical Protocol",
+        "default_steps": [
+            "Sit upright and lean your head and torso slightly forward (NOT backward).",
+            "Firmly pinch the soft fleshy part of the nose just below the nasal bone with thumb and index finger.",
+            "Breathe through your mouth and hold this continuous pressure for 10 to 15 full minutes without letting go.",
+            "Apply a cold pack or cloth-wrapped ice to the bridge of the nose and forehead to constrict vessels.",
+            "If bleeding continues past 20 minutes or follows severe head trauma, seek emergency medical care immediately."
+        ],
+        "do_list": [
+            "Lean forward to allow blood to drain out instead of being swallowed",
+            "Pinch the soft lower nose continuously for 15 minutes by the clock",
+            "Spit out any blood that collects in the throat"
+        ],
+        "dont_list": [
+            "NEVER tilt head backward; blood will drain into stomach causing vomiting or choke airway",
+            "Do NOT pack the nose with dry rough paper napkins or non-sterile cotton",
+            "Do NOT blow or pick the nose for several hours after bleeding stops"
+        ],
+        "referral": "ENT Emergency Clinic at General Hospital or University Hospital"
+    },
+    "eye_injury": {
+        "english_title": "Eye Trauma, Foreign Objects & Chemical Burns",
+        "category": "Ophthalmic & Eye Emergencies",
+        "default_severity": "orange",
+        "source": "American Academy of Ophthalmology (AAO) & Egyptian Ophthalmic Protocol",
+        "default_steps": [
+            "If chemical exposure (bleach, acid, detergent): flush the eye immediately with clean running tap water for 15-20 minutes.",
+            "Keep eyelids held open with clean fingers during flushing to ensure thorough irrigation.",
+            "If an object is embedded in the eye: do NOT attempt to touch or remove it.",
+            "Shield the injured eye with a rigid guard (e.g. bottom of a clean paper cup) taped in place without pressing the eyeball.",
+            "Transport the patient immediately to specialized ophthalmic emergency care."
+        ],
+        "do_list": [
+            "Immediate prolonged water irrigation for chemical splashes",
+            "Shield eye gently and transfer to ophthalmologist immediately",
+            "Keep head steady and minimize eye movement"
+        ],
+        "dont_list": [
+            "NEVER rub or press on the injured eye; rubbing scratches the cornea and embeds objects deeper",
+            "NEVER use tweezers, pins, or cotton swabs to extract an object from the eye",
+            "Do NOT apply eye drops or ointments to a penetrating eye wound before doctor examination"
+        ],
+        "referral": "Ophthalmic Emergency Hospital (Ramad Hospital) or University Eye Center"
+    },
+    "bites_stings": {
+        "english_title": "Venomous Stings, Snakebites & Animal Bites",
+        "category": "Toxic Bites & Rabies Emergencies",
+        "default_severity": "orange",
+        "source": "Egyptian Ministry of Health Anti-Rabies & Antivenom Guidelines",
+        "default_steps": [
+            "Keep the victim calm and still; physical activity accelerates venom spread through circulation.",
+            "Immobilize the bitten limb and keep it positioned at or slightly below heart level.",
+            "Immediately remove rings, watches, and tight footwear before significant swelling occurs.",
+            "Gently cleanse the wound with clean water and mild antiseptic soap without scrubbing.",
+            "Transport the victim immediately to the nearest hospital for antivenom and rabies vaccine evaluation."
+        ],
+        "do_list": [
+            "Keep the bitten limb still and positioned below heart level",
+            "Seek emergency hospital care immediately for antivenom/rabies post-exposure prophylaxis",
+            "Remember the creature's color or shape if safe to assist physicians"
+        ],
+        "dont_list": [
+            "NEVER cut, incise, or slash the bite mark with razor or knife",
+            "NEVER suck venom with mouth; this poisons the rescuer and infects the wound",
+            "NEVER apply a tight tourniquet that cuts off arterial blood flow (causes limb loss)",
+            "Do NOT apply ice directly onto snakebite marks"
+        ],
+        "referral": "Poison Control Center, General Hospital, or Fevers Hospital for Rabies Vaccine & Antivenom"
+    },
+    "low_blood_sugar": {
+        "english_title": "Acute Hypoglycemia & Diabetic Low Blood Sugar Emergency",
+        "category": "Diabetic Emergencies & Hypoglycemia",
+        "default_severity": "orange",
+        "source": "American Diabetes Association (ADA) Guidelines & National Diabetes Protocol",
+        "default_steps": [
+            "If the patient is conscious and able to swallow: apply the Rule of 15 immediately.",
+            "Give 15 grams of fast-acting simple carbohydrates (half cup fruit juice, 1 tablespoon honey, or 3 teaspoons sugar in water).",
+            "Wait 15 minutes, then re-test blood glucose level with home glucometer.",
+            "If glucose remains under 70 mg/dL, provide another 15 grams of fast-acting sugar.",
+            "If the patient is unconscious or unable to swallow safely: do NOT give anything by mouth; turn into recovery position and call 123 immediately."
+        ],
+        "do_list": [
+            "Apply the 15-15 rule for conscious patients",
+            "Administer Glucagon emergency injection if available and trained",
+            "Call 123 immediately if consciousness deteriorates"
+        ],
+        "dont_list": [
+            "NEVER force food, liquid, or sugar into an unconscious person's mouth (fatal choking risk)",
+            "NEVER give insulin to someone experiencing low blood sugar; it is fatal",
+            "Do NOT rely on chocolate; its high fat content slows glucose absorption"
+        ],
+        "referral": "Internal Medicine & Diabetes Emergency at University Hospital or 123"
+    },
+    "general_triage": {
+        "english_title": "General Emergency Clinical Triage & Health Assessment",
+        "category": "Clinical Emergency Assessment",
+        "default_severity": "green",
+        "source": "National Emergency Medical Protocol - Egyptian Ministry of Health",
+        "default_steps": [
+            "Assess the patient's vital signs: confirm level of consciousness, breathing regularity, and pulse.",
+            "Help the person rest in a safe, comfortable, and well-ventilated position.",
+            "If symptoms include severe chest pain, breathing difficulty, or unresponsiveness: call 123 immediately.",
+            "Note the exact time symptoms started and any medications taken to inform medical staff.",
+            "Proceed to the nearest hospital emergency room or primary health center for physical examination and diagnosis."
+        ],
+        "do_list": [
+            "Monitor breathing and consciousness continuously",
+            "Call 123 immediately if red-flag symptoms emerge",
+            "Seek in-person medical evaluation for accurate diagnosis and therapy"
+        ],
+        "dont_list": [
+            "Do NOT self-medicate with strong antibiotics or painkillers without physician exam",
+            "Do NOT neglect sudden or severe symptoms expecting them to resolve alone",
+            "Do NOT give oral fluids to someone who is drowsy or uncoordinated"
+        ],
+        "referral": "Emergency Reception at General Hospital or University Hospital (or 123 for critical emergencies)"
+    }
+}
+
+
 def _match_condition_keywords(text: str) -> Optional[str]:
     """
-    Robust medical intent & keyword matcher.
+    Robust medical intent & keyword matcher (Arabic & English).
     Distinguishes specific symptoms accurately without generic bleeding/burn false-positives.
     """
     t = text.lower()
 
     # 1. High Blood Pressure (must check before generic 'blood')
-    if any(k in t for k in ["ضغط دم", "ضغط الدم", "الضغط مرتفع", "الضغط عالي", "ضغط 180", "ضغط 160", "ضغط عالي", "hypertension", "high blood pressure", "عندي ضغط"]):
+    if any(k in t for k in [
+        "ضغط دم", "ضغط الدم", "الضغط مرتفع", "الضغط عالي", "ضغط 180", "ضغط 160", "عندي ضغط", "ارتفاع ضغط",
+        "hypertension", "high blood pressure", "blood pressure", "high bp", "elevated pressure", "hypertensive"
+    ]):
         return "high_blood_pressure"
 
     # 2. Abdominal pain / Stomach cramps
-    if any(k in t for k in ["بطني", "مغص", "ألم في البطن", "الم بالبطن", "الم في البطن", "وجع بطن", "وجع في بطني", "معدتي", "وجع معدة", "كرامبات بطن", "stomach", "abdominal", "abdomen"]):
+    if any(k in t for k in [
+        "بطني", "مغص", "ألم في البطن", "الم بالبطن", "الم في البطن", "وجع بطن", "وجع في بطني", "معدتي", "وجع معدة", "كرامبات بطن",
+        "stomach", "abdominal", "abdomen", "belly pain", "stomach ache", "stomach pain", "colic", "cramps"
+    ]):
         return "abdominal_pain"
 
     # 3. Chest pain / Heart attack / Cardiac
-    if any(k in t for k in ["ألم في الصدر", "الم في الصدر", "ألم صدري", "الم صدري", "صدري بيوجعني", "وجع في صدري", "ألم في صدري", "ذبحة", "جلطة قلب", "أزمة قلبية", "ثقل في الصدر", "قابس على صدري", "chest pain"]):
+    if any(k in t for k in [
+        "ألم في الصدر", "الم في الصدر", "ألم صدري", "الم صدري", "صدري بيوجعني", "وجع في صدري", "ألم في صدري", "ذبحة", "جلطة قلب", "أزمة قلبية", "ثقل في الصدر", "قابس على صدري",
+        "chest pain", "heart attack", "cardiac", "angina", "chest tightness", "chest pressure", "pain in chest"
+    ]):
         return "chest_pain_cardiac"
 
     # 4. Severe headache / Neurological / Stroke signs
-    if any(k in t for k in ["صداع شديد", "صداع نصفي", "صداع مفاجئ", "صداع بينفجر", "تنميل في الوجه", "ثقل في اللسان", "تداخل بالكلام", "سكتة دماغية", "headache", "migraine"]):
+    if any(k in t for k in [
+        "صداع شديد", "صداع نصفي", "صداع مفاجئ", "صداع بينفجر", "تنميل في الوجه", "ثقل في اللسان", "تداخل بالكلام", "سكتة دماغية",
+        "headache", "migraine", "stroke", "slurred speech", "facial droop", "severe headache"
+    ]):
         return "headache_neurological"
 
     # 5. Low blood sugar / Diabetic emergency
-    if any(k in t for k in ["سكر واطي", "هبوط سكر", "غيبوبة سكر", "سكر منخفض", "سكر 50", "عرق بارد سكر", "انسولين", "أنسولين", "low sugar", "hypoglycemia"]):
+    if any(k in t for k in [
+        "سكر واطي", "هبوط سكر", "غيبوبة سكر", "سكر منخفض", "سكر 50", "عرق بارد سكر", "انسولين", "أنسولين",
+        "low sugar", "hypoglycemia", "low blood sugar", "hypoglycemic", "diabetic shock", "insulin shock"
+    ]):
         return "low_blood_sugar"
 
     # 6. Choking / Airway Obstruction
-    if any(k in t for k in ["شرق", "اختناق", "بلع عملة", "مش قادر يتنفس", "ازرقاق", "غصة", "مجرى الهواء", "بلع لسانه", "choking"]):
+    if any(k in t for k in [
+        "شرق", "اختناق", "بلع عملة", "مش قادر يتنفس", "ازرقاق", "غصة", "مجرى الهواء", "بلع لسانه",
+        "choking", "choke", "airway blocked", "swallowed a coin", "suffocation"
+    ]):
         return "choking"
 
     # 7. CPR / Cardiac arrest
-    if any(k in t for k in ["توقف قلب", "مش بينبض", "إنعاش", "cpr", "توقف التنفس", "قلبه وقف", "نبضه وقف"]):
+    if any(k in t for k in [
+        "توقف قلب", "مش بينبض", "إنعاش", "توقف التنفس", "قلبه وقف", "نبضه وقف",
+        "cpr", "cardiac arrest", "not breathing", "no pulse", "heart stopped", "unresponsive", "resuscitation"
+    ]):
         return "cpr"
 
     # 8. Burns / Heat injuries (must have clear burn words)
-    if any(k in t for k in ["حرق", "مية مغلية", "ماء مغلي", "زيت مغلي", "نار", "احترق", "سلخ", "سلق", "فقاقيع مائية", "burn", "scald"]):
+    if any(k in t for k in [
+        "حرق", "مية مغلية", "ماء مغلي", "زيت مغلي", "نار", "احترق", "سلخ", "سلق", "فقاقيع مائية",
+        "burn", "burned", "burning", "scald", "boiling water", "fire"
+    ]):
         return "burn"
 
     # 9. Fracture / Dislocation
-    if any(k in t for k in ["كسر", "التواء", "خلع", "مش قادر يمشي", "رجله اتكسرت", "ايده اتكسرت", "عظم", "جبيرة", "عظم بارز", "fracture", "sprain"]):
+    if any(k in t for k in [
+        "كسر", "التواء", "خلع", "مش قادر يمشي", "رجله اتكسرت", "ايده اتكسرت", "عظم", "جبيرة", "عظم بارز",
+        "fracture", "broken bone", "broken arm", "broken leg", "dislocation", "sprain", "twisted ankle"
+    ]):
         return "fracture"
 
     # 10. Cut / Open bleeding (must be actual bleeding or cuts, not just the word 'blood' in high pressure)
-    if any(k in t for k in ["نزيف خارجي", "نزيف حاد", "جرح ينزف", "دم ينزف", "دم كتير", "سكين", "جرح غائر", "طرد دم", "cut", "bleeding"]):
+    if any(k in t for k in [
+        "نزيف خارجي", "نزيف حاد", "جرح ينزف", "دم ينزف", "دم كتير", "سكين", "جرح غائر", "طرد دم",
+        "cut", "bleeding", "wound", "hemorrhage", "deep cut", "laceration"
+    ]):
         return "cut"
 
     # 11. Poisoning / Ingestion of chemicals
-    if any(k in t for k in ["تسمم", "شرب كلور", "مبيد", "سم فئران", "جرعة زيادة", "منظف", "مادة كاوية", "شرب دواء", "بلع مادة", "poison"]):
+    if any(k in t for k in [
+        "تسمم", "شرب كلور", "مبيد", "سم فئران", "جرعة زيادة", "منظف", "مادة كاوية", "شرب دواء", "بلع مادة",
+        "poison", "poisoning", "toxic", "swallowed bleach", "overdose", "chemical ingestion"
+    ]):
         return "poisoning"
 
     # 12. Allergy / Anaphylaxis
-    if any(k in t for k in ["حساسية", "صدمة تحسسية", "تورم شفايف", "أرتيكاريا", "تورم باللسان", "انافيلاكسيس", "anaphylaxis", "allergy"]):
+    if any(k in t for k in [
+        "حساسية", "صدمة تحسسية", "تورم شفايف", "أرتيكاريا", "تورم باللسان", "انافيلاكسيس",
+        "anaphylaxis", "allergic", "allergy", "hives", "swollen tongue", "swollen face"
+    ]):
         return "allergy_anaphylaxis"
 
     # 13. Asthma / Respiratory distress
-    if any(k in t for k in ["ربو", "ضيق تنفس", "صفير بالصدر", "فنتولين", "أزمة تنفس", "كرشة نفس", "بخاخ", "نهجان شديد", "asthma"]):
+    if any(k in t for k in [
+        "ربو", "ضيق تنفس", "صفير بالصدر", "فنتولين", "أزمة تنفس", "كرشة نفس", "بخاخ", "نهجان شديد",
+        "asthma", "inhaler", "wheezing", "asthma attack", "difficulty breathing", "shortness of breath"
+    ]):
         return "asthma"
 
     # 14. Seizures / Epilepsy
-    if any(k in t for k in ["صرع", "تشنج", "تشنجات", "نفضة", "رغوة من الفم", "عض لسانه", "نوبة صرع", "seizure", "epilepsy"]):
+    if any(k in t for k in [
+        "صرع", "تشنج", "تشنجات", "نفضة", "رغوة من الفم", "عض لسانه", "نوبة صرع",
+        "seizure", "seizures", "convulsion", "epilepsy", "epileptic"
+    ]):
         return "seizures"
 
     # 15. Fainting / Syncope
-    if any(k in t for k in ["اغمى", "أغمى", "غيبوبة", "داخ", "دوار", "فقد الوعي", "هبوط حاد", "faint", "syncope"]):
+    if any(k in t for k in [
+        "اغمى", "أغمى", "غيبوبة", "داخ", "دوار", "فقد الوعي", "هبوط حاد",
+        "faint", "fainted", "fainting", "syncope", "passed out", "blackout", "dizziness"
+    ]):
         return "fainting"
 
     # 16. Electric shock
-    if any(k in t for k in ["كهربا", "كهرباء", "صعق", "ماس كهربائي", "سلك عريان", "صدمة كهربائية", "electric shock"]):
+    if any(k in t for k in [
+        "كهربا", "كهرباء", "صعق", "ماس كهربائي", "سلك عريان", "صدمة كهربائية",
+        "electric shock", "electrocuted", "electrocution"
+    ]):
         return "electric_shock"
 
     # 17. Heatstroke
-    if any(k in t for k in ["ضربة شمس", "حر شديد", "اجهاد حراري", "إجهاد حراري", "حرارته 40", "heatstroke"]):
+    if any(k in t for k in [
+        "ضربة شمس", "حر شديد", "اجهاد حراري", "إجهاد حراري", "حرارته 40",
+        "heatstroke", "heat stroke", "heat exhaustion", "sunstroke"
+    ]):
         return "heatstroke"
 
     # 18. Nosebleed (epistaxis)
-    if any(k in t for k in ["رعاف", "نزيف أنف", "نزيف انف", "نزيف الأنف", "نزيف الانف", "نزيف من الأنف", "نزيف من الانف", "دم من مناخير", "مناخيره بتنزل دم", "دم من الانف", "دم من الأنف", "دم من المناخير", "nosebleed", "epistaxis"]) or (("أنف" in t or "انف" in t or "مناخير" in t) and ("دم" in t or "نزيف" in t)):
+    if any(k in t for k in [
+        "رعاف", "نزيف أنف", "نزيف انف", "نزيف الأنف", "نزيف الانف", "نزيف من الأنف", "نزيف من الانف",
+        "دم من مناخير", "مناخيره بتنزل دم", "دم من الانف", "دم من الأنف", "دم من المناخير",
+        "nosebleed", "nose bleed", "epistaxis", "bleeding nose", "bloody nose"
+    ]) or (("أنف" in t or "انف" in t or "مناخير" in t) and ("دم" in t or "نزيف" in t)):
         return "nosebleed"
 
     # 19. Eye injury
-    if any(k in t for k in ["عين", "عينه", "مادة في عينه", "جسم في عينه", "حرق بالعين", "خدش بالعين", "eye injury"]):
+    if any(k in t for k in [
+        "عين", "عينه", "مادة في عينه", "جسم في عينه", "حرق بالعين", "خدش بالعين",
+        "eye injury", "chemical in eye", "scratch on eye", "eye trauma", "object in eye"
+    ]):
         return "eye_injury"
 
     # 20. Bites & Stings
-    if any(k in t for k in ["عضة", "لدغة", "عقرب", "ثعبان", "كلب", "حشرة", "دبور", "نحلة", "قرصة", "sting", "bite"]):
+    if any(k in t for k in [
+        "عضة", "لدغة", "عقرب", "ثعبان", "كلب", "حشرة", "دبور", "نحلة", "قرصة",
+        "bite", "bites", "bitten", "sting", "stings", "stung", "snake", "scorpion", "spider", "dog bite", "bee sting"
+    ]):
         return "bites_stings"
 
     return None
-
 
 def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, Any]:
     """
     Main clinical decision pipeline:
     1. Pass through Member 3 (Reda) ML NLU model (prediction + confidence).
-    2. Pass through accurate keyword/intent classification.
+    2. Pass through accurate keyword/intent classification (Arabic & English).
     3. Retrieve relevant medical guide evidence (Member 1 IR + Member 4 78 Guides).
     4. Apply Knowledge Base rules & Triage priority (Member 2 KB).
     5. Fallback safely to general triage (NEVER absurdly fallback to burns).
-    6. Assemble rich JSON for Member 6 Frontend UI.
+    6. Assemble rich bilingual JSON for Member 6 Frontend UI.
     7. Log to Member 5 Analytics.
     """
     start_time = time.time()
     clean_text = (text or "").strip()
+
+    from nlu.language_detect import detect_language
+    lang_code = detect_language(clean_text)
+    is_english = (lang_code == "en")
+
     if not clean_text:
         return {
             "status": "error",
-            "message": "نص الرسالة فارغ، يرجى كتابة وصف الحالة الطارئة."
+            "message": "Message cannot be empty. Please describe the emergency condition." if is_english else "نص الرسالة فارغ، يرجى كتابة وصف الحالة الطارئة."
         }
 
     # =========================================================================
@@ -724,18 +1350,21 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         nlu_res = nlu_parse(clean_text)
         ml_condition = nlu_res.get("condition")
         ml_confidence = float(nlu_res.get("confidence", 0.0))
+        if nlu_res.get("language") == "english":
+            is_english = True
     except Exception as e:
         print(f"[ClinicalPipeline] NLU warning: {e}")
 
     # =========================================================================
     # Step 3: Condition Resolution (Precision First)
     # =========================================================================
-    # If explicit keyword match exists, prioritize it to prevent ML false-positives
-    # (e.g. preventing 'ضغط الدم' from becoming 'nosebleed' or 'بطني' from becoming 'burn')
-    if rule_condition and rule_condition in CONDITION_CATALOG:
+    active_catalog = ENGLISH_CATALOG if is_english else CONDITION_CATALOG
+    catalog_keys = active_catalog.keys()
+
+    if rule_condition and rule_condition in catalog_keys:
         condition = rule_condition
         confidence = max(ml_confidence, 0.90)
-    elif ml_condition and ml_condition in CONDITION_CATALOG and ml_confidence >= 0.20:
+    elif ml_condition and ml_condition in catalog_keys and ml_confidence >= 0.20:
         condition = ml_condition
         confidence = ml_confidence
     else:
@@ -743,38 +1372,50 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         condition = "general_triage"
         confidence = 0.50
 
-    catalog_data = CONDITION_CATALOG.get(condition, CONDITION_CATALOG["general_triage"])
+    catalog_data = active_catalog.get(condition, active_catalog["general_triage"])
 
     # =========================================================================
     # Step 4: Member 1 - IR Search Engine over 78 Guides
     # =========================================================================
     top_snippet = ""
-    guide_title = catalog_data["arabic_title"]
     source = catalog_data["source"]
-    try:
-        ir_results = ir_search(clean_text, k=2)
-        if ir_results:
-            top_snippet = ir_results[0].get("snippet", "")
-            if ir_results[0].get("source"):
-                source = ir_results[0]["source"]
-    except Exception as e:
-        print(f"[ClinicalPipeline] IR warning: {e}")
+    if not is_english:
+        try:
+            ir_results = ir_search(clean_text, k=2)
+            if ir_results:
+                top_snippet = ir_results[0].get("snippet", "")
+                if ir_results[0].get("source"):
+                    source = ir_results[0]["source"]
+        except Exception as e:
+            print(f"[ClinicalPipeline] IR warning: {e}")
 
     # =========================================================================
     # Step 5: Member 2 - Knowledge Base & Triage Rules
     # =========================================================================
     severity = catalog_data["default_severity"]
-    reasoning_text = f"تم تقييم الحالة وفق بروتوكول الإسعاف الأولي المعتمد بنسبة ثقة {int(confidence*100)}%."
+    if is_english:
+        reasoning_text = f"Case evaluated and prioritized according to accredited First Aid protocols with {int(confidence*100)}% confidence score."
+    else:
+        reasoning_text = f"تم تقييم الحالة وفق بروتوكول الإسعاف الأولي المعتمد بنسبة ثقة {int(confidence*100)}%."
 
     # Critical red-flag emergency detection
     text_lower = clean_text.lower()
-    critical_triggers = [
+    critical_triggers_ar = [
         "فاقد الوعي", "مش بينبض", "توقف التنفس", "ازرقاق", "غيبوبة", "نزيف شرياني",
         "مادة كاوية", "سم", "كهربا", "نار", "درجة تالتة", "عظم بارز", "اختناق", "مش قادر يتنفس", "ضغط 180", "ذبحة", "جلطة"
     ]
-    if any(trig in text_lower for trig in critical_triggers) or condition in ["choking", "cpr", "electric_shock", "heatstroke", "anaphylaxis", "allergy_anaphylaxis", "chest_pain_cardiac"]:
+    critical_triggers_en = [
+        "unconscious", "not breathing", "stopped breathing", "no pulse", "cyanosis", "coma", "arterial bleeding",
+        "caustic", "poison", "electric shock", "third degree", "bone sticking out", "choking", "cannot breathe", "180", "chest pain", "heart attack", "stroke"
+    ]
+    triggers = critical_triggers_en if is_english else critical_triggers_ar
+
+    if any(trig in text_lower for trig in triggers) or condition in ["choking", "cpr", "electric_shock", "heatstroke", "anaphylaxis", "allergy_anaphylaxis", "chest_pain_cardiac"]:
         severity = "red"
-        reasoning_text = f"تم تصنيف الحالة كـ (طوارئ قصوى - أحمر) لوجود علامات خطورة حادة تمس مجرى التنفس أو الوعي أو القلب والدورة الدموية وفق بروتوكول الفرز الطبي."
+        if is_english:
+            reasoning_text = "The case has been classified as Critical Emergency (RED Code) due to acute life-threatening signs affecting vital airway, breathing, or cardiac circulation according to clinical triage guidelines."
+        else:
+            reasoning_text = "تم تصنيف الحالة كـ (طوارئ قصوى - أحمر) لوجود علامات خطورة حادة تمس مجرى التنفس أو الوعي أو القلب والدورة الدموية وفق بروتوكول الفرز الطبي."
     elif severity != "red":
         try:
             kb_res = kb_infer({"condition": condition})
@@ -787,26 +1428,44 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
     # Step 6: Assemble Rich Response Object
     # =========================================================================
     case_id = f"case-{int(time.time() * 1000)}"
-    if condition == "general_triage":
-        summary = (
-            f"تم استلام استفسارك: '{clean_text}'. "
-            "يرجى توضيح طبيعة الإصابة بالتفصيل (مثل وجود جرح، سقوط، ألم محدد، أو صعوبة تنفس) لتحديد بروتوكول الإسعاف بدقة. في حالات الطوارئ الحادة اتصل بـ 123 فوراً."
-        )
+    if is_english:
+        title = catalog_data.get("english_title", "Clinical Assessment")
+        if condition == "general_triage":
+            summary = (
+                f"Inquiry received: '{clean_text}'. "
+                "Please describe the specific injury or symptoms (such as bleeding, burns, exact pain location, or breathing distress) so we can provide accurate first-aid steps. In life-threatening emergencies, call 123 immediately."
+            )
+            followup_question = "Is the patient experiencing difficulty breathing, chest pain, or loss of consciousness?"
+        else:
+            summary = (
+                f"Identified Medical Emergency: {title}. "
+                f"{'Requires immediate emergency medical intervention without delay!' if severity == 'red' else 'Please follow the evidence-based first aid steps outlined below carefully.'}"
+            )
+            followup_question = None
     else:
-        summary = (
-            f"حالة طوارئ مصنفة: {catalog_data['arabic_title']}. "
-            f"{'تتطلب تدخلاً عاجلاً دون تأخير!' if severity == 'red' else 'يرجى اتباع خطوات الإسعاف الأولي الموضحة أدناه بعناية.'}"
-        )
-        if top_snippet:
-            clean_snippet = re.sub(r'<[^>]+>', '', top_snippet).strip()
-            if len(clean_snippet) > 40:
-                summary += f" — استناداً للدليل: {clean_snippet[:130]}..."
+        title = catalog_data["arabic_title"]
+        if condition == "general_triage":
+            summary = (
+                f"تم استلام استفسارك: '{clean_text}'. "
+                "يرجى توضيح طبيعة الإصابة بالتفصيل (مثل وجود جرح، سقوط، ألم محدد، أو صعوبة تنفس) لتحديد بروتوكول الإسعاف بدقة. في حالات الطوارئ الحادة اتصل بـ 123 فوراً."
+            )
+            followup_question = "هل يعاني المصاب من صعوبة في التنفس، ألم بالصدر، أو فقدان للوعي؟"
+        else:
+            summary = (
+                f"حالة طوارئ مصنفة: {title}. "
+                f"{'تتطلب تدخلاً عاجلاً دون تأخير!' if severity == 'red' else 'يرجى اتباع خطوات الإسعاف الأولي الموضحة أدناه بعناية.'}"
+            )
+            if top_snippet:
+                clean_snippet = re.sub(r'<[^>]+>', '', top_snippet).strip()
+                if len(clean_snippet) > 40:
+                    summary += f" — استناداً للدليل: {clean_snippet[:130]}..."
+            followup_question = None
 
     response_payload = {
         "id": case_id,
         "severity": severity,
         "category": catalog_data["category"],
-        "title": catalog_data["arabic_title"],
+        "title": title,
         "summary": summary,
         "confidence": round(confidence, 2),
         "reasoning": reasoning_text,
@@ -816,7 +1475,8 @@ def process_clinical_query(text: str, session_id: str = "default") -> Dict[str, 
         "source": source,
         "referral": catalog_data["referral"],
         "requires_followup": (condition == "general_triage"),
-        "followup_question": "هل يعاني المصاب من صعوبة في التنفس، ألم بالصدر، أو فقدان للوعي؟" if condition == "general_triage" else None,
+        "followup_question": followup_question,
+        "language": "english" if is_english else "arabic",
         # Backward-compatible fields:
         "condition": condition,
         "message": summary,

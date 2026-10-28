@@ -11,10 +11,12 @@ const SeverityBadge = {
    * @param {string} [customLabel]
    * @returns {string} HTML string
    */
-  render(severity, customLabel = null) {
+  render(severity, customLabel = null, isArabic = null) {
     const sev = (severity || 'green').toLowerCase();
 
-    const isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
+    if (isArabic === null) {
+      isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
+    }
 
     const defaultLabels = {
       red: isArabic ? 'حالة حرجة / طارئة' : 'Critical / Emergency',

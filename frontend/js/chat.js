@@ -188,17 +188,20 @@ const ChatController = {
       }
     }
 
-    const badgeHtml = SeverityBadge.render(severity);
-    const stepsHtml = StepCardComponent.renderSteps(res.steps || []);
-    const doDontHtml = StepCardComponent.renderDoDont(res.do_list || [], res.dont_list || []);
+    const isArabic = res.language ? (res.language === 'arabic') : (document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl');
+    const langDir = isArabic ? 'rtl' : 'ltr';
+    const textAlign = isArabic ? 'right' : 'left';
 
-    const isArabic = document.documentElement.lang === 'ar' || document.body.getAttribute('dir') === 'rtl';
+    const badgeHtml = SeverityBadge.render(severity, null, isArabic);
+    const stepsHtml = StepCardComponent.renderSteps(res.steps || []);
+    const doDontHtml = StepCardComponent.renderDoDont(res.do_list || [], res.dont_list || [], isArabic);
 
     // Why this diagnosis button
-    const reasonEscaped = encodeURIComponent(res.reasoning || 'تم التقييم وفق بروتوكول فرز الإصابات الطبي.');
+    const defaultReason = isArabic ? 'تم التقييم وفق بروتوكول فرز الإصابات الطبي.' : 'Assessed according to clinical emergency triage protocol.';
+    const reasonEscaped = encodeURIComponent(res.reasoning || defaultReason);
 
     const followupHtml = res.requires_followup && res.followup_question ? `
-      <div style="margin-top: 14px; padding: 14px 18px; background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-md); color: #92400e; display: flex; align-items: flex-start; gap: 10px;">
+      <div style="margin-top: 14px; padding: 14px 18px; background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-md); color: #92400e; display: flex; align-items: flex-start; gap: 10px;" dir="${langDir}">
         <i class="fa-solid fa-circle-question" style="font-size: 1.2rem; color: #d97706; margin-top: 2px;"></i>
         <div>
           <strong>${isArabic ? 'سؤال توضيحي للمتابعة:' : 'Clarifying Follow-up Question:'}</strong>
@@ -208,11 +211,11 @@ const ChatController = {
     ` : '';
 
     const msgHtml = `
-      <div class="message-row system" id="msg-${res.id}">
+      <div class="message-row system" id="msg-${res.id}" dir="${langDir}" style="text-align: ${textAlign};">
         <div class="msg-avatar">
           <i class="fa-solid fa-user-doctor"></i>
         </div>
-        <div class="msg-bubble print-card" style="width: 100%;">
+        <div class="msg-bubble print-card" style="width: 100%; text-align: ${textAlign};" dir="${langDir}">
           <div class="msg-top-meta">
             ${badgeHtml}
             <div style="display: flex; align-items: center; gap: 8px;">
